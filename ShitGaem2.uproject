@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{46C483F5-45B1-CA98-6929-ACA67A9223E2}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "ShitGaem2",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
