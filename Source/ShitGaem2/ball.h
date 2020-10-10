@@ -18,6 +18,10 @@ public:
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* BallMesh;
 
+
+	UPROPERTY(EditAnywhere, Category = "Ball")
+	TSubclassOf<class Aball> ShitBall;
+
 	
 
 protected:

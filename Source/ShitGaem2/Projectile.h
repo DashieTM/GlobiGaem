@@ -34,3 +34,4 @@ public:
 	void OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVector NormalImpulse, const FHitResult & Hit);
 
 };
+

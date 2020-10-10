@@ -7,6 +7,9 @@
 #include "SoccerGameMode.h"
 #include "ball.h"
 #include "characterthatworks.h"
+#include "Misc/App.h"
+#include "Goalred.h"
+#include "Goalgreen.h"
 
 
 // Sets default values
@@ -44,7 +47,7 @@ void AProjectile::OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVect
 	
 	if (Aball* Target = Cast<Aball>(OtherActor))
 	{
-
+		Destroy();
 	}
 	else 
 	{
