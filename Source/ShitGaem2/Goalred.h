@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "Components/AudioComponent.h"
 #include "Goalred.generated.h"
 
 UCLASS()
@@ -17,6 +19,12 @@ public:
 
 	UPROPERTY(Editanywhere, Category = "Components")
 		UStaticMeshComponent* GoalBounds;
+
+	UPROPERTY(Editanywhere, Category = "Particles")
+		UParticleSystemComponent* Explosion;
+
+	UPROPERTY(Editanywhere, Category = "Sound")
+		UAudioComponent* SoundEffect;
 
 protected:
 	// Called when the game starts or when spawned

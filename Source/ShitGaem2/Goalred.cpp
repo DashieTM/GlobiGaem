@@ -9,8 +9,15 @@ AGoalred::AGoalred()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	SetReplicateMovement(true);
+	SetReplicates(true);
 	GoalBounds = CreateDefaultSubobject<UStaticMeshComponent>("GoalBounds");
 	SetRootComponent(GoalBounds);
+	Explosion = CreateDefaultSubobject<UParticleSystemComponent>("Explosion");
+	Explosion->SetupAttachment(GoalBounds);
+	SoundEffect = CreateDefaultSubobject<UAudioComponent>("Sound");
+	SoundEffect->SetupAttachment(GoalBounds);
+
 }
 
 // Called when the game starts or when spawned

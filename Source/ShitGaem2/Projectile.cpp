@@ -17,8 +17,10 @@ AProjectile::AProjectile()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 	
+
+	SetReplicateMovement(true);
+	SetReplicates(true);
 	BulletMesh = CreateDefaultSubobject<UStaticMeshComponent>("BulletMesh");
 	SetRootComponent(BulletMesh);
 	BulletMovement = CreateDefaultSubobject<UProjectileMovementComponent>("BulletMovement");
@@ -26,6 +28,7 @@ AProjectile::AProjectile()
 	BulletMovement->MaxSpeed = 8000.0f;
 
 	OnActorHit.AddDynamic(this, &AProjectile::OnProjectileHit);
+
 }
 
 // Called when the game starts or when spawned
@@ -38,29 +41,31 @@ void AProjectile::BeginPlay()
 // Called every frame
 void AProjectile::Tick(float DeltaTime)
 {
+
 	Super::Tick(DeltaTime);
 
 }
 
 void AProjectile::OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVector NormalImpulse, const FHitResult & Hit)
 {
-	
-	if (Aball* Target = Cast<Aball>(OtherActor))
+	if (Aball* Ball = Cast<Aball>(OtherActor))
 	{
-		Destroy();
+		return;
 	}
-	else 
-	{
-		if (Acharacterthatworks* Target2 = Cast<Acharacterthatworks>(OtherActor))
-		{
-
-		}
-		else
-		{
-			Destroy();
-		}
-	}
-	
-	
+	AProjectile::ProjectileDestroy();
 }
 
+void AProjectile::ProjectileDestroy()
+{
+	if (GetLocalRole() < ROLE_Authority)
+	{
+		ServerProjectileDestroy();
+		return;
+	}
+	Destroy();
+}
+
+void AProjectile::ServerProjectileDestroy_Implementation()
+{
+	ProjectileDestroy();
+}

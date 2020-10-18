@@ -30,6 +30,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void ProjectileDestroy();
+
+	UFUNCTION(Server, Reliable)
+		void ServerProjectileDestroy();
+
 	UFUNCTION()
 	void OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVector NormalImpulse, const FHitResult & Hit);
 

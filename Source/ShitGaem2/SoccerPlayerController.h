@@ -14,6 +14,10 @@ class SHITGAEM2_API ASoccerPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
+private:
+	int Team;
+
+	FText BobbyName;
 protected:
 
 	ASoccerPlayerController();
@@ -22,5 +26,16 @@ protected:
 
 	void OpenMenu();
 	
-	
+
+public:
+	void SetTeamGreen();
+	void SetTeamRed();
+	void SetTeamSpectator();
+	void RespawnOnGoal();
+	int GetTeam();
+	void SetBobbyName(FText& Name);
+	FText ReturnBobbyName();
+
+
+
 };

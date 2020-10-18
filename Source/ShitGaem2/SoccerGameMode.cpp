@@ -3,36 +3,26 @@
 
 #include "SoccerGameMode.h"
 #include "characterthatworks.h"
+#include "SoccerGameState.h"
 #include "SoccerPlayerController.h"
 #include "UObject/ConstructorHelpers.h"
-#include "SoccerGameState.h"
+#include "MenuHUD.h"
+#include "BobbyPlayerState.h"
+
 
 
 ASoccerGameMode::ASoccerGameMode()
 {
 
 	//set default pawn class to our Blueprinted character
-	
-
+	PointsRed = 0;
+	PointsGreen = 0;
+	GM = nullptr;
 	PointsToWin = 999;
 	PlayerControllerClass = ASoccerPlayerController::StaticClass();
-	
-	
-}
-
-
-
-
-void ASoccerGameMode::OnGreenGoalHit()
-{
-		ASoccerGameState::PointsRed++;
-	
-}
-
-void ASoccerGameMode::OnRedGoalHit()
-{
-	ASoccerGameState::PointsGreen++;
-	
+	PlayerStateClass = ABobbyPlayerState::StaticClass();
+	GameStateClass = ASoccerGameState::StaticClass();
+	HUDClass = AMenuHUD::StaticClass();
 	
 }
 

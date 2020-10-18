@@ -8,7 +8,9 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/AudioComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Components/TextRenderComponent.h"
 #include "characterthatworks.generated.h"
 
 
@@ -17,7 +19,72 @@ class SHITGAEM2_API Acharacterthatworks : public ACharacter
 {
 	GENERATED_BODY()
 
+private:
+
+	bool bCanDash;
+	bool bCanFire;
+	bool bHasPowerUp;
+
+	
+	FTransform SpawnTransformPowerUp;
+
+	FTimerHandle MemberTimerHandle;
+	FTimerHandle MemberTimerHandle2;
+	FTimerHandle MemberTimerHandle3;
+
+	class Acharacterthatworks* BobbyRed;
+	class Acharacterthatworks* BobbyGreen;
+	class Acharacterthatworks* BobbyDefault;
+
+
+	UPROPERTY(Replicated)
+		class Acharacterthatworks* BobbyBuffer;
+
+	UPROPERTY(Replicated)
+		class Acharacterthatworks* BobbyBufferOld;
+
+	UPROPERTY(EditAnywhere, Category = "Red Bobby")
+		TSubclassOf<class Acharacterthatworks> Bobby_Red;
+
+	UPROPERTY(EditAnywhere, Category = "Green Bobby")
+		TSubclassOf<class Acharacterthatworks> Bobby_Green;
+
+	
+
+	UPROPERTY(EditAnywhere, Category = "Default Bobby")
+		TSubclassOf<class Acharacterthatworks> Bobby_Default;
+
+	UPROPERTY(EditAnywhere, Category = "Shootingposition")
+		float ShootingPosition;
+
+	UPROPERTY(EditAnywhere, Category = "Dash Cooldown")
+		float DashCD;
+
+	UPROPERTY(EditAnywhere, Category = "Dash lenght")
+		float DashLenght;
+
+	UPROPERTY(EditAnywhere, Category = "Dash Friction")
+		float DashFriction;
+
+	UPROPERTY(EditAnywhere, Category = "Dash Friction in air")
+		float DashFrictionAir;
+
+	UPROPERTY(EditAnywhere, Category = "PowerUpStrenght")
+		float PowerUpStrenght;
+
+	UPROPERTY(EditAnywhere, Category = "PowerUpCD")
+	float PowerUpCD;
+
+	
+
+protected:
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+
 public:
+	
 	// Sets default values for this character's properties
 	Acharacterthatworks();
 
@@ -30,27 +97,128 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Shooting")
 	TSubclassOf<class AProjectile> ProjectileBP;
 
+	UPROPERTY(Editanywhere, Category = "Sound")
+		UAudioComponent* SoundEffectBobby;
 
-	void MoveForward(float Axis);
+	UPROPERTY(EditAnywhere, Category = "PowerUp")
+		TSubclassOf<class APowerUp> PowerUpBP;
+
+	UPROPERTY(EditAnywhere, Category = "BobbyName")
+	UTextRenderComponent* BobbyName;
+
+
+	
+	void MoveForward(float Axis); 
 	void MoveRight(float Axis);
 	void Shoot(); 
+	void ResetShoot();
+	void ResetDash();
+	void SetBobbyBuffer(class Acharacterthatworks* Bobby);
+	void ClearBobbyBuffer();
+	void GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const;
+	
+	
+
+
+	class Acharacterthatworks* GetBobbyBuffer();
+
+
 	UWorld* OpenLevel();
 
+	
+	UFUNCTION()
+	void Dash();
+
+	UFUNCTION()
+	void DeleteBobby(class Acharacterthatworks* Bobby);
+
+	UFUNCTION()
+	void SpawnBobbyDefault(class APlayerController* TheNewController);
+
+	UFUNCTION()
+	void SpawnBobbyRed(class APlayerController* TheNewController);
+
+	UFUNCTION()
+	void SpawnBobbyGreen(class APlayerController* TheNewController);
+
+	UFUNCTION()
+	void UsePowerUp();
+
+	UFUNCTION()
+	void SetBobbyName(APlayerController* TheNewController);
+
+
+	UFUNCTION(BlueprintPure, Category = "FireStatus")
+	FString ReturnFireStatus();
+
+	UFUNCTION(BlueprintPure, Category = "DashStatus")
+	FString ReturnDashStatus();
+
+	UFUNCTION(BlueprintPure, Category = "PowerUpStatus")
+	FString ReturnPowerUpStatus();
+	
 	UFUNCTION(Server, Reliable)
 	void ServerShoot();
-protected:
+
+	UFUNCTION(Server, Reliable)
+	void ServerDeleteBobby(class Acharacterthatworks* Bobby);
+
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnBobbyDefault(class APlayerController* TheNewController);
+
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnBobbyRed(class APlayerController* TheNewController);
+
+	UFUNCTION(Server, Reliable)
+		void ServerResetDash();
 
 
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnBobbyGreen(class APlayerController* TheNewController);
 
-public:	
+	UFUNCTION(Server, Reliable)
+	void ServerDash();
+
+	UFUNCTION(Server, Reliable)
+	void ServerUsePowerUp();
+
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnPowerUp(FTransform Power);
+
+	UFUNCTION(Server, Reliable)
+	void ServerSpawnPowerUpDelay();
+
+
+	UFUNCTION(Server, Reliable)
+	void ServerSetBobbyName(APlayerController* TheNewController);
+
+
+	UFUNCTION(Client, Reliable) //function on client to smooth the movement, works, kinda, not really
+	void ClientDash();
+
+	UFUNCTION(Client, Reliable)
+	void ClientWhichTeam(class ASoccerPlayerController* SController); //which character are is the client requesting to spawn?
+
+	UFUNCTION(Client, Reliable)
+	void ClientUsePowerUp();
+
+	UFUNCTION(Client, Reliable)
+	void ClientResetPowerUp();
+
+	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
 	
 
 	
+	void PowerUpCollected(FTransform& Power);
+	bool HasPowerUp();
+
+
+
 };
