@@ -466,19 +466,28 @@ bool Acharacterthatworks::HasPowerUp()
 	return bHasPowerUp;
 }
 
-void Acharacterthatworks::SetBobbyName(APlayerController* TheNewController)
+void Acharacterthatworks::SetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController)
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
-		ServerSetBobbyName(TheNewController);
+		ServerSetBobbyName(BobbyState, BobbyController);
 		return;
 	}
+	else {
+		ClientSetBobbyName(BobbyState, BobbyController);
+	}
 	
-	this->BobbyName->SetText(Cast<ABobbyPlayerState>(TheNewController->PlayerState)->ReturnBobbyName());
+	
 }
 
 
-void Acharacterthatworks::ServerSetBobbyName_Implementation(APlayerController* TheNewController)
+void Acharacterthatworks::ServerSetBobbyName_Implementation(ABobbyPlayerState* BobbyState,ASoccerPlayerController* BobbyController)
 {
-	SetBobbyName(TheNewController);
+	ClientSetBobbyName(BobbyState, BobbyController);
+	Cast<Acharacterthatworks>(BobbyController->GetCharacter())->BobbyName->SetText(BobbyState->ReturnBobbyName());
+}
+
+void Acharacterthatworks::ClientSetBobbyName_Implementation(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController)
+{
+	Cast<Acharacterthatworks>(BobbyController->GetCharacter())->BobbyName->SetText(BobbyState->ReturnBobbyName());
 }

@@ -145,7 +145,7 @@ public:
 	void UsePowerUp();
 
 	UFUNCTION()
-	void SetBobbyName(APlayerController* TheNewController);
+	void SetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
 
 
 	UFUNCTION(BlueprintPure, Category = "FireStatus")
@@ -190,7 +190,7 @@ public:
 
 
 	UFUNCTION(Server, Reliable)
-	void ServerSetBobbyName(APlayerController* TheNewController);
+	void ServerSetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
 
 
 	UFUNCTION(Client, Reliable) //function on client to smooth the movement, works, kinda, not really
@@ -204,6 +204,9 @@ public:
 
 	UFUNCTION(Client, Reliable)
 	void ClientResetPowerUp();
+
+	UFUNCTION(Client, Reliable)
+		void ClientSetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
 
 	
 

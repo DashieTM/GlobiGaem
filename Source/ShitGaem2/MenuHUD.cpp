@@ -252,9 +252,9 @@ int AMenuHUD::GetBobbyTeam()
 
 void AMenuHUD::ReloadBobby(FText PlayerName)
 {
-	
-	Cast<ABobbyPlayerState>(PlayerOwner->PlayerState)->SetBobbyName(PlayerName);
-	GetBobbyBuffer()->SetBobbyName(TheNewController);
+	ABobbyPlayerState* BobbyState = Cast<ABobbyPlayerState>(PlayerOwner->PlayerState);
+	BobbyState->SetBobbyName(PlayerName);
+	GetBobbyBuffer()->SetBobbyName(BobbyState, TheNewController);
 	SetNameBuffer(PlayerName);
 }
 
