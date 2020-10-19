@@ -137,6 +137,7 @@ void AMenuHUD::SetTeamSpectator()
 				SetBobbyBuffer(Bobby, 0);
 				TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f));
 				ReloadBobby(GetNameBuffer());
+				Bobby->UpdateName();
 			}
 		}
 	}
@@ -159,7 +160,7 @@ void AMenuHUD::SetTeamRed()
 				SetBobbyBuffer(Bobby, 2);
 				TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
 				ReloadBobby(GetNameBuffer());
-
+				Bobby->UpdateName();
 			}
 		}
 	}
@@ -182,9 +183,7 @@ void AMenuHUD::SetTeamGreen()
 				SetBobbyBuffer(Bobby, 1);
 				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 				ReloadBobby(GetNameBuffer());
-
-
-
+				Bobby->UpdateName();
 			}
 		}
 	}
@@ -212,7 +211,7 @@ void AMenuHUD::RespawnBobby()
 			SetBobbyBuffer(Bobby, 1);
 			TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 			ReloadBobby(GetNameBuffer());
-
+			Bobby->UpdateName();
 			break;
 		}
 		case 2:
@@ -225,6 +224,8 @@ void AMenuHUD::RespawnBobby()
 			SetBobbyBuffer(Bobby, 2);
 			TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
 			ReloadBobby(GetNameBuffer());
+			Bobby->UpdateName();
+			break;
 		}
 	}
 }
@@ -252,9 +253,7 @@ int AMenuHUD::GetBobbyTeam()
 
 void AMenuHUD::ReloadBobby(FText PlayerName)
 {
-	ABobbyPlayerState* BobbyState = Cast<ABobbyPlayerState>(PlayerOwner->PlayerState);
-	BobbyState->SetBobbyName(PlayerName);
-	GetBobbyBuffer()->SetBobbyName(BobbyState, TheNewController);
+	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(PlayerName, TheNewController);
 	SetNameBuffer(PlayerName);
 }
 

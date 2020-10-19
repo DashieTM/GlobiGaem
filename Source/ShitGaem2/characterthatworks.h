@@ -25,6 +25,8 @@ private:
 	bool bCanFire;
 	bool bHasPowerUp;
 
+	UPROPERTY(ReplicatedUsing = OnRep_CurrentName)
+		FText BobbyNameText;
 	
 	FTransform SpawnTransformPowerUp;
 
@@ -125,7 +127,11 @@ public:
 
 	UWorld* OpenLevel();
 
+	UFUNCTION()
+		void OnRep_CurrentName();
 	
+	void UpdateName();
+
 	UFUNCTION()
 	void Dash();
 
@@ -145,7 +151,7 @@ public:
 	void UsePowerUp();
 
 	UFUNCTION()
-	void SetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
+	void SetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);
 
 
 	UFUNCTION(BlueprintPure, Category = "FireStatus")
@@ -190,7 +196,7 @@ public:
 
 
 	UFUNCTION(Server, Reliable)
-	void ServerSetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
+	void ServerSetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);
 
 
 	UFUNCTION(Client, Reliable) //function on client to smooth the movement, works, kinda, not really
@@ -205,8 +211,10 @@ public:
 	UFUNCTION(Client, Reliable)
 	void ClientResetPowerUp();
 
-	UFUNCTION(Client, Reliable)
-		void ClientSetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController);
+	UFUNCTION(NetMulticast, Reliable)
+		void MultiSetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);
+
+	
 
 	
 

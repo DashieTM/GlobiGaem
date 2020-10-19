@@ -38,6 +38,8 @@ Acharacterthatworks::Acharacterthatworks()
 	DashFriction = 0.5f;
 	DashFrictionAir = 38.0f;
 	PowerUpCD = 25.f;
+	BobbyNameText.FromString("");
+	
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
@@ -73,6 +75,7 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 
 	DOREPLIFETIME(Acharacterthatworks,BobbyBuffer);
 	DOREPLIFETIME(Acharacterthatworks, BobbyBufferOld);
+	DOREPLIFETIME(Acharacterthatworks, BobbyNameText);
 	
 
 }
@@ -228,6 +231,16 @@ void Acharacterthatworks::ResetShoot()
 UWorld* Acharacterthatworks::OpenLevel()
 {
 	return GetWorld();
+}
+
+void Acharacterthatworks::OnRep_CurrentName()
+{
+	UpdateName();
+}
+
+void Acharacterthatworks::UpdateName()
+{
+	BobbyName->SetText(BobbyNameText);
 }
 
 FString Acharacterthatworks::ReturnFireStatus()
@@ -466,28 +479,25 @@ bool Acharacterthatworks::HasPowerUp()
 	return bHasPowerUp;
 }
 
-void Acharacterthatworks::SetBobbyName(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController)
+void Acharacterthatworks::SetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController)
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
-		ServerSetBobbyName(BobbyState, BobbyController);
+		ServerSetBobbyName(LeName, BobbyController);
 		return;
 	}
-	else {
-		ClientSetBobbyName(BobbyState, BobbyController);
-	}
-	
-	
+	BobbyNameText = LeName;
 }
 
 
-void Acharacterthatworks::ServerSetBobbyName_Implementation(ABobbyPlayerState* BobbyState,ASoccerPlayerController* BobbyController)
+void Acharacterthatworks::ServerSetBobbyName_Implementation(const FText& LeName,ASoccerPlayerController* BobbyController)
 {
-	ClientSetBobbyName(BobbyState, BobbyController);
-	Cast<Acharacterthatworks>(BobbyController->GetCharacter())->BobbyName->SetText(BobbyState->ReturnBobbyName());
+	BobbyNameText = LeName;
 }
 
-void Acharacterthatworks::ClientSetBobbyName_Implementation(ABobbyPlayerState* BobbyState, ASoccerPlayerController* BobbyController)
+void Acharacterthatworks::MultiSetBobbyName_Implementation(const FText& LeName, ASoccerPlayerController* BobbyController)
 {
-	Cast<Acharacterthatworks>(BobbyController->GetCharacter())->BobbyName->SetText(BobbyState->ReturnBobbyName());
+	
 }
+
+

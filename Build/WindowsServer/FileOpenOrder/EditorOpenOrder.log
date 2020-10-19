@@ -2092,235 +2092,232 @@
 "../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Intermediate/AssetRegistryCache/311563bb.bin" 2092
 "../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer4p.umap" 2093
 "../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer4p_BuiltData.uasset" 2094
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Intermediate/AssetRegistryCache/c90e3f55.bin" 2095
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/PowerUpNew.uasset" 2096
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/PowerUp_BP.uasset" 2097
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyBall.uasset" 2098
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Default.uasset" 2099
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Default_Mesh.uasset" 2100
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player.umap" 2095
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player_BuiltData.uasset" 2096
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Intermediate/AssetRegistryCache/c90e3f55.bin" 2097
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/PowerUp_BP.uasset" 2098
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShitGamemode.uasset" 2099
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Default.uasset" 2100
 "../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Green.uasset" 2101
 "../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Red.uasset" 2102
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim.uasset" 2103
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Green.uasset" 2104
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Red.uasset" 2105
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_PhysicsAsset.uasset" 2106
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_Skeleton.uasset" 2107
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_PhysicsAsset.uasset" 2108
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_Skeleton.uasset" 2109
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Mannequin/Character/Mesh/UE4_Mannequin_Skeleton.uasset" 2110
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset" 2111
-"../../../Engine/Content/BasicShapes/Cube.uasset" 2112
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Grass.uasset" 2113
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_D.uasset" 2114
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_N.uasset" 2115
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_MacroVariation.uasset" 2116
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Perlin_Noise_M.uasset" 2117
-"../../../Engine/DerivedDataCache/9/3/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__73DD2618EBA4E5F0484F9B7D87F6D31752960B0C.udd" 2118
-"../../../Engine/DerivedDataCache/0/6/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_02755E9E4BA833365__FC283BAA6E36B8261E9BD86D1A3C5ACDD24FF3C9.udd" 2119
-"../../../Engine/DerivedDataCache/4/5/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_02755E9E4BA833365B8D7E8081C8375__504270BF8CD2CCBBA6D89103E8477C3984FB62A2.udd" 2120
-"../../../Engine/Content/BasicShapes/Sphere.uasset" 2121
-"../../../Engine/DerivedDataCache/2/8/7/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__C61462C4D5A291A3DBE21F64C35B5F0F2AA02AEE.udd" 2122
-"../../../Engine/DerivedDataCache/5/3/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_F93A868C471D0DE82__637E5CB0DB3AA611B5DB1E2B64AF9E40A2FA1ABA.udd" 2123
-"../../../Engine/DerivedDataCache/8/0/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_F93A868C471D0DE82928079B965DD3B__79D93F95287A95F4D1D46B1F02D02B3BE9B4EE60.udd" 2124
-"../../../Engine/Content/BasicShapes/Cylinder.uasset" 2125
-"../../../Engine/DerivedDataCache/7/6/9/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__611472290E012B7CF2F37FBAFE331165AC7669FA.udd" 2126
-"../../../Engine/DerivedDataCache/1/2/5/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_3C1AE2C048C12A663__D994814B63737C0FDCFDED12765FE21E737BD4D6.udd" 2127
-"../../../Engine/DerivedDataCache/2/9/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_3C1AE2C048C12A663DA5BB8FAF74BB1__24B97F1EBC0230BF7E04471E3EA30A23180D078E.udd" 2128
-"../../../Engine/Content/BasicShapes/Cone.uasset" 2129
-"../../../Engine/DerivedDataCache/3/7/5/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__20E4E4A5FD337F2A22052CC3850924593A724678.udd" 2130
-"../../../Engine/DerivedDataCache/0/7/9/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_2E98B72D4BA502DB7__BF752D49129C9F27CD8C90480A48A6BA897E298E.udd" 2131
-"../../../Engine/DerivedDataCache/7/3/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_2E98B72D4BA502DB719279B4BD1103C__03918E6935BEE606D9A263D2327D4BA98B6E6A8E.udd" 2132
-"../../../Engine/Content/BasicShapes/Plane.uasset" 2133
-"../../../Engine/DerivedDataCache/6/8/2/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__CBC10BBBCC99907A2AA6D0B1C931DD6E672039D7.udd" 2134
-"../../../Engine/DerivedDataCache/3/4/9/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_8B63846543482A3CC__AD3E2BD30AFBAA8992ABDE345A962D24E1C1821E.udd" 2135
-"../../../Engine/DerivedDataCache/5/9/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_8B63846543482A3CC5AED59FC7386CB__1121A681298F3792420B6D403ECD24A36ACF7B01.udd" 2136
-"../../../Engine/Content/EditorResources/SequenceRecorder/Countdown.uasset" 2137
-"../../../Engine/Content/EditorResources/SequenceRecorder/RecordingIndicator.uasset" 2138
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Intermediate/AssetRegistryCache/39a71ea5.bin" 2139
-"C:/Users/fabio/Documents/Unreal Projects/ShitGaem2/Saved/Cooked/WindowsServer/ShitGaem2/Metadata/CookedIniVersion.txt" 2140
-"../../../Engine/Content/MobileResources/HUD/DefaultVirtualJoysticks.uasset" 2141
-"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Background.uasset" 2142
-"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Thumb.uasset" 2143
-"../../../Engine/DerivedDataCache/4/5/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_572BACBB4C0F7A7E5E958FB3CA3C35D__20675B003F0E3075516B9397F7D62BF08806ACE5.udd" 2144
-"../../../Engine/DerivedDataCache/5/0/3/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_03B0782E43A4D3C2AFA298B72B9BFF3__5B2E6E524C764414B771936196DEC5DF2121573B.udd" 2145
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShitGamemode.uasset" 2146
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/gunshotsilenced.uasset" 2147
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Oak.uasset" 2148
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_D.uasset" 2149
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_N.uasset" 2150
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Pine.uasset" 2151
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_D.uasset" 2152
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_N.uasset" 2153
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Gold.uasset" 2154
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_D.uasset" 2155
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_N.uasset" 2156
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Sparks.uasset" 2157
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Radial_Gradient.uasset" 2158
-"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Gradient/RadialGradient.uasset" 2159
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset" 2160
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_SubUV.uasset" 2161
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_Tiled_D.uasset" 2162
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Spark.uasset" 2163
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Spark_Core.uasset" 2164
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Sphere.uasset" 2165
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Basic_Wall.uasset" 2166
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShitProjectile.uasset" 2167
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Water_Ocean.uasset" 2168
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BlendAngleCorrectedNormals.uasset" 2169
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_M.uasset" 2170
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_N.uasset" 2171
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Props/MaterialSphere.uasset" 2172
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Polished.uasset" 2173
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_D.uasset" 2174
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_M.uasset" 2175
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_N.uasset" 2176
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/MenuHUD_BP.uasset" 2177
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/HUD/HUD.uasset" 2178
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/crosshair__2_.uasset" 2179
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/SoccerGameState_BP.uasset" 2180
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/SoccerPlayerController_BP.uasset" 2181
-"../../../Engine/DerivedDataCache/5/9/4/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_56FC2A5A4FB370BA8657C8A1206EEBB4.udd" 2182
-"../../../Engine/DerivedDataCache/0/7/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__59DAA7BB3698D9B5948E0BC209763F9962261D3D.udd" 2183
-"../../../Engine/DerivedDataCache/8/3/6/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_CC1ABFA347532F921__AF250646665330168BA1C9A151DF8A733F260F80.udd" 2184
-"../../../Engine/DerivedDataCache/4/3/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_CC1ABFA347532F9212CB2CB951792B8__5ECC0C386E84DE6E560BC9D10B1991106044114C.udd" 2185
-"../../../Engine/DerivedDataCache/0/0/7/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__8068C8D96F47C7A9F073ECBE71EEE16CB4C9BCCB.udd" 2186
-"../../../Engine/DerivedDataCache/7/8/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_25098840450940CDF__6307E07DF2C45F34FC28C742173D271B881BCC89.udd" 2187
-"../../../Engine/DerivedDataCache/7/5/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_25098840450940CDFBA4C291C9B0974__A2BF5CB3FDE1666BBE7E079077C29C7341C4D19C.udd" 2188
-"../../../Engine/DerivedDataCache/5/1/4/SKELETALMESH_BAD8180EFB1543D79AA1D10F3F5945A2_DD7C5A704BBDBBED05C6979A6EFD9F19__27473C59C028EDFB6C95C1AD9B93358A5B25DDE4.udd" 2189
-"../../../Engine/DerivedDataCache/8/1/5/SKELETALMESH_BAD8180EFB1543D79AA1D10F3F5945A2_D74054D149F590F2F900AFA75035D1FA__351E3474D1A036036A42EAB5AB4C630EE5C3EC92.udd" 2190
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset" 2191
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_M.uasset" 2192
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_N.uasset" 2193
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/ballhit.uasset" 2194
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyGoalGreen.uasset" 2195
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/1M_Cube.uasset" 2196
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/CubeMaterial.uasset" 2197
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Explosion01.uasset" 2198
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Explosion.uasset" 2199
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Burst.uasset" 2200
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Burst_M.uasset" 2201
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_explosion_subUV.uasset" 2202
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Explosion_SubUV.uasset" 2203
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/m_flare_01.uasset" 2204
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_radial_ramp.uasset" 2205
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyGoalRed.uasset" 2206
-"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 2207
-"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 2208
-"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 2209
-"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 2210
-"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 2211
-"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 2212
-"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 2213
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 2214
-"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 2215
-"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 2216
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Brazier_BP.uasset" 2217
-"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.uasset" 2218
-"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/M_smoke_subUV_blackbody.uasset" 2219
-"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_SmokeSubUV_8X8.uasset" 2220
-"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_soft_smoke.uasset" 2221
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/shitty_goal_BP.uasset" 2222
-"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uasset" 2223
-"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterialInst.uasset" 2224
-"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial.uasset" 2225
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Gamebounds_BP.uasset" 2226
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Ground.uasset" 2227
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Tiles.uasset" 2228
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_D.uasset" 2229
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_M.uasset" 2230
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_N.uasset" 2231
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_Variation_M.uasset" 2232
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Glass.uasset" 2233
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Rock.uasset" 2234
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Detail_Rocky_N.uasset" 2235
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Basalt_D.uasset" 2236
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_M.uasset" 2237
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_N.uasset" 2238
-"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial_Inst.uasset" 2239
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Pipe_90.uasset" 2240
-"../../../Engine/DerivedDataCache/1/9/4/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__8B12922BA43CC8FFA81017C3FC3D93A3CA911A02.udd" 2241
-"../../../Engine/DerivedDataCache/6/4/0/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_4AD4ABB94F54AE737__5A43AFAA25562BF41E426BE6F43439D826F11A94.udd" 2242
-"../../../Engine/DerivedDataCache/8/6/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__AB8BBA7C4D9185810C5D70B5445494A242BE5704.udd" 2243
-"../../../Engine/DerivedDataCache/2/1/8/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_86B743CE46BEC7BF6__32D54855F0EC66C4759FE9ABBD6B865B1F17E472.udd" 2244
-"../../../Engine/DerivedDataCache/7/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_86B743CE46BEC7BF68209087B83478B__D7739F540836F5D2F9780E3A642879A99A6AC4BA.udd" 2245
-"../../../Engine/DerivedDataCache/7/7/8/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_632D1B9A4FC93D9537554A9FD1692204.udd" 2246
-"../../../Engine/DerivedDataCache/0/2/6/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_AF4854C34D5B86748E71F48FCE00A84E.udd" 2247
-"../../../Engine/DerivedDataCache/8/2/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_F238809946C80E9176830C8D58246140__1_0_0_0_2_13315_0.udd" 2248
-"../../../Engine/DerivedDataCache/4/6/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_2852BC5141409F8A22E781B29016A4F7__1_0_0_0_3_13315_0.udd" 2249
-"../../../Engine/DerivedDataCache/0/9/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_18B6883941DF1113CDD6C99D25390372__1_0_0_0_3_13315_0.udd" 2250
-"../../../Engine/DerivedDataCache/6/1/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_4FA540F34542DFA338793CBC3B4A1DE2__1_0_0_0_3_13315_0.udd" 2251
-"../../../Engine/DerivedDataCache/2/4/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_1CC44E9A4BA7C6981B5E1F8D81362F76__1_0_0_0_3_13315_0.udd" 2252
-"../../../Engine/DerivedDataCache/7/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_ECDDC129433858AC23CDE6870D759D07__1_0_0_0_3_13315_0.udd" 2253
-"../../../Engine/DerivedDataCache/1/0/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_DAA09D2E4EBE01A72F411785965F339B__1_0_0_0_3_13315_0.udd" 2254
-"../../../Engine/DerivedDataCache/0/8/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_1AE5B9484357304B94C1B996430ED986__1_0_0_0_3_13315_0.udd" 2255
-"../../../Engine/DerivedDataCache/7/0/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_323A1C6D46E7BEA1B630469E3C5D8198__1_0_0_0_3_13315_0.udd" 2256
-"../../../Engine/DerivedDataCache/4/9/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_3BE5F5C2445B8D0D3774D59497654A94__1_0_0_0_3_13315_0.udd" 2257
-"../../../Engine/DerivedDataCache/2/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_DB7247A14657CF62576414B68C9A7BF0__1_0_0_0_3_13315_0.udd" 2258
-"../../../Engine/DerivedDataCache/7/0/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_D81E67C54234CDBEFED51CBA601AAA5E__1_0_0_0_3_13315_0.udd" 2259
-"../../../Engine/DerivedDataCache/4/6/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_755EBCC1465C8E865937BCA322EDC905__1_0_0_0_3_13315_0.udd" 2260
-"../../../Engine/DerivedDataCache/2/1/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_D9C0B084452DBC5D8A5850A3B4D84484__1_0_0_0_3_13315_0.udd" 2261
-"../../../Engine/DerivedDataCache/0/7/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_967C311347FA8CBF6337FDB4A5DDF21B__1_0_0_0_3_13315_0.udd" 2262
-"../../../Engine/DerivedDataCache/4/1/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_BDEB03F84CE9C1237BD7EF83C6713C79__1_0_0_0_3_13315_0.udd" 2263
-"../../../Engine/DerivedDataCache/0/6/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_6AEE78004946DEA98791C58335F7D31B__1_0_0_0_3_13315_0.udd" 2264
-"../../../Engine/DerivedDataCache/3/1/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_98B2F115466C9F90700B5B91CE0BB181__1_0_0_0_3_13315_0.udd" 2265
-"../../../Engine/DerivedDataCache/6/1/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_9BD6F1EE49233E8711D861A8AFFF3A50__1_0_0_0_3_13315_0.udd" 2266
-"../../../Engine/DerivedDataCache/0/9/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_C0B48C5B4980272A42BBC2B3109CF636__1_0_0_0_3_13315_0.udd" 2267
-"../../../Engine/DerivedDataCache/5/1/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_5F558A924C52C050332181888F502F36__1_0_0_0_2_13315_0.udd" 2268
-"../../../Engine/DerivedDataCache/6/7/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__F645165C47458BE0DC80DC9DBEAECF955B51853C.udd" 2269
-"../../../Engine/DerivedDataCache/3/5/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_7248C1D1416638401__7A00B31DC96022184F8375593B0D6C0590E235C8.udd" 2270
-"../../../Engine/DerivedDataCache/9/1/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_7248C1D141663840119E8889D6B55A6__34F10A1F596BE9994C33E7B924AC339914FCD0C0.udd" 2271
-"../../../Engine/Content/EditorResources/EmptyActor.uasset" 2272
-"../../../Engine/Content/EditorResources/LightIcons/S_LightError.uasset" 2273
-"../../../Engine/Content/EditorResources/AudioIcons/S_AudioComponent.uasset" 2274
-"../../../Engine/Content/EditorMaterials/PreviewShadowIndicatorMaterial.uasset" 2275
-"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.uasset" 2276
-"../../../Engine/DerivedDataCache/1/6/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_68F96D6E4F7269E4AD14B2B016CAF6B__6560CD419B82330C1DAC5F7B22889A6CBC9A18DC.udd" 2277
-"../../../Engine/DerivedDataCache/8/0/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_8BCFCFC24E0DF8EF018F38A90F4EFBD__423AEF4022F305998E0D816E2A750551BC84AD11.udd" 2278
-"../../../Engine/DerivedDataCache/5/4/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_A45AC5F24F727E508B7132ADC00580F__12EFDE69DFFD28B05522811505852CD6BA20D790.udd" 2279
-"../../../Engine/DerivedDataCache/4/6/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_C7E16BC44EBF283831F3C1844D1CAD1__FBF58923D2FBA4D06FAB5A3BCF634BEC523BA16D.udd" 2280
-"../../../Engine/DerivedDataCache/2/5/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_F260EC324774DCAE6A79CD8375DD10E__44AFEE5820E98D4B5ED440480ABE867417AE303F.udd" 2281
-"../../../Engine/DerivedDataCache/5/6/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_52AECB5F44307B68A160C3A844CA93C__0C1BD30EBD06BB1917298CB2D25FBF198202A530.udd" 2282
-"../../../Engine/DerivedDataCache/2/6/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_688DE534429542F2A282749F0E16140__F11869A2BFD3623EF67CA77C624C94D1F7008C92.udd" 2283
-"../../../Engine/DerivedDataCache/1/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_0EAA33D84B2C00A4EF99379D6181F75__E0167CF49933C1FAA5D7F07C0695B5FA53073888.udd" 2284
-"../../../Engine/DerivedDataCache/1/4/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_EFC97AF34787426E181448A12D8642B__8AA6B1C4E7030FDE0D15BABE16DBAE8E79922BE3.udd" 2285
-"../../../Engine/DerivedDataCache/8/2/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_ED0028A248A57D12896F708C02C3451__0757ECAD8113BECB5BD437C43A25BE1D77515540.udd" 2286
-"../../../Engine/DerivedDataCache/1/5/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_7878859F4A9996EB41A8A4B02FB3318__FE18F667A27E9FFFAF659E64B0769090D322B3C8.udd" 2287
-"../../../Engine/Content/EngineDebugMaterials/DebugEditorMaterial.uasset" 2288
-"../../../Engine/DerivedDataCache/4/1/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_0B92E78C4DB1EF7D0C58D2A05F1E4C3__71900F3BB266B2045253796E9D9AB0AC484771C1.udd" 2289
-"../../../Engine/Content/EditorResources/BSPVertex.uasset" 2290
-"../../../Engine/Content/EngineSounds/Submixes/MasterEQSubmixDefault.uasset" 2291
-"../../../Engine/Content/EngineSounds/Submixes/MasterEQEffectPreset.uasset" 2292
-"../../../Engine/Content/EngineSounds/Submixes/MasterSubmixDefault.uasset" 2293
-"../../../Engine/Content/EngineSounds/Submixes/MasterReverbSubmixDefault.uasset" 2294
-"../../../Engine/Content/EngineSounds/Submixes/MasterReverbEffectPreset.uasset" 2295
-"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickOutter.uasset" 2296
-"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickInner.uasset" 2297
-"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionStick.uasset" 2298
-"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad3.uasset" 2299
-"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad2.uasset" 2300
-"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad.uasset" 2301
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButtonFire.uasset" 2302
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButton3.uasset" 2303
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_on.uasset" 2304
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_off.uasset" 2305
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_on.uasset" 2306
-"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_off.uasset" 2307
-"../../../Engine/Content/MobileResources/HUD/LeftVirtualJoystickOnly.uasset" 2308
-"../../../Engine/Content/MobileResources/HUD/AnalogHat.uasset" 2309
-"../../../Engine/Content/MobileResources/T_MobileMenu2.uasset" 2310
-"../../../Engine/Content/MobileResources/T_MobileControls_texture.uasset" 2311
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player.umap" 2312
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player_BuiltData.uasset" 2313
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Moss.uasset" 2314
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_ground_Moss_D.uasset" 2315
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Moss_N.uasset" 2316
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/TemplateFloor.uasset" 2317
-"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Wedge_A.uasset" 2318
-"../../../Engine/DerivedDataCache/8/9/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__01D1068DDE357BFE65273A846379205FBE503A13.udd" 2319
-"../../../Engine/DerivedDataCache/9/4/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_AEE7EAC941823C391__E84F4A4CE97E20B4AE507496DBE7C6FC711C49E7.udd" 2320
-"../../../Engine/DerivedDataCache/4/2/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_AEE7EAC941823C3913ACD7A0388017A__E62AC0CB21199399DC7AFEBB5D99FAEAC5B142E5.udd" 2321
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/HUD/HUD.uasset" 2103
+"../../../Engine/Content/BasicShapes/Cube.uasset" 2104
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Grass.uasset" 2105
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_D.uasset" 2106
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_N.uasset" 2107
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_MacroVariation.uasset" 2108
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Perlin_Noise_M.uasset" 2109
+"../../../Engine/DerivedDataCache/9/3/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__73DD2618EBA4E5F0484F9B7D87F6D31752960B0C.udd" 2110
+"../../../Engine/DerivedDataCache/0/6/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_02755E9E4BA833365__FC283BAA6E36B8261E9BD86D1A3C5ACDD24FF3C9.udd" 2111
+"../../../Engine/DerivedDataCache/4/5/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_02755E9E4BA833365B8D7E8081C8375__504270BF8CD2CCBBA6D89103E8477C3984FB62A2.udd" 2112
+"../../../Engine/Content/BasicShapes/Sphere.uasset" 2113
+"../../../Engine/DerivedDataCache/2/8/7/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__C61462C4D5A291A3DBE21F64C35B5F0F2AA02AEE.udd" 2114
+"../../../Engine/DerivedDataCache/5/3/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_F93A868C471D0DE82__637E5CB0DB3AA611B5DB1E2B64AF9E40A2FA1ABA.udd" 2115
+"../../../Engine/DerivedDataCache/8/0/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_F93A868C471D0DE82928079B965DD3B__79D93F95287A95F4D1D46B1F02D02B3BE9B4EE60.udd" 2116
+"../../../Engine/Content/BasicShapes/Cylinder.uasset" 2117
+"../../../Engine/DerivedDataCache/7/6/9/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__611472290E012B7CF2F37FBAFE331165AC7669FA.udd" 2118
+"../../../Engine/DerivedDataCache/1/2/5/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_3C1AE2C048C12A663__D994814B63737C0FDCFDED12765FE21E737BD4D6.udd" 2119
+"../../../Engine/DerivedDataCache/2/9/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_3C1AE2C048C12A663DA5BB8FAF74BB1__24B97F1EBC0230BF7E04471E3EA30A23180D078E.udd" 2120
+"../../../Engine/Content/BasicShapes/Cone.uasset" 2121
+"../../../Engine/DerivedDataCache/3/7/5/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__20E4E4A5FD337F2A22052CC3850924593A724678.udd" 2122
+"../../../Engine/DerivedDataCache/0/7/9/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_2E98B72D4BA502DB7__BF752D49129C9F27CD8C90480A48A6BA897E298E.udd" 2123
+"../../../Engine/DerivedDataCache/7/3/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_2E98B72D4BA502DB719279B4BD1103C__03918E6935BEE606D9A263D2327D4BA98B6E6A8E.udd" 2124
+"../../../Engine/Content/BasicShapes/Plane.uasset" 2125
+"../../../Engine/DerivedDataCache/6/8/2/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__CBC10BBBCC99907A2AA6D0B1C931DD6E672039D7.udd" 2126
+"../../../Engine/DerivedDataCache/3/4/9/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_8B63846543482A3CC__AD3E2BD30AFBAA8992ABDE345A962D24E1C1821E.udd" 2127
+"../../../Engine/DerivedDataCache/5/9/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_8B63846543482A3CC5AED59FC7386CB__1121A681298F3792420B6D403ECD24A36ACF7B01.udd" 2128
+"../../../Engine/Content/EditorResources/SequenceRecorder/Countdown.uasset" 2129
+"../../../Engine/Content/EditorResources/SequenceRecorder/RecordingIndicator.uasset" 2130
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Intermediate/AssetRegistryCache/39a71ea5.bin" 2131
+"C:/Users/fabio/Documents/Unreal Projects/ShitGaem2/Saved/Cooked/WindowsServer/ShitGaem2/Metadata/CookedIniVersion.txt" 2132
+"../../../Engine/Content/MobileResources/HUD/DefaultVirtualJoysticks.uasset" 2133
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Background.uasset" 2134
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Thumb.uasset" 2135
+"../../../Engine/DerivedDataCache/4/5/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_572BACBB4C0F7A7E5E958FB3CA3C35D__20675B003F0E3075516B9397F7D62BF08806ACE5.udd" 2136
+"../../../Engine/DerivedDataCache/5/0/3/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_03B0782E43A4D3C2AFA298B72B9BFF3__5B2E6E524C764414B771936196DEC5DF2121573B.udd" 2137
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/gunshotsilenced.uasset" 2138
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim.uasset" 2139
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Oak.uasset" 2140
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_D.uasset" 2141
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_N.uasset" 2142
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_PhysicsAsset.uasset" 2143
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_Skeleton.uasset" 2144
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_PhysicsAsset.uasset" 2145
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_Skeleton.uasset" 2146
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Red.uasset" 2147
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Pine.uasset" 2148
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_D.uasset" 2149
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_N.uasset" 2150
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/PowerUpNew.uasset" 2151
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Gold.uasset" 2152
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_D.uasset" 2153
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_N.uasset" 2154
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Sparks.uasset" 2155
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Radial_Gradient.uasset" 2156
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Gradient/RadialGradient.uasset" 2157
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset" 2158
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_SubUV.uasset" 2159
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_Tiled_D.uasset" 2160
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Spark.uasset" 2161
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Spark_Core.uasset" 2162
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Sphere.uasset" 2163
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Basic_Wall.uasset" 2164
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShitProjectile.uasset" 2165
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Water_Ocean.uasset" 2166
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BlendAngleCorrectedNormals.uasset" 2167
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_M.uasset" 2168
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_N.uasset" 2169
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Props/MaterialSphere.uasset" 2170
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Green.uasset" 2171
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Polished.uasset" 2172
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_D.uasset" 2173
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_M.uasset" 2174
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_N.uasset" 2175
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/MenuHUD_BP.uasset" 2176
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/crosshair__2_.uasset" 2177
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/SoccerGameState_BP.uasset" 2178
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/SoccerPlayerController_BP.uasset" 2179
+"../../../Engine/DerivedDataCache/5/1/4/SKELETALMESH_BAD8180EFB1543D79AA1D10F3F5945A2_DD7C5A704BBDBBED05C6979A6EFD9F19__27473C59C028EDFB6C95C1AD9B93358A5B25DDE4.udd" 2180
+"../../../Engine/DerivedDataCache/0/7/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__59DAA7BB3698D9B5948E0BC209763F9962261D3D.udd" 2181
+"../../../Engine/DerivedDataCache/8/3/6/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_CC1ABFA347532F921__AF250646665330168BA1C9A151DF8A733F260F80.udd" 2182
+"../../../Engine/DerivedDataCache/4/3/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_CC1ABFA347532F9212CB2CB951792B8__5ECC0C386E84DE6E560BC9D10B1991106044114C.udd" 2183
+"../../../Engine/DerivedDataCache/0/0/7/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__8068C8D96F47C7A9F073ECBE71EEE16CB4C9BCCB.udd" 2184
+"../../../Engine/DerivedDataCache/7/8/7/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_25098840450940CDF__6307E07DF2C45F34FC28C742173D271B881BCC89.udd" 2185
+"../../../Engine/DerivedDataCache/7/5/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_25098840450940CDFBA4C291C9B0974__A2BF5CB3FDE1666BBE7E079077C29C7341C4D19C.udd" 2186
+"../../../Engine/DerivedDataCache/8/1/5/SKELETALMESH_BAD8180EFB1543D79AA1D10F3F5945A2_D74054D149F590F2F900AFA75035D1FA__351E3474D1A036036A42EAB5AB4C630EE5C3EC92.udd" 2187
+"../../../Engine/DerivedDataCache/5/9/4/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_56FC2A5A4FB370BA8657C8A1206EEBB4.udd" 2188
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyBall.uasset" 2189
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset" 2190
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_M.uasset" 2191
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_N.uasset" 2192
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/ballhit.uasset" 2193
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyGoalGreen.uasset" 2194
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/1M_Cube.uasset" 2195
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/CubeMaterial.uasset" 2196
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Explosion01.uasset" 2197
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Explosion.uasset" 2198
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Burst.uasset" 2199
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Burst_M.uasset" 2200
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_explosion_subUV.uasset" 2201
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Explosion_SubUV.uasset" 2202
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/m_flare_01.uasset" 2203
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_radial_ramp.uasset" 2204
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/ShittyGoalRed.uasset" 2205
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 2206
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 2207
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 2208
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 2209
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 2210
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 2211
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 2212
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 2213
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 2214
+"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 2215
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/Brazier_BP.uasset" 2216
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.uasset" 2217
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/M_smoke_subUV_blackbody.uasset" 2218
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_SmokeSubUV_8X8.uasset" 2219
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_soft_smoke.uasset" 2220
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Blueprints/shitty_goal_BP.uasset" 2221
+"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uasset" 2222
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterialInst.uasset" 2223
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial.uasset" 2224
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Gamebounds_BP.uasset" 2225
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Ground.uasset" 2226
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Tiles.uasset" 2227
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_D.uasset" 2228
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_M.uasset" 2229
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_N.uasset" 2230
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_Variation_M.uasset" 2231
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Glass.uasset" 2232
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Rock.uasset" 2233
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Detail_Rocky_N.uasset" 2234
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Basalt_D.uasset" 2235
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_M.uasset" 2236
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_N.uasset" 2237
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial_Inst.uasset" 2238
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Pipe_90.uasset" 2239
+"../../../Engine/DerivedDataCache/1/9/4/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__8B12922BA43CC8FFA81017C3FC3D93A3CA911A02.udd" 2240
+"../../../Engine/DerivedDataCache/6/4/0/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_4AD4ABB94F54AE737__5A43AFAA25562BF41E426BE6F43439D826F11A94.udd" 2241
+"../../../Engine/DerivedDataCache/8/6/3/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__AB8BBA7C4D9185810C5D70B5445494A242BE5704.udd" 2242
+"../../../Engine/DerivedDataCache/2/1/8/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_86B743CE46BEC7BF6__32D54855F0EC66C4759FE9ABBD6B865B1F17E472.udd" 2243
+"../../../Engine/DerivedDataCache/7/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_86B743CE46BEC7BF68209087B83478B__D7739F540836F5D2F9780E3A642879A99A6AC4BA.udd" 2244
+"../../../Engine/DerivedDataCache/7/7/8/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_632D1B9A4FC93D9537554A9FD1692204.udd" 2245
+"../../../Engine/DerivedDataCache/0/2/6/AUDIO_0005_0000_OGG10000$2D1$2D1$2D1$2D1$2D1_0003_AF4854C34D5B86748E71F48FCE00A84E.udd" 2246
+"../../../Engine/DerivedDataCache/2/4/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_946BD362494C5206AE5192B9A92B9AF9__1_0_0_0_2_13315_0.udd" 2247
+"../../../Engine/DerivedDataCache/8/2/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_709901E8493C6281B3E6F1903A5AF362__1_0_0_0_3_13315_0.udd" 2248
+"../../../Engine/DerivedDataCache/7/5/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_E9A7B42F4314B9917DCF66887EBDC100__1_0_0_0_3_13315_0.udd" 2249
+"../../../Engine/DerivedDataCache/9/7/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_5E571B014288D08FEEBB50826823A91C__1_0_0_0_3_13315_0.udd" 2250
+"../../../Engine/DerivedDataCache/9/0/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_8A72E5044BD4DCDA2AC6FFA6F5B4297C__1_0_0_0_3_13315_0.udd" 2251
+"../../../Engine/DerivedDataCache/8/7/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_593A90F541B039B42A71E89D8365A14C__1_0_0_0_3_13315_0.udd" 2252
+"../../../Engine/DerivedDataCache/3/5/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_AE3ADA0B468EEE19E64BB9991F6719AC__1_0_0_0_3_13315_0.udd" 2253
+"../../../Engine/DerivedDataCache/4/9/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_812FEBE04371412177B2EDA87774F15B__1_0_0_0_3_13315_0.udd" 2254
+"../../../Engine/DerivedDataCache/0/1/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_248CACCF40CEF473CB4F3F9DECE557D6__1_0_0_0_3_13315_0.udd" 2255
+"../../../Engine/DerivedDataCache/7/6/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_37C7CC4C47328C7FF0B53280BAE1C386__1_0_0_0_3_13315_0.udd" 2256
+"../../../Engine/DerivedDataCache/9/3/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_A7AE075D4D818B00C9305F9FDCEFB61A__1_0_0_0_3_13315_0.udd" 2257
+"../../../Engine/DerivedDataCache/0/8/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_09BE87BD4E0C09327DCACDA59995BD84__1_0_0_0_3_13315_0.udd" 2258
+"../../../Engine/DerivedDataCache/8/3/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_0D5C012540DC83BFEC3491A727B45B01__1_0_0_0_3_13315_0.udd" 2259
+"../../../Engine/DerivedDataCache/5/7/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_B5BBE63B4AA45CE65A2DF291A50E73BD__1_0_0_0_3_13315_0.udd" 2260
+"../../../Engine/DerivedDataCache/3/3/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_B36B020C4205D0B1BA7BD882E4506BA2__1_0_0_0_3_13315_0.udd" 2261
+"../../../Engine/DerivedDataCache/3/3/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_54A76A2648CB96C01547958F782E1B37__1_0_0_0_3_13315_0.udd" 2262
+"../../../Engine/DerivedDataCache/8/7/2/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_02DC63F647E6251D6BD6D098F5A09438__1_0_0_0_3_13315_0.udd" 2263
+"../../../Engine/DerivedDataCache/1/7/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_D74A26A246BA59C9A6DC029A52FC9F85__1_0_0_0_3_13315_0.udd" 2264
+"../../../Engine/DerivedDataCache/8/2/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_61AAD4A146E9C980D379178FDCE7AA8B__1_0_0_0_3_13315_0.udd" 2265
+"../../../Engine/DerivedDataCache/5/9/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_E2061F134DA8602B6392AEBBB7919638__1_0_0_0_3_13315_0.udd" 2266
+"../../../Engine/DerivedDataCache/5/0/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_CC26B6844A08D8C4E0D18E97C4F75C0D__1_0_0_0_2_13315_0.udd" 2267
+"../../../Engine/DerivedDataCache/6/7/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__F645165C47458BE0DC80DC9DBEAECF955B51853C.udd" 2268
+"../../../Engine/DerivedDataCache/3/5/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_7248C1D1416638401__7A00B31DC96022184F8375593B0D6C0590E235C8.udd" 2269
+"../../../Engine/DerivedDataCache/9/1/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_7248C1D141663840119E8889D6B55A6__34F10A1F596BE9994C33E7B924AC339914FCD0C0.udd" 2270
+"../../../Engine/Content/EditorResources/EmptyActor.uasset" 2271
+"../../../Engine/Content/EditorResources/LightIcons/S_LightError.uasset" 2272
+"../../../Engine/Content/EditorResources/AudioIcons/S_AudioComponent.uasset" 2273
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicatorMaterial.uasset" 2274
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.uasset" 2275
+"../../../Engine/DerivedDataCache/1/6/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_68F96D6E4F7269E4AD14B2B016CAF6B__6560CD419B82330C1DAC5F7B22889A6CBC9A18DC.udd" 2276
+"../../../Engine/DerivedDataCache/8/0/9/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_8BCFCFC24E0DF8EF018F38A90F4EFBD__423AEF4022F305998E0D816E2A750551BC84AD11.udd" 2277
+"../../../Engine/DerivedDataCache/5/4/4/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_A45AC5F24F727E508B7132ADC00580F__12EFDE69DFFD28B05522811505852CD6BA20D790.udd" 2278
+"../../../Engine/DerivedDataCache/4/6/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_C7E16BC44EBF283831F3C1844D1CAD1__FBF58923D2FBA4D06FAB5A3BCF634BEC523BA16D.udd" 2279
+"../../../Engine/DerivedDataCache/2/5/7/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_F260EC324774DCAE6A79CD8375DD10E__44AFEE5820E98D4B5ED440480ABE867417AE303F.udd" 2280
+"../../../Engine/DerivedDataCache/5/6/0/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_52AECB5F44307B68A160C3A844CA93C__0C1BD30EBD06BB1917298CB2D25FBF198202A530.udd" 2281
+"../../../Engine/DerivedDataCache/2/6/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_688DE534429542F2A282749F0E16140__F11869A2BFD3623EF67CA77C624C94D1F7008C92.udd" 2282
+"../../../Engine/DerivedDataCache/1/0/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_0EAA33D84B2C00A4EF99379D6181F75__E0167CF49933C1FAA5D7F07C0695B5FA53073888.udd" 2283
+"../../../Engine/DerivedDataCache/1/4/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_EFC97AF34787426E181448A12D8642B__8AA6B1C4E7030FDE0D15BABE16DBAE8E79922BE3.udd" 2284
+"../../../Engine/DerivedDataCache/8/2/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_ED0028A248A57D12896F708C02C3451__0757ECAD8113BECB5BD437C43A25BE1D77515540.udd" 2285
+"../../../Engine/DerivedDataCache/1/5/1/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_7878859F4A9996EB41A8A4B02FB3318__FE18F667A27E9FFFAF659E64B0769090D322B3C8.udd" 2286
+"../../../Engine/Content/EngineDebugMaterials/DebugEditorMaterial.uasset" 2287
+"../../../Engine/DerivedDataCache/4/1/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_0B92E78C4DB1EF7D0C58D2A05F1E4C3__71900F3BB266B2045253796E9D9AB0AC484771C1.udd" 2288
+"../../../Engine/Content/EditorResources/BSPVertex.uasset" 2289
+"../../../Engine/Content/EngineSounds/Submixes/MasterEQSubmixDefault.uasset" 2290
+"../../../Engine/Content/EngineSounds/Submixes/MasterEQEffectPreset.uasset" 2291
+"../../../Engine/Content/EngineSounds/Submixes/MasterSubmixDefault.uasset" 2292
+"../../../Engine/Content/EngineSounds/Submixes/MasterReverbSubmixDefault.uasset" 2293
+"../../../Engine/Content/EngineSounds/Submixes/MasterReverbEffectPreset.uasset" 2294
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickOutter.uasset" 2295
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickInner.uasset" 2296
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionStick.uasset" 2297
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad3.uasset" 2298
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad2.uasset" 2299
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad.uasset" 2300
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButtonFire.uasset" 2301
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton3.uasset" 2302
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_on.uasset" 2303
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_off.uasset" 2304
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_on.uasset" 2305
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_off.uasset" 2306
+"../../../Engine/Content/MobileResources/HUD/LeftVirtualJoystickOnly.uasset" 2307
+"../../../Engine/Content/MobileResources/HUD/AnalogHat.uasset" 2308
+"../../../Engine/Content/MobileResources/T_MobileMenu2.uasset" 2309
+"../../../Engine/Content/MobileResources/T_MobileControls_texture.uasset" 2310
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Moss.uasset" 2311
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_ground_Moss_D.uasset" 2312
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Moss_N.uasset" 2313
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/TemplateFloor.uasset" 2314
+"../../../../Users/fabio/Documents/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Wedge_A.uasset" 2315
+"../../../Engine/DerivedDataCache/8/9/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__01D1068DDE357BFE65273A846379205FBE503A13.udd" 2316
+"../../../Engine/DerivedDataCache/9/4/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_AEE7EAC941823C391__E84F4A4CE97E20B4AE507496DBE7C6FC711C49E7.udd" 2317
+"../../../Engine/DerivedDataCache/4/2/6/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_AEE7EAC941823C3913ACD7A0388017A__E62AC0CB21199399DC7AFEBB5D99FAEAC5B142E5.udd" 2318
+"../../../Engine/DerivedDataCache/0/3/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__EED8CB62DABC7A61A5EB1D86EA357122C0AE2CEB.udd" 2319
+"../../../Engine/DerivedDataCache/0/1/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_185D6B4F4AD6DB147__D80413E95FD03C7B78B15EE19B7156A5A2BC8836.udd" 2320
+"../../../Engine/DerivedDataCache/1/8/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_185D6B4F4AD6DB147B0D89866C89BD2__031506F16215F844C115F5F6B9710C10BD13F981.udd" 2321
 "../../../Engine/DerivedDataCache/9/0/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_A71707134D713CD13DB618B622B4E602__1_0_0_0_2_13315_0.udd" 2322
 "../../../Engine/DerivedDataCache/5/0/8/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_28E788FF4F11A1FDA6D0F2838D096342__1_0_0_0_2_13315_0.udd" 2323
-"../../../Engine/DerivedDataCache/0/3/6/STATICMESH_F9378A28F161444987BACE79B2590E57_228332BAE0224DD294E232B87D83948FQU__EED8CB62DABC7A61A5EB1D86EA357122C0AE2CEB.udd" 2324
-"../../../Engine/DerivedDataCache/0/1/4/NAVCOLLISION_2EE6412E1E884D1AAA7F79FF760363BC_NAVCOLLISION_X_185D6B4F4AD6DB147__D80413E95FD03C7B78B15EE19B7156A5A2BC8836.udd" 2325
-"../../../Engine/DerivedDataCache/1/8/5/PHYSX_A08609EF508D460CBB6710540B03AACF_PHYSXPC_185D6B4F4AD6DB147B0D89866C89BD2__031506F16215F844C115F5F6B9710C10BD13F981.udd" 2326

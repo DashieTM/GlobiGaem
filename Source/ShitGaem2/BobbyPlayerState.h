@@ -19,6 +19,8 @@ protected:
 
 	ABobbyPlayerState();
 private:
+
+	UPROPERTY(Replicated)
 	FText BobbyName;
 
 public:
@@ -31,5 +33,6 @@ public:
 
 	UFUNCTION(Server, Reliable)
 		void ServerSetBobbyName(const FText& Name);
-	
+
+	void GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const;
 };

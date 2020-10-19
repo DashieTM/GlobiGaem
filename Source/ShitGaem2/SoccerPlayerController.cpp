@@ -8,6 +8,7 @@ ASoccerPlayerController::ASoccerPlayerController()
 	//Team Spectator
 	Team = 0;
 	BobbyName.FromString("");
+
 }
  
 
