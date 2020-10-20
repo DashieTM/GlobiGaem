@@ -136,8 +136,7 @@ void AMenuHUD::SetTeamSpectator()
 				TheNewController->SetTeamSpectator();
 				SetBobbyBuffer(Bobby, 0);
 				TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f));
-				ReloadBobby(GetNameBuffer());
-				Bobby->UpdateName();
+				ReloadBobbyWSpawn();
 			}
 		}
 	}
@@ -159,8 +158,7 @@ void AMenuHUD::SetTeamRed()
 				TheNewController->SetTeamRed();
 				SetBobbyBuffer(Bobby, 2);
 				TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
-				ReloadBobby(GetNameBuffer());
-				Bobby->UpdateName();
+				ReloadBobbyWSpawn();
 			}
 		}
 	}
@@ -182,8 +180,7 @@ void AMenuHUD::SetTeamGreen()
 				TheNewController->SetTeamGreen();
 				SetBobbyBuffer(Bobby, 1);
 				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
-				ReloadBobby(GetNameBuffer());
-				Bobby->UpdateName();
+				ReloadBobbyWSpawn();
 			}
 		}
 	}
@@ -192,9 +189,6 @@ void AMenuHUD::SetTeamGreen()
 
 void AMenuHUD::RespawnBobby()
 {
-	TheNewController = Cast<ASoccerPlayerController>(PlayerOwner);
-	
-	
 	switch(Team)
 	{ 
 		case 0: 
@@ -210,8 +204,7 @@ void AMenuHUD::RespawnBobby()
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			SetBobbyBuffer(Bobby, 1);
 			TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
-			ReloadBobby(GetNameBuffer());
-			Bobby->UpdateName();
+			ReloadBobbyWSpawn();
 			break;
 		}
 		case 2:
@@ -223,8 +216,7 @@ void AMenuHUD::RespawnBobby()
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			SetBobbyBuffer(Bobby, 2);
 			TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
-			ReloadBobby(GetNameBuffer());
-			Bobby->UpdateName();
+			ReloadBobbyWSpawn();
 			break;
 		}
 	}
@@ -259,10 +251,15 @@ void AMenuHUD::ReloadBobby(FText PlayerName)
 
 void AMenuHUD::SetNameBuffer(FText& Name)
 {
-	BobbyName = Name;
+	Cast<ABobbyPlayerState>(TheNewController->PlayerState)->SetBobbyName(Name);
 }
 
 FText AMenuHUD::GetNameBuffer()
 {
-	return BobbyName;
+	return Cast<ABobbyPlayerState>(TheNewController->PlayerState)->ReturnBobbyName();
+}
+
+void AMenuHUD::ReloadBobbyWSpawn()
+{
+	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(GetNameBuffer(), TheNewController);
 }

@@ -77,6 +77,7 @@ public:
 	void ReloadBobby(FText PlayerName);
 	void SetNameBuffer(FText& Name);
 	FText GetNameBuffer();
+	void ReloadBobbyWSpawn();
 
 	
 

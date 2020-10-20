@@ -9,23 +9,9 @@ ABobbyPlayerState::ABobbyPlayerState()
 	BobbyName.FromString("");
 }
 
-void ABobbyPlayerState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(ABobbyPlayerState, BobbyName);
-
-
-}
 
 void ABobbyPlayerState::SetBobbyName(const FText& Name)
 {
-	if (GetLocalRole() < ROLE_Authority)
-	{
-		ServerSetBobbyName(Name);
-		BobbyName;
-		return;
-	}
 	BobbyName = Name;
 }
 
