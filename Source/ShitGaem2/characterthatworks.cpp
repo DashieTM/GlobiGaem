@@ -288,12 +288,12 @@ void Acharacterthatworks::ServerDeleteBobby_Implementation(Acharacterthatworks* 
 
 
 
-void Acharacterthatworks::ServerSpawnBobbyDefault_Implementation(APlayerController* TheNewController)
+void Acharacterthatworks::ServerSpawnBobbyDefault_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyDefault(TheNewController);
 }
 
-void Acharacterthatworks::SpawnBobbyDefault(APlayerController* TheNewController)
+void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewController)
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
@@ -301,7 +301,7 @@ void Acharacterthatworks::SpawnBobbyDefault(APlayerController* TheNewController)
 		return;
 	}
 	
-	BobbyBufferOld = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
+	
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn;
 	BallRespawn.TransformPosition(FVector());
@@ -312,20 +312,20 @@ void Acharacterthatworks::SpawnBobbyDefault(APlayerController* TheNewController)
 	Acharacterthatworks::SetBobbyBuffer(BobbyDefault);
 	BobbyDefault->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyDefault);
-	BobbyBufferOld->Destroy();
+	Destroy();
 	
 }
 
 
 
 
-void Acharacterthatworks::ServerSpawnBobbyRed_Implementation(APlayerController* TheNewController)
+void Acharacterthatworks::ServerSpawnBobbyRed_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyRed(TheNewController);
 	
 }
 
-void Acharacterthatworks::SpawnBobbyRed(APlayerController* TheNewController)
+void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewController)
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
@@ -334,7 +334,7 @@ void Acharacterthatworks::SpawnBobbyRed(APlayerController* TheNewController)
 		return;
 	}
 	
-	BobbyBufferOld = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
+	
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn;
 	BallRespawn.TransformPosition(FVector());
@@ -345,18 +345,18 @@ void Acharacterthatworks::SpawnBobbyRed(APlayerController* TheNewController)
 	Acharacterthatworks::SetBobbyBuffer(BobbyRed);
 	BobbyRed->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyRed);
-	BobbyBufferOld->Destroy();
+	Destroy();
 	
 }
 
 
 
-void Acharacterthatworks::ServerSpawnBobbyGreen_Implementation(APlayerController* TheNewController)
+void Acharacterthatworks::ServerSpawnBobbyGreen_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyGreen(TheNewController);
 }
 
-void Acharacterthatworks::SpawnBobbyGreen(APlayerController* TheNewController)
+void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewController)
 {
 	
 		if (GetLocalRole() < ROLE_Authority)
@@ -367,7 +367,6 @@ void Acharacterthatworks::SpawnBobbyGreen(APlayerController* TheNewController)
 			return;
 		}
 
-		BobbyBufferOld = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
 		FActorSpawnParameters SpawnParams;
 		FTransform BallRespawn;
 		BallRespawn.TransformPosition(FVector());
@@ -378,7 +377,7 @@ void Acharacterthatworks::SpawnBobbyGreen(APlayerController* TheNewController)
 		BobbyBuffer = BobbyGreen;
 		BobbyGreen->SetOwner(TheNewController);
 		TheNewController->Possess(BobbyGreen);
-		BobbyBufferOld->Destroy();
+		Destroy();
 		
 	
 }

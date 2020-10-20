@@ -139,13 +139,13 @@ public:
 	void DeleteBobby(class Acharacterthatworks* Bobby);
 
 	UFUNCTION()
-	void SpawnBobbyDefault(class APlayerController* TheNewController);
+	void SpawnBobbyDefault(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION()
-	void SpawnBobbyRed(class APlayerController* TheNewController);
+	void SpawnBobbyRed(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION()
-	void SpawnBobbyGreen(class APlayerController* TheNewController);
+	void SpawnBobbyGreen(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION()
 	void UsePowerUp();
@@ -170,17 +170,17 @@ public:
 	void ServerDeleteBobby(class Acharacterthatworks* Bobby);
 
 	UFUNCTION(Server, Reliable)
-	void ServerSpawnBobbyDefault(class APlayerController* TheNewController);
+	void ServerSpawnBobbyDefault(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION(Server, Reliable)
-	void ServerSpawnBobbyRed(class APlayerController* TheNewController);
+	void ServerSpawnBobbyRed(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION(Server, Reliable)
 		void ServerResetDash();
 
 
 	UFUNCTION(Server, Reliable)
-	void ServerSpawnBobbyGreen(class APlayerController* TheNewController);
+	void ServerSpawnBobbyGreen(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION(Server, Reliable)
 	void ServerDash();

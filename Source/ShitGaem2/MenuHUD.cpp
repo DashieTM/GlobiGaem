@@ -131,10 +131,10 @@ void AMenuHUD::SetTeamSpectator()
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+				SetBobbyBuffer(BobbyOld, 0);
 				BobbyOld->Acharacterthatworks::SpawnBobbyDefault(TheNewController);
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamSpectator();
-				SetBobbyBuffer(Bobby, 0);
 				TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f));
 				ReloadBobbyWSpawn();
 			}
@@ -153,10 +153,10 @@ void AMenuHUD::SetTeamRed()
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+				SetBobbyBuffer(BobbyOld, 2);
 				BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController);
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamRed();
-				SetBobbyBuffer(Bobby, 2);
 				TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
 				ReloadBobbyWSpawn();
 			}
@@ -172,13 +172,15 @@ void AMenuHUD::SetTeamGreen()
 		{
 			if (BobbyBuffer)
 			{
+				
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+				SetBobbyBuffer(BobbyOld, 1);
 				BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamGreen();
-				SetBobbyBuffer(Bobby, 1);
+				
 				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 				ReloadBobbyWSpawn();
 			}
@@ -200,9 +202,9 @@ void AMenuHUD::RespawnBobby()
 			Acharacterthatworks* Bobby;
 			Acharacterthatworks* BobbyOld;
 			BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+			SetBobbyBuffer(BobbyOld, 1);
 			BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-			SetBobbyBuffer(Bobby, 1);
 			TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 			ReloadBobbyWSpawn();
 			break;
@@ -212,9 +214,9 @@ void AMenuHUD::RespawnBobby()
 			Acharacterthatworks* Bobby;
 			Acharacterthatworks* BobbyOld;
 			BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+			SetBobbyBuffer(BobbyOld, 2);
 			BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-			SetBobbyBuffer(Bobby, 2);
 			TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
 			ReloadBobbyWSpawn();
 			break;
@@ -251,15 +253,20 @@ void AMenuHUD::ReloadBobby(FText PlayerName)
 
 void AMenuHUD::SetNameBuffer(FText& Name)
 {
-	Cast<ABobbyPlayerState>(TheNewController->PlayerState)->SetBobbyName(Name);
+	TheNewController->SetBobbyName(Name);
 }
 
 FText AMenuHUD::GetNameBuffer()
 {
-	return Cast<ABobbyPlayerState>(TheNewController->PlayerState)->ReturnBobbyName();
+	return TheNewController->ReturnBobbyName();
 }
 
 void AMenuHUD::ReloadBobbyWSpawn()
 {
+	Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
+	while(BobbyBuffer == Bobby)
+	{
+	Bobby = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
+	}
 	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(GetNameBuffer(), TheNewController);
 }
