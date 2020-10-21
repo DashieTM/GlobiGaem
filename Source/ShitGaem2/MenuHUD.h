@@ -24,6 +24,7 @@ private:
 	bool IsServer;
 	FText BobbyName;
 
+	FTimerHandle MemberTimerHandle;
 
 	class Acharacterthatworks* BobbyRed;
 	class Acharacterthatworks* BobbyGreen;

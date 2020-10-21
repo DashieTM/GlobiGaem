@@ -15,6 +15,7 @@
 #include "SoccerGameMode.h"
 #include "SOptionsWidget.h"
 #include "BobbyPlayerState.h"
+#include "Net/UnrealNetwork.h"
 
 
 void AMenuHUD::BeginPlay()
@@ -136,7 +137,7 @@ void AMenuHUD::SetTeamSpectator()
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamSpectator();
 				TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f));
-				ReloadBobbyWSpawn();
+				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			}
 		}
 	}
@@ -158,7 +159,7 @@ void AMenuHUD::SetTeamRed()
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamRed();
 				TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
-				ReloadBobbyWSpawn();
+				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			}
 		}
 	}
@@ -182,7 +183,7 @@ void AMenuHUD::SetTeamGreen()
 				TheNewController->SetTeamGreen();
 				
 				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
-				ReloadBobbyWSpawn();
+				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			}
 		}
 	}
@@ -206,7 +207,7 @@ void AMenuHUD::RespawnBobby()
 			BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
-			ReloadBobbyWSpawn();
+			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			break;
 		}
 		case 2:
@@ -218,7 +219,7 @@ void AMenuHUD::RespawnBobby()
 			BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
-			ReloadBobbyWSpawn();
+			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			break;
 		}
 	}
@@ -263,10 +264,5 @@ FText AMenuHUD::GetNameBuffer()
 
 void AMenuHUD::ReloadBobbyWSpawn()
 {
-	Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
-	while(BobbyBuffer == Bobby)
-	{
-	Bobby = Cast<Acharacterthatworks>(TheNewController->GetCharacter());
-	}
 	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(GetNameBuffer(), TheNewController);
 }
