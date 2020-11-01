@@ -76,7 +76,8 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 	DOREPLIFETIME(Acharacterthatworks,BobbyBuffer);
 	DOREPLIFETIME(Acharacterthatworks, BobbyBufferOld);
 	DOREPLIFETIME(Acharacterthatworks, BobbyNameText);
-	
+	DOREPLIFETIME(Acharacterthatworks, bCanFire);
+	DOREPLIFETIME(Acharacterthatworks, SoundEffectBobby);
 
 }
 
@@ -156,10 +157,10 @@ void Acharacterthatworks::Dash()
 		if(GetLocalRole() < ROLE_Authority)
 		{
 			bCanDash = false;
-			GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = true;
+			
 			ServerDash();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
-			GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = false;
+			
 			return;
 		}
 	
@@ -176,11 +177,13 @@ void Acharacterthatworks::Dash()
 
 void Acharacterthatworks::ServerDash_Implementation()
 {
+	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = true;
 	ClientDash();
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
 	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
-	
+	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = false;
+
 }
 
 void Acharacterthatworks::ClientDash_Implementation()
@@ -204,9 +207,6 @@ void Acharacterthatworks::Shoot()
 		if(GetLocalRole() < ROLE_Authority)
 		{
 			ServerShoot();
-			bCanFire = false;
-			SoundEffectBobby->Play();
-			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &Acharacterthatworks::ResetShoot, 2.5f, false);
 			return;
 		}
 
@@ -214,11 +214,16 @@ void Acharacterthatworks::Shoot()
 		SpawnTransform.SetLocation(FollowCamera->GetComponentRotation().Vector() * ShootingPosition + FollowCamera->GetComponentLocation());
 		FActorSpawnParameters SpawnParams;
 		GetWorld()->SpawnActor<AProjectile>(ProjectileBP, SpawnTransform, SpawnParams);
-		SoundEffectBobby->Play();
+		ClientBobbySound();
 		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &Acharacterthatworks::ResetShoot, 2.5f, false);
 		//set fire to false after player has fired.
 		bCanFire = false;
 	}
+}
+
+void Acharacterthatworks::ClientBobbySound_Implementation()
+{
+	SoundEffectBobby->Play();
 }
 
 void Acharacterthatworks::ResetShoot()

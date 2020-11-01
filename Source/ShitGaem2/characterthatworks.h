@@ -22,7 +22,8 @@ class SHITGAEM2_API Acharacterthatworks : public ACharacter
 private:
 
 	bool bCanDash;
-	bool bCanFire;
+
+	
 	bool bHasPowerUp;
 
 	UPROPERTY(ReplicatedUsing = OnRep_CurrentName)
@@ -38,6 +39,8 @@ private:
 	class Acharacterthatworks* BobbyGreen;
 	class Acharacterthatworks* BobbyDefault;
 
+	UPROPERTY(Replicated)
+	bool bCanFire;
 
 	UPROPERTY(Replicated)
 		class Acharacterthatworks* BobbyBuffer;
@@ -99,7 +102,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Shooting")
 	TSubclassOf<class AProjectile> ProjectileBP;
 
-	UPROPERTY(Editanywhere, Category = "Sound")
+	UPROPERTY(Editanywhere, Category = "Sound", Replicated)
 		UAudioComponent* SoundEffectBobby;
 
 	UPROPERTY(EditAnywhere, Category = "PowerUp")
@@ -210,6 +213,9 @@ public:
 
 	UFUNCTION(Client, Reliable)
 	void ClientResetPowerUp();
+
+	UFUNCTION(Client, Reliable)
+	void ClientBobbySound();
 
 	UFUNCTION(NetMulticast, Reliable)
 		void MultiSetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);

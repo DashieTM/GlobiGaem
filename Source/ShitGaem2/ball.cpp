@@ -19,6 +19,8 @@ Aball::Aball()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	SetReplicateMovement(true);
+	SetReplicatingMovement(true);
+	
 	SetReplicates(true);
 	
 	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
@@ -252,12 +254,12 @@ void Aball::BallJump()
 		ServerBallJump();
 		return;
 	}
-	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 700.f));
+	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
 void Aball::NetMulticastBallJump_Implementation()
 {
-	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 700.f));
+	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
 void Aball::ServerBallJump_Implementation()

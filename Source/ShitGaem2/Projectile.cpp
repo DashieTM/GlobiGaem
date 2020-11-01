@@ -52,6 +52,12 @@ void AProjectile::OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVect
 	{
 		return;
 	}
+
+	if (Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(OtherActor))
+	{
+		return;
+	}
+
 	AProjectile::ProjectileDestroy();
 }
 
