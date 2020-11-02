@@ -181,7 +181,7 @@ void Acharacterthatworks::ServerDash_Implementation()
 	ClientDash();
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
+	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = false;
 
 }
@@ -190,7 +190,7 @@ void Acharacterthatworks::ClientDash_Implementation()
 {
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
+	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 }
 
 void Acharacterthatworks::ServerShoot_Implementation()

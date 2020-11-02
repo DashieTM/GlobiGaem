@@ -18,10 +18,7 @@ Aball::Aball()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	SetReplicateMovement(true);
-	SetReplicatingMovement(true);
 	
-	SetReplicates(true);
 	
 	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
 	bCanPlay = true;
@@ -35,6 +32,9 @@ Aball::Aball()
 	
 	OnActorHit.AddDynamic(this, &Aball::OnBallHit);
 
+	SetReplicateMovement(true);
+	SetReplicatingMovement(true);
+	SetReplicates(true);
 }
 
 // Called when the game starts or when spawned
