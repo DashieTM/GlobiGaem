@@ -52,7 +52,7 @@ void Aball::Tick(float DeltaTime)
 
 }
 
-
+//what happens to the ball after hit with a certain actor
 void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
 	if(GetLocalRole() == ROLE_Authority)
@@ -61,9 +61,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		{
 			MultiGoalGreenHit(Target);
 			MultiSetHidden();
-			
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallGreenGoalHit, 0.7f, false);
-			
 			BallSoundCount = 0;
 			return;
 		}
@@ -72,9 +70,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		{
 			MultiGoalRedHit(Target);
 			MultiSetHidden();
-			
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallRedGoalHit, 0.7f, false);
-			
 			BallSoundCount = 0;
 			return;
 		}
@@ -110,7 +106,6 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 				MultiSoundPlay();
 				BallSoundCount++;
 			}
-			
 			return;
 		}
 		MultiSoundPlay();
@@ -118,11 +113,13 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 	}
 }
 
+//set the ball hidden for a few seconds, tape solution for the duration the goal hit function takes
 void Aball::MultiSetHidden_Implementation()
 {
 	BallMesh->SetHiddenInGame(true);
 }
 
+//play sound and particle system after red goal hit on all clients
 void Aball::MultiGoalRedHit_Implementation(AGoalred* Target)
 {
 	Target->Explosion->Activate();
@@ -131,6 +128,7 @@ void Aball::MultiGoalRedHit_Implementation(AGoalred* Target)
 	BallSoundBobby = 0;
 }
 
+//play sound and particle system after green goal hit on all clients
 void Aball::MultiGoalGreenHit_Implementation(AGoalgreen* Target)
 {
 	Target->Explosion->Activate();
@@ -139,6 +137,7 @@ void Aball::MultiGoalGreenHit_Implementation(AGoalgreen* Target)
 	BallSoundBobby = 0;
 }
 
+//play the sound on all clients after ball hit
 void Aball::MultiProjectileHit_Implementation()
 {
 	SoundEffectBall->Play();
@@ -146,6 +145,7 @@ void Aball::MultiProjectileHit_Implementation()
 	BallSoundBobby = 0;
 }
 
+//play the sound on all clients
 void Aball::MultiSoundPlay_Implementation()
 {
 	if(bCanPlay)
@@ -153,16 +153,17 @@ void Aball::MultiSoundPlay_Implementation()
 	SoundEffectBall->Play();
 	bCanPlay = false;
 	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &Aball::ResetBallSoundEffect, 0.1f, false);
-	
 	}
 }
 
+//cooldown for the sound, we don't want tinitus
 void Aball::ResetBallSoundEffect()
 {
 	bCanPlay = true;
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle);
 }
 
+//spawn a new ball
 void Aball::SpawnBall()
 {
 	BallDestroy();
@@ -174,26 +175,25 @@ void Aball::SpawnBall()
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle3);
 }
 
-
-
-
+//spawn the ball serverside
 void Aball::ServerSpawnBall_Implementation()
 {
 	SpawnBall();
 }
 
-
+//server red goal hit implementation
 void Aball::ServerCallRedGoalHit_Implementation()
 {
 	CallRedGoalHit();
 }
 
+//server green goal hit implementation
 void Aball::ServerCallGreenGoalHit_Implementation()
 {
 	CallGreenGoalHit();
 }
 
-
+//increase the red points and reset the ball and characters
 void Aball::CallGreenGoalHit()
 {
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
@@ -210,6 +210,7 @@ void Aball::CallGreenGoalHit()
 	Aball::SpawnBall();
 }
 
+//increase the green points and reset the ball and characters
 void Aball::CallRedGoalHit()
 {
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
@@ -226,42 +227,43 @@ void Aball::CallRedGoalHit()
 	Aball::SpawnBall();
 }
 
+//destroy the ball
 void Aball::BallDestroy()
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
 		ServerBallDestroy();
-		
 		return;
 	}
 	Destroy();
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle);
 }
 
+//destroy the ball serverside
 void Aball::ServerBallDestroy_Implementation()
 {
 	BallDestroy();
 }
 
 
-
+// ball jump after hit with projectile
 void Aball::BallJump()
 {
-
 	if (GetLocalRole() < ROLE_Authority)
 	{
-		
 		ServerBallJump();
 		return;
 	}
 	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
+//smoothing ball jump for clients
 void Aball::NetMulticastBallJump_Implementation()
 {
 	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
+//serverballjump implementation, acutal position
 void Aball::ServerBallJump_Implementation()
 {
 	NetMulticastBallJump();

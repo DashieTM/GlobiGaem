@@ -42,138 +42,123 @@ void SMenuWidget::Construct(const FArguments& InArgs)
 	TitleTextStyle.Size = 38.0f;
 
 	ChildSlot
+	[
+		SNew(SOverlay)
+		+SOverlay::Slot()
+		.HAlign(HAlign_Center)
+		.VAlign(VAlign_Center)
+		+SOverlay::Slot()
+		.HAlign(HAlign_Fill)
+		.VAlign(VAlign_Fill)
+		.Padding(ContentPadding)
 		[
-			SNew(SOverlay)
-			+SOverlay::Slot()
-			.HAlign(HAlign_Center)
-			.VAlign(VAlign_Center)
-		
-			
-			+SOverlay::Slot()
-			.HAlign(HAlign_Fill)
-			.VAlign(VAlign_Fill)
-			.Padding(ContentPadding)
+			SNew(SVerticalBox)
+			//Title Text
+			+ SVerticalBox::Slot()
 			[
-				SNew(SVerticalBox)
-
-				//Title Text
-				+ SVerticalBox::Slot()
+				SNew(STextBlock)
+				.Font(TitleTextStyle)
+				.Text(TitleText)
+				.Justification(ETextJustify::Center)
+			]
+			//Button small Stadium
+			+SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SMenuWidget::OnLevel1Clicked)
 				[
 					SNew(STextBlock)
-					.Font(TitleTextStyle)
-					.Text(TitleText)
+					.Font(ButtonTextStyle)
+					.Text(Level1Text)
 					.Justification(ETextJustify::Center)
-				
 				]
-				//Button small Stadium
-				+SVerticalBox::Slot()
-				.Padding(ButtonPadding)
+			]
+			//Button big Stadium
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SMenuWidget::OnLevel2Clicked)
 				[
-					SNew(SButton)
-					.OnClicked(this, &SMenuWidget::OnLevel1Clicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
-						.Text(Level1Text)
-						.Justification(ETextJustify::Center)
-					
-					]
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+					.Text(Level2Text)
+					.Justification(ETextJustify::Center)
 				]
-				//Button big Stadium
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
+			]
+			//Button Multiplayer
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SMenuWidget::OnMultiplayerClicked)
 				[
-					SNew(SButton)
-					.OnClicked(this, &SMenuWidget::OnLevel2Clicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
-						.Text(Level2Text)
-						.Justification(ETextJustify::Center)
-					
-					]
-				]
-				//Button Multiplayer
-				+ SVerticalBox::Slot()
-					.Padding(ButtonPadding)
-					[
-						SNew(SButton)
-						.OnClicked(this, &SMenuWidget::OnMultiplayerClicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
 					.Text(MultiplayerText)
 					.Justification(ETextJustify::Center)
-
-					]
 				]
-				//Buttons for teams
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
+			]
+			//Buttons for teams
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SHorizontalBox)
+				+ SHorizontalBox::Slot()
 				[
-					SNew(SHorizontalBox)
-					+ SHorizontalBox::Slot()
-					[
-						SNew(SButton)
-						.OnClicked(this, &SMenuWidget::OnGreenClicked)
+					SNew(SButton)
+					.OnClicked(this, &SMenuWidget::OnGreenClicked)
 						[
 							SNew(STextBlock)
 							.Font(ButtonTextStyle)
 							.Text(TeamGreen)
 							.Justification(ETextJustify::Center)
-		
 						]
-					]
-					+ SHorizontalBox::Slot()
-					[
-						SNew(SButton)
-						.OnClicked(this, &SMenuWidget::OnRedClicked)
-						[
-							SNew(STextBlock)
-							.Font(ButtonTextStyle)
-							.Text(TeamRed)
-							.Justification(ETextJustify::Center)
-
-						]
-					]
 				]
-				//Button Spectator
-				+ SVerticalBox::Slot()
-					.Padding(ButtonPadding)
-					[
-						SNew(SButton)
-						.OnClicked(this, &SMenuWidget::OnSpectatorClicked)
-						[
-							SNew(STextBlock)
-							.Font(ButtonTextStyle)
-							.Text(SpectatorTeam)
-							.Justification(ETextJustify::Center)
-
-						]
-					]
-				//Button Quit
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
+				+ SHorizontalBox::Slot()
 				[
 					SNew(SButton)
-					.OnClicked(this, &SMenuWidget::OnQuitClicked)
+					.OnClicked(this, &SMenuWidget::OnRedClicked)
 					[
 						SNew(STextBlock)
 						.Font(ButtonTextStyle)
-						.Text(QuitText)
+						.Text(TeamRed)
 						.Justification(ETextJustify::Center)
-
 					]
-				]	
+				]
 			]
-		];
+			//Button Spectator
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SMenuWidget::OnSpectatorClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+					.Text(SpectatorTeam)
+					.Justification(ETextJustify::Center)
+				]
+			]
+			//Button Quit
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SMenuWidget::OnQuitClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+					.Text(QuitText)
+					.Justification(ETextJustify::Center)
+				]
+			]	
+		]
+	];
 }
 
-
-
-
-
-
+//load level 1
 FReply SMenuWidget::OnLevel1Clicked() const
 {
 	if (OwningHUD.IsValid())
@@ -183,6 +168,7 @@ FReply SMenuWidget::OnLevel1Clicked() const
 		return FReply::Handled();
 }
 
+//load level 2
 FReply SMenuWidget::OnLevel2Clicked() const
 {
 	if (OwningHUD.IsValid())
@@ -192,13 +178,14 @@ FReply SMenuWidget::OnLevel2Clicked() const
 		return FReply::Handled();	
 }
 
-
+//connect to entered IP
 FReply SMenuWidget::OnMultiplayerClicked() const
 {
 	OwningHUD->ShowOptions();
 	return FReply::Handled();
 }
 
+//quit the game
 FReply SMenuWidget::OnQuitClicked() const
 {
 	if (OwningHUD.IsValid())
@@ -206,32 +193,33 @@ FReply SMenuWidget::OnQuitClicked() const
 		if (APlayerController* PC = OwningHUD->PlayerOwner)
 		{
 			PC->ConsoleCommand("quit");
-			
-			
 		}
 	}
 	return FReply::Handled();
 }
 
+//set the team to green
 FReply SMenuWidget::OnGreenClicked() const
 {
 	OwningHUD->SetTeamGreen();
 	return FReply::Handled();
 }
 
+//set the team to red
 FReply SMenuWidget::OnRedClicked() const
 {
 	OwningHUD->SetTeamRed();
 	return FReply::Handled();
 }
 
+//set the team to spectator
 FReply SMenuWidget::OnSpectatorClicked() const
 {
 	OwningHUD->SetTeamSpectator();
 	return FReply::Handled();
 }
 
-
+//implement the quit menu function with escape and delete key
 FReply SMenuWidget::OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent)
 {
 	if (InKeyEvent.GetKey() == FKey("Escape") || InKeyEvent.GetKey() == FKey("Delete"))
@@ -241,8 +229,6 @@ FReply SMenuWidget::OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEven
 	}
 	return FReply::Handled();
 }
-
-
 
 #undef LOCTEXT_NAMESPACE
 

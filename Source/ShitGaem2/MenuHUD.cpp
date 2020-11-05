@@ -36,6 +36,7 @@ void AMenuHUD::BeginPlay()
 	ShowMenu();
 }
 
+//show the menu
 void AMenuHUD::ShowMenu()
 {
 	if (CurrentWidget != nullptr)
@@ -56,7 +57,7 @@ void AMenuHUD::ShowMenu()
 }
 
 
-
+//remove the menu
 void AMenuHUD::RemoveMenu()
 {
 	if (GEngine && GEngine->GameViewport && MenuWidgetContainer.IsValid())
@@ -78,6 +79,7 @@ void AMenuHUD::RemoveMenu()
 	}
 }
 
+//show options menu
 void AMenuHUD::ShowOptions()
 {
 	if (GEngine && GEngine->GameViewport && MenuWidgetContainer.IsValid())
@@ -93,7 +95,7 @@ void AMenuHUD::ShowOptions()
 }
 
 
-
+//remove options and show menu
 void AMenuHUD::RemoveOptions()
 {
 	if (GEngine && GEngine->GameViewport && OptionWidgetContainer.IsValid())
@@ -108,19 +110,19 @@ void AMenuHUD::RemoveOptions()
 	}
 }
 
-
+//open the big stadium
 void AMenuHUD::OpenLevel1()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), "soccer4p");
 }
 
+//open the small stadium
 void AMenuHUD::OpenLevel2()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), "soccer_2player");
 }
 
-
-
+//join the spectator team
 void AMenuHUD::SetTeamSpectator()
 {
 	if (GetWorld()->GetName() == "soccer4p")
@@ -143,6 +145,7 @@ void AMenuHUD::SetTeamSpectator()
 	}
 }
 
+//join the red team
 void AMenuHUD::SetTeamRed()
 {
 	if (GetWorld()->GetName() == "soccer4p")
@@ -165,6 +168,7 @@ void AMenuHUD::SetTeamRed()
 	}
 }
 
+//join the green team
 void AMenuHUD::SetTeamGreen()
 {
 	if (GetWorld()->GetName() == "soccer4p")
@@ -173,7 +177,6 @@ void AMenuHUD::SetTeamGreen()
 		{
 			if (BobbyBuffer)
 			{
-				
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
@@ -181,7 +184,6 @@ void AMenuHUD::SetTeamGreen()
 				BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamGreen();
-				
 				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			}
@@ -189,7 +191,7 @@ void AMenuHUD::SetTeamGreen()
 	}
 }
 
-
+//respawn bobby after goal hit, automatically checks which team the bobby is in
 void AMenuHUD::RespawnBobby()
 {
 	switch(Team)
@@ -225,43 +227,51 @@ void AMenuHUD::RespawnBobby()
 	}
 }
 
+//set the bobby buffer
 void AMenuHUD::SetBobbyBuffer(Acharacterthatworks* Bobby, int TeamLocal)
 {
 	BobbyBuffer = Bobby;
 	Team = TeamLocal;
 }
 
+//return the bobby buffer
 Acharacterthatworks* AMenuHUD::GetBobbyBuffer()
 {
 	return BobbyBuffer;
 }
 
+//clear the bobby buffer
 void AMenuHUD::ClearBobbyBuffer()
 {
 	AMenuHUD::SetBobbyBuffer(nullptr, 0);
 }
 
+//return the bobby team
 int AMenuHUD::GetBobbyTeam()
 {
 	return Team;
 }
 
+//reload the bobby after team select, for bobby name
 void AMenuHUD::ReloadBobby(FText PlayerName)
 {
 	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(PlayerName, TheNewController);
 	SetNameBuffer(PlayerName);
 }
 
+//set the bobby name
 void AMenuHUD::SetNameBuffer(FText& Name)
 {
 	TheNewController->SetBobbyName(Name);
 }
 
+//get the bobby name
 FText AMenuHUD::GetNameBuffer()
 {
 	return TheNewController->ReturnBobbyName();
 }
 
+//reload bobby after goal, because of the name
 void AMenuHUD::ReloadBobbyWSpawn()
 {
 	Cast<Acharacterthatworks>(TheNewController->GetCharacter())->SetBobbyName(GetNameBuffer(), TheNewController);

@@ -19,10 +19,6 @@
 // Sets default values
 Acharacterthatworks::Acharacterthatworks()
 {
-	
-
-	
-
 	SetReplicateMovement(true);
 	SetReplicates(true);
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -61,24 +57,19 @@ Acharacterthatworks::Acharacterthatworks()
 	BobbyName->SetupAttachment(RootComponent);
 	BobbyName->SetText("");
 	
-	
-
 	FollowCamera->bUsePawnControlRotation = false;
 	bCanFire = true;
-
 }
 
-
+//replication
 void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
 	DOREPLIFETIME(Acharacterthatworks,BobbyBuffer);
 	DOREPLIFETIME(Acharacterthatworks, BobbyBufferOld);
 	DOREPLIFETIME(Acharacterthatworks, BobbyNameText);
 	DOREPLIFETIME(Acharacterthatworks, bCanFire);
 	DOREPLIFETIME(Acharacterthatworks, SoundEffectBobby);
-
 }
 
 
@@ -86,22 +77,18 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 void Acharacterthatworks::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	
 }
 
 // Called every frame
 void Acharacterthatworks::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
 }
 
 // Called to bind functionality to input
 void Acharacterthatworks::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
@@ -111,11 +98,10 @@ void Acharacterthatworks::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &Acharacterthatworks::Shoot);
 	PlayerInputComponent->BindAction("Dash", IE_Pressed, this, &Acharacterthatworks::Dash);
 	PlayerInputComponent->BindAction("UsePowerUp", IE_Pressed, this, &Acharacterthatworks::UsePowerUp);
-	
 }
 
 
-
+//Move forward and backward
 void Acharacterthatworks::MoveForward(float Axis)
 {
 	FRotator Rotation = Controller->GetControlRotation();
@@ -124,6 +110,7 @@ void Acharacterthatworks::MoveForward(float Axis)
 	AddMovementInput(Direction, Axis);
 }
 
+//move right and left
 void Acharacterthatworks::MoveRight(float Axis)
 {
 	FRotator Rotation = Controller->GetControlRotation();
@@ -133,7 +120,7 @@ void Acharacterthatworks::MoveRight(float Axis)
 }
 
 
-
+//reset the dash cd(called after dash cd)
 void Acharacterthatworks::ResetDash()
 { 
 	bCanDash = true;
@@ -143,13 +130,15 @@ void Acharacterthatworks::ResetDash()
 	ServerResetDash();
 }
 
-
+//reset Friction after dash, called by server because of authority
 void Acharacterthatworks::ServerResetDash_Implementation()
 {
 	GetCharacterMovement()->FallingLateralFriction = 8.f;
 	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
 }
 
+
+//dash implementation, dash is towards view angle
 void Acharacterthatworks::Dash()
 {
 	if (bCanDash)
@@ -157,24 +146,19 @@ void Acharacterthatworks::Dash()
 		if(GetLocalRole() < ROLE_Authority)
 		{
 			bCanDash = false;
-			
 			ServerDash();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
-			
 			return;
 		}
-	
-	bCanDash = false;
-	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
-	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
-	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
+		bCanDash = false;
+		GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
+		GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
+		LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
+		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
 	}
-
-	
-	
 }
 
+//dash implementation for server, in order to not falsly correct position
 void Acharacterthatworks::ServerDash_Implementation()
 {
 	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = true;
@@ -183,9 +167,9 @@ void Acharacterthatworks::ServerDash_Implementation()
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
 	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = false;
-
 }
 
+//client dash implementation for smooth movement
 void Acharacterthatworks::ClientDash_Implementation()
 {
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
@@ -193,23 +177,22 @@ void Acharacterthatworks::ClientDash_Implementation()
 	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 }
 
+//servershoot implementation, authority
 void Acharacterthatworks::ServerShoot_Implementation()
 {
 	Shoot();
 }
 
-
+//actual shoot fucntion
 void Acharacterthatworks::Shoot()
 {
 	if(bCanFire) //check fire status >> player allowed to fire?
 	{ 
-		
 		if(GetLocalRole() < ROLE_Authority)
 		{
 			ServerShoot();
 			return;
 		}
-
 		FTransform SpawnTransform = FollowCamera->GetComponentTransform();
 		SpawnTransform.SetLocation(FollowCamera->GetComponentRotation().Vector() * ShootingPosition + FollowCamera->GetComponentLocation());
 		FActorSpawnParameters SpawnParams;
@@ -221,33 +204,39 @@ void Acharacterthatworks::Shoot()
 	}
 }
 
+//play sound in client
 void Acharacterthatworks::ClientBobbySound_Implementation()
 {
 	SoundEffectBobby->Play();
 }
 
+
+//reset the dash cd
 void Acharacterthatworks::ResetShoot()
 {
 	bCanFire = true;
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle);
-
 }
 
+//return the world the character is currently in
 UWorld* Acharacterthatworks::OpenLevel()
 {
 	return GetWorld();
 }
 
+//update name on rep
 void Acharacterthatworks::OnRep_CurrentName()
 {
 	UpdateName();
 }
 
+//update name
 void Acharacterthatworks::UpdateName()
 {
 	BobbyName->SetText(BobbyNameText);
 }
 
+//return fire status, ready or cooldown
 FString Acharacterthatworks::ReturnFireStatus()
 {
 	if (bCanFire)
@@ -257,6 +246,7 @@ FString Acharacterthatworks::ReturnFireStatus()
 	return "cooldown";
 }
 
+//return dash status, ready or cooldown
 FString Acharacterthatworks::ReturnDashStatus()
 {
 	if (bCanDash)
@@ -266,6 +256,7 @@ FString Acharacterthatworks::ReturnDashStatus()
 	return "cooldown";
 }
 
+//return power up status, ready, or empty
 FString Acharacterthatworks::ReturnPowerUpStatus()
 {
 	if (bHasPowerUp)
@@ -275,6 +266,7 @@ FString Acharacterthatworks::ReturnPowerUpStatus()
 	return "empty";
 }
 
+//delete the current character
 void Acharacterthatworks::DeleteBobby(Acharacterthatworks* Bobby)
 {
 	if (GetLocalRole() < ROLE_Authority)
@@ -282,22 +274,22 @@ void Acharacterthatworks::DeleteBobby(Acharacterthatworks* Bobby)
 		ServerDeleteBobby(Bobby);
 		return;
 	}
-	
 	BobbyBufferOld->Destroy();
 }
 
+//delete character on server, authority
 void Acharacterthatworks::ServerDeleteBobby_Implementation(Acharacterthatworks* Bobby)
 {
 	DeleteBobby(Bobby);
 }
 
-
-
+//Spawnbobby spectator server implementation, authority
 void Acharacterthatworks::ServerSpawnBobbyDefault_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyDefault(TheNewController);
 }
 
+//spawn spectator bobby
 void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewController)
 {
 	if (GetLocalRole() < ROLE_Authority)
@@ -305,8 +297,6 @@ void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewContr
 		ServerSpawnBobbyDefault(TheNewController);
 		return;
 	}
-	
-	
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn;
 	BallRespawn.TransformPosition(FVector());
@@ -318,28 +308,22 @@ void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewContr
 	BobbyDefault->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyDefault);
 	Destroy();
-	
 }
 
-
-
-
+//spawn bobby red, authority
 void Acharacterthatworks::ServerSpawnBobbyRed_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyRed(TheNewController);
-	
 }
 
+//spawn bobby red
 void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewController)
 {
 	if (GetLocalRole() < ROLE_Authority)
 	{
 		ServerSpawnBobbyRed(TheNewController);
-		
 		return;
 	}
-	
-	
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn;
 	BallRespawn.TransformPosition(FVector());
@@ -351,57 +335,54 @@ void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewControlle
 	BobbyRed->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyRed);
 	Destroy();
-	
 }
 
-
-
+//spawn bobby green, authority
 void Acharacterthatworks::ServerSpawnBobbyGreen_Implementation(ASoccerPlayerController* TheNewController)
 {
 	SpawnBobbyGreen(TheNewController);
 }
 
+//spawn bobby green
 void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewController)
 {
-	
-		if (GetLocalRole() < ROLE_Authority)
-		{
-			
-			ServerSpawnBobbyGreen(TheNewController);
-			
-			return;
-		}
-
-		FActorSpawnParameters SpawnParams;
-		FTransform BallRespawn;
-		BallRespawn.TransformPosition(FVector());
-		BallRespawn.SetRotation(FQuat(FRotator(0.f, -90.f, 0.0f)));
-		BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-		BallRespawn.SetLocation(FVector(0.f, 4500.f, 380.f));
-		BobbyGreen = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Green, BallRespawn, SpawnParams);
-		BobbyBuffer = BobbyGreen;
-		BobbyGreen->SetOwner(TheNewController);
-		TheNewController->Possess(BobbyGreen);
-		Destroy();
-		
-	
+	if (GetLocalRole() < ROLE_Authority)
+	{
+		ServerSpawnBobbyGreen(TheNewController);
+		return;
+	}
+	FActorSpawnParameters SpawnParams;
+	FTransform BallRespawn;
+	BallRespawn.TransformPosition(FVector());
+	BallRespawn.SetRotation(FQuat(FRotator(0.f, -90.f, 0.0f)));
+	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+	BallRespawn.SetLocation(FVector(0.f, 4500.f, 380.f));
+	BobbyGreen = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Green, BallRespawn, SpawnParams);
+	BobbyBuffer = BobbyGreen;
+	BobbyGreen->SetOwner(TheNewController);
+	TheNewController->Possess(BobbyGreen);
+	Destroy();
 }
 
+//set the bobby buffer
 void Acharacterthatworks::SetBobbyBuffer(Acharacterthatworks* Bobby)
 {
 	BobbyBuffer = Bobby;
 }
 
+//return the bobby buffer
 Acharacterthatworks* Acharacterthatworks::GetBobbyBuffer()
 {
 	return BobbyBuffer;
 }
 
+//clear the bobby buffer
 void Acharacterthatworks::ClearBobbyBuffer()
 {
 	Acharacterthatworks::SetBobbyBuffer(nullptr);
 }
 
+//determine which bobby should spawn
 void Acharacterthatworks::ClientWhichTeam_Implementation(ASoccerPlayerController* SController)
 {
 	if (GetWorld()->GetName() == "soccer4p")
@@ -417,18 +398,17 @@ void Acharacterthatworks::ClientWhichTeam_Implementation(ASoccerPlayerController
 			case 1:
 			{
 				Acharacterthatworks::SpawnBobbyGreen(SController);
-
 				break;
 			}
 			case 2:
 			{
 				Acharacterthatworks::SpawnBobbyRed(SController);
-
 			}
 		}
 	}
 }
 
+//power up implementation
 void Acharacterthatworks::UsePowerUp()
 {
 	if(bHasPowerUp)
@@ -443,17 +423,20 @@ void Acharacterthatworks::UsePowerUp()
 	}
 }
 
+//power up serverside, actual position
 void Acharacterthatworks::ServerUsePowerUp_Implementation()
 {
 	ClientUsePowerUp();
 	LaunchCharacter(FVector(0.f, 0.f, PowerUpStrenght), false, true);
 }
 
+//power up clientside, smooth movement
 void Acharacterthatworks::ClientUsePowerUp_Implementation()
 {
 	LaunchCharacter(FVector(0.f, 0.f, PowerUpStrenght), false, true);
 }
 
+//player has power up again
 void Acharacterthatworks::ClientResetPowerUp_Implementation()
 {
 	bHasPowerUp = true;
@@ -464,25 +447,28 @@ void Acharacterthatworks::PowerUpCollected(FTransform& Power)
 {
 	ClientResetPowerUp();
 	SpawnTransformPowerUp = Power;
-	
 }
 
+//Delay time for the power up to spawn
 void Acharacterthatworks::ServerSpawnPowerUpDelay_Implementation()
 {
 	ServerSpawnPowerUp(SpawnTransformPowerUp);
 }
 
+//spawn power up
 void Acharacterthatworks::ServerSpawnPowerUp_Implementation(FTransform Power)
 {
 	FActorSpawnParameters SpawnParams;
 	GetWorld()->SpawnActor<APowerUp>(PowerUpBP, Power, SpawnParams);
 }
 
+//return power up status
 bool Acharacterthatworks::HasPowerUp()
 {
 	return bHasPowerUp;
 }
 
+//set the player name
 void Acharacterthatworks::SetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController)
 {
 	if (GetLocalRole() < ROLE_Authority)
@@ -493,15 +479,15 @@ void Acharacterthatworks::SetBobbyName(const FText& LeName, ASoccerPlayerControl
 	BobbyNameText = LeName;
 }
 
-
+//set the player name serverside
 void Acharacterthatworks::ServerSetBobbyName_Implementation(const FText& LeName,ASoccerPlayerController* BobbyController)
 {
 	BobbyNameText = LeName;
 }
 
+//useless
 void Acharacterthatworks::MultiSetBobbyName_Implementation(const FText& LeName, ASoccerPlayerController* BobbyController)
 {
-	
 }
 
 

@@ -17,7 +17,6 @@ void SOptionsWidget::Construct(const FArguments& InArgs)
 {
 	bCanSupportFocus = true;
 
-
 	OwningHUD = InArgs._OwningHUD;
 
 	const FMargin ContentPadding = FMargin(425.0f, 225.0f);
@@ -38,97 +37,87 @@ void SOptionsWidget::Construct(const FArguments& InArgs)
 	TitleTextStyle.Size = 38.0f;
 
 	ChildSlot
+	[
+		SNew(SOverlay)
+		+ SOverlay::Slot()
+		.HAlign(HAlign_Center)
+		.VAlign(VAlign_Center)
+		+ SOverlay::Slot()
+		.HAlign(HAlign_Fill)
+		.VAlign(VAlign_Fill)
+		.Padding(ContentPadding)
 		[
-			SNew(SOverlay)
-			+ SOverlay::Slot()
-			.HAlign(HAlign_Center)
-			.VAlign(VAlign_Center)
-
-
-			+ SOverlay::Slot()
-			.HAlign(HAlign_Fill)
-			.VAlign(VAlign_Fill)
-			.Padding(ContentPadding)
+			SNew(SVerticalBox)
+			//Title Text
+			+ SVerticalBox::Slot()
 			[
-				SNew(SVerticalBox)
-
-				//Title Text
-				+ SVerticalBox::Slot()
+				SNew(STextBlock)
+				.Font(TitleTextStyle)
+				.Text(TitleText)
+				.Justification(ETextJustify::Center)
+			]
+			//Player Name Text Box
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SAssignNew(BoxyPtr2, SEditableTextBox)
+				.HintText(BobbyName)
+				.Font(ButtonTextStyle)
+				.Justification(ETextJustify::Center)
+			]
+			//Button Save Name
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+					SNew(SButton)
+					.OnClicked(this, &SOptionsWidget::OnSetBobbyNameClicked)
 				[
 					SNew(STextBlock)
-					.Font(TitleTextStyle)
-					.Text(TitleText)
-					.Justification(ETextJustify::Center)
-				]
-				//Player Name Text Box
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
-				[
-					SAssignNew(BoxyPtr2, SEditableTextBox)
-					.HintText(BobbyName)
 					.Font(ButtonTextStyle)
+					.Text(SetBobbyName)
 					.Justification(ETextJustify::Center)
-				]
-
-				//Button Save Name
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
-				[
-						SNew(SButton)
-						.OnClicked(this, &SOptionsWidget::OnSetBobbyNameClicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
-						.Text(SetBobbyName)
-						.Justification(ETextJustify::Center)
-					]
-				]
-				//IP address Box
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
-				[
-					SAssignNew(BoxyPtr, SEditableTextBox)
-					.HintText(Address)
-					.Font(ButtonTextStyle)
-					.Justification(ETextJustify::Center)
-				]
-
-				//Connect to IP
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
-				[
-					SNew(SButton)
-					.OnClicked(this, &SOptionsWidget::OnConnectClicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
-						.Text(Connect)
-						.Justification(ETextJustify::Center)
-					]
-				]
-				//Button Quit
-				+ SVerticalBox::Slot()
-				.Padding(ButtonPadding)
-				[
-					SNew(SButton)
-					.OnClicked(this, &SOptionsWidget::OnBackClicked)
-					[
-						SNew(STextBlock)
-						.Font(ButtonTextStyle)
-						.Text(Back)
-						.Justification(ETextJustify::Center)
-
-					]
 				]
 			]
-		];
+			//IP address Box
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SAssignNew(BoxyPtr, SEditableTextBox)
+				.HintText(Address)
+				.Font(ButtonTextStyle)
+				.Justification(ETextJustify::Center)
+			]
+			//Connect to IP
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SOptionsWidget::OnConnectClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+					.Text(Connect)
+					.Justification(ETextJustify::Center)
+				]
+			]
+			//Button Quit
+			+ SVerticalBox::Slot()
+			.Padding(ButtonPadding)
+			[
+				SNew(SButton)
+				.OnClicked(this, &SOptionsWidget::OnBackClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+					.Text(Back)
+					.Justification(ETextJustify::Center)
+				]
+			]
+		]
+	];
 }
 
-
-
-
-
-
+//save the bobby name
 FReply SOptionsWidget::OnSetBobbyNameClicked() const
 {
 	if (OwningHUD.IsValid())
@@ -142,6 +131,7 @@ FReply SOptionsWidget::OnSetBobbyNameClicked() const
 	return FReply::Handled();
 }
 
+//connect to entered IP
 FReply SOptionsWidget::OnConnectClicked() const
 {
 	if(OwningHUD.IsValid())
@@ -150,20 +140,20 @@ FReply SOptionsWidget::OnConnectClicked() const
 		{
 			FString Command = BoxyPtr->GetText().ToString();
 			Command = "open " + Command;
-
 			PC->ConsoleCommand(Command);
 		}
 	}
 	return FReply::Handled();
 }
 
-
+//return to menu
 FReply SOptionsWidget::OnBackClicked() const
 {
 	OwningHUD->RemoveOptions();
 	return FReply::Handled();
 }
 
+//implement the back function with the escape and delete key
 FReply SOptionsWidget::OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent)
 {
 	if (InKeyEvent.GetKey() == FKey("Escape") || InKeyEvent.GetKey() == FKey("Delete"))
@@ -172,8 +162,6 @@ FReply SOptionsWidget::OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyE
 	}
 	return FReply::Handled();
 }
-
-
 
 #undef LOCTEXT_NAMESPACE
 

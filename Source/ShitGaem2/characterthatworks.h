@@ -221,21 +221,12 @@ public:
 		void MultiSetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);
 
 	
-
-	
-
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
-
-	
 	void PowerUpCollected(FTransform& Power);
 	bool HasPowerUp();
-
-
-
 };
