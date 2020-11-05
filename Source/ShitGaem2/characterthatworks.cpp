@@ -443,10 +443,9 @@ void Acharacterthatworks::ClientResetPowerUp_Implementation()
 }
 
 //Hit Detection
-void Acharacterthatworks::PowerUpCollected(FTransform& Power)
+void Acharacterthatworks::PowerUpCollected()
 {
 	ClientResetPowerUp();
-	SpawnTransformPowerUp = Power;
 }
 
 //Delay time for the power up to spawn

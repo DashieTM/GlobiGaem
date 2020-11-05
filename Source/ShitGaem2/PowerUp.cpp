@@ -21,7 +21,8 @@ APowerUp::APowerUp()
 	Sparks = CreateDefaultSubobject<UParticleSystemComponent>("Sparks");
 	Sparks->SetupAttachment(PowerUpMesh);
 
-	OnActorHit.AddDynamic(this, &APowerUp::OnPowerUpHit);
+	
+	PowerUpMesh->OnComponentBeginOverlap.AddDynamic(this, &APowerUp::OnPowerUpHit);
 }
 
 // Called when the game starts or when spawned
@@ -38,32 +39,28 @@ void APowerUp::Tick(float DeltaTime)
 
 }
 
-void APowerUp::OnPowerUpHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+
+void APowerUp::OnPowerUpHit(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (GetLocalRole() == ROLE_Authority)
 	{
 		if (Acharacterthatworks* bobby = Cast<Acharacterthatworks>(OtherActor))
 		{
-			if(isfirst)
+			if(IsHidden() == false)
 			{
-			isfirst = false;
-			
-			SpawnTransformPowerUp.SetLocation(this->GetActorLocation());
-			bobby->PowerUpCollected(SpawnTransformPowerUp);
+			bobby->PowerUpCollected();
 			this->SetActorHiddenInGame(true);
+
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &APowerUp::SpawnPowerUp,6.f, false);
-			UE_LOG(LogTemp, Warning, TEXT("Some warning message"));
 			}
 		}
 	}
-	
 }
 
 
 void APowerUp::SpawnPowerUp()
 {
+	this->SetActorHiddenInGame(false);
 	
-		FActorSpawnParameters SpawnParams;
-	GetWorld()->SpawnActor<APowerUp>(PowerUpBP, SpawnTransformPowerUp, SpawnParams);
-	Destroy();
 }
+
