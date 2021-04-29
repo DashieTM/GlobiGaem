@@ -20,7 +20,7 @@ Aball::Aball()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	
-	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
+	if (GetRemoteRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
 	bCanPlay = true;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;

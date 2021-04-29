@@ -36,7 +36,8 @@ Acharacterthatworks::Acharacterthatworks()
 	PowerUpCD = 25.f;
 	BobbyNameText.FromString("");
 	
-
+	if (GetRemoteRole() < ROLE_Authority) SetRole(ROLE_AutonomousProxy);
+	
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
 	GetCharacterMovement()->AirControl = 0.8f;
