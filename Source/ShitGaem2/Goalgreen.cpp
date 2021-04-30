@@ -11,7 +11,7 @@ AGoalgreen::AGoalgreen()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SetReplicateMovement(true);
-	SetReplicates(true);
+	bReplicates = true;
 	GoalBounds = CreateDefaultSubobject<UStaticMeshComponent>("GoalBounds");
 	SetRootComponent(GoalBounds);
 	Explosion = CreateDefaultSubobject<UParticleSystemComponent>("Explosion");

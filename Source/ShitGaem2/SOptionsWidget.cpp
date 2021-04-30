@@ -10,6 +10,7 @@
 #include "GameFramework/Character.h"
 #include "Engine.h"
 #include "Framework/Application/SlateApplication.h"
+#include "SoccerGameState.h"
 
 #define LOCTEXT_NAMESPACE "OptionsMenu"
 
@@ -27,6 +28,7 @@ void SOptionsWidget::Construct(const FArguments& InArgs)
 	const FText SetBobbyName = LOCTEXT("SaveBobbyName", "Save");
 	const FText Address = LOCTEXT("Address", "enter an IP address");
 	const FText Connect = LOCTEXT("Connect", "Connect");
+	const FText ResetPoints = LOCTEXT("ResetPoints(Server only)", "ResetPoints(Server only)");
 	const FText Back = LOCTEXT("back", "back");
 
 
@@ -145,6 +147,7 @@ FReply SOptionsWidget::OnConnectClicked() const
 	}
 	return FReply::Handled();
 }
+
 
 //return to menu
 FReply SOptionsWidget::OnBackClicked() const

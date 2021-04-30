@@ -21,11 +21,19 @@ private:
 	UPROPERTY(Replicated)
 	int32 PointsRed;
 
+	UPROPERTY(Replicated)
+		bool RedWinStatus;
+
+	UPROPERTY(Replicated)
+		bool GreenWinStatus;
+
 	int Team;
 	class Acharacterthatworks* BobbyRed;
 	class Acharacterthatworks* BobbyGreen;
 	class Acharacterthatworks* BobbyDefault;
 	class Acharacterthatworks* BobbyBuffer;
+
+	FTimerHandle MemberTimerHandle;
 
 	UPROPERTY(EditAnywhere, Category = "Red Bobby")
 		TSubclassOf<class Acharacterthatworks> Bobby_Red;
@@ -52,13 +60,18 @@ public:
 	class Acharacterthatworks* GetBobbyBuffer();
 	int GetTeam();
 	void ClearBobbyBuffer();
+	void ResetPoints();
+	void ResetVictory();
 
 
 	UFUNCTION(BlueprintPure, Category = "Points")
 		int32 GetPointsRed();
 	UFUNCTION(BlueprintPure, Category = "Points")
 		int32 GetPointsGreen();
-
+	UFUNCTION(BlueprintPure, Category = "Points")
+		bool RedHasWon();
+	UFUNCTION(BlueprintPure, Category = "Points")
+		bool GreenHasWon();
 
 
 

@@ -7,6 +7,7 @@
 #include "GameFramework/PlayerController.h"
 #include "characterthatworks.h"
 #include "MenuHUD.h"
+#include "TimerManager.h"
 #include "SoccerGameMode.h"
 
 
@@ -14,8 +15,10 @@ ASoccerGameState::ASoccerGameState()
 {
 	PointsRed = 0;
 	PointsGreen = 0;
+	RedWinStatus = false;
+	GreenWinStatus = false;
 
-	SetReplicates(true);
+	bReplicates = true;
 	
 }
 
@@ -24,18 +27,31 @@ void ASoccerGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(ASoccerGameState, PointsGreen);
 	DOREPLIFETIME(ASoccerGameState, PointsRed);
+	DOREPLIFETIME(ASoccerGameState, GreenWinStatus);
+	DOREPLIFETIME(ASoccerGameState, RedWinStatus);
 }
 
 void ASoccerGameState::OnGreenGoalHit()
 {
-	PointsRed++;
-	
+	if(PointsRed <= 1)
+	{ 
+		PointsRed++;
+		return;
+	}
+	RedWinStatus = true;
+	ResetPoints();
 }
 
 void ASoccerGameState::OnRedGoalHit()
 {
-	PointsGreen++;
 	
+	if (PointsGreen <= 1)
+	{
+		PointsGreen++;
+		return;
+	}
+	GreenWinStatus = true;
+	ResetPoints();
 }
 
 int32 ASoccerGameState::GetPointsRed()
@@ -50,6 +66,16 @@ int32 ASoccerGameState::GetPointsGreen()
 	
 }
 
+bool ASoccerGameState::RedHasWon()
+{
+	return RedWinStatus;
+}
+
+bool ASoccerGameState::GreenHasWon()
+{
+	return GreenWinStatus;
+}
+
 void ASoccerGameState::GetController()
 {
 	
@@ -58,3 +84,17 @@ void ASoccerGameState::GetController()
 }
 
 
+void ASoccerGameState::ResetPoints()
+{
+	PointsGreen = 0;
+	PointsRed = 0;
+	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &ASoccerGameState::ResetVictory, 2.0f, false);
+	
+}
+
+void ASoccerGameState::ResetVictory()
+{
+	GreenWinStatus = false;
+	RedWinStatus = false;
+	GetWorldTimerManager().ClearTimer(MemberTimerHandle);
+}

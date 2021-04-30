@@ -19,7 +19,7 @@ AProjectile::AProjectile()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	SetReplicateMovement(true);
-	SetReplicates(true);
+	bReplicates = true;
 	BulletMesh = CreateDefaultSubobject<UStaticMeshComponent>("BulletMesh");
 	SetRootComponent(BulletMesh);
 	BulletMovement = CreateDefaultSubobject<UProjectileMovementComponent>("BulletMovement");

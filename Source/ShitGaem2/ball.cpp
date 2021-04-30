@@ -20,7 +20,7 @@ Aball::Aball()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	
-	if (GetRemoteRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
+	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
 	bCanPlay = true;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;
@@ -34,7 +34,7 @@ Aball::Aball()
 
 	SetReplicateMovement(true);
 	SetReplicatingMovement(true);
-	SetReplicates(true);
+	bReplicates = true;
 }
 
 // Called when the game starts or when spawned
@@ -254,7 +254,7 @@ void Aball::BallJump()
 		ServerBallJump();
 		return;
 	}
-	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
+	
 }
 
 //smoothing ball jump for clients
@@ -266,5 +266,6 @@ void Aball::NetMulticastBallJump_Implementation()
 //serverballjump implementation, acutal position
 void Aball::ServerBallJump_Implementation()
 {
+	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 	NetMulticastBallJump();
 }

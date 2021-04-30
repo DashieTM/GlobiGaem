@@ -20,7 +20,7 @@
 Acharacterthatworks::Acharacterthatworks()
 {
 	SetReplicateMovement(true);
-	SetReplicates(true);
+	bReplicates = true;
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	bUseControllerRotationPitch = false;
@@ -36,7 +36,7 @@ Acharacterthatworks::Acharacterthatworks()
 	PowerUpCD = 25.f;
 	BobbyNameText.FromString("");
 	
-	if (GetRemoteRole() < ROLE_Authority) SetRole(ROLE_AutonomousProxy);
+	
 	
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
@@ -296,6 +296,7 @@ void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewContr
 	if (GetLocalRole() < ROLE_Authority)
 	{
 		ServerSpawnBobbyDefault(TheNewController);
+		SetRole(ROLE_AutonomousProxy);
 		return;
 	}
 	FActorSpawnParameters SpawnParams;
