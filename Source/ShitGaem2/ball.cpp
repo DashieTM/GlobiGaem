@@ -32,8 +32,7 @@ Aball::Aball()
 	
 	OnActorHit.AddDynamic(this, &Aball::OnBallHit);
 
-	SetReplicateMovement(true);
-	SetReplicatingMovement(true);
+	
 	bReplicates = true;
 }
 
@@ -41,7 +40,7 @@ Aball::Aball()
 void Aball::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (GetLocalRole() != ROLE_Authority) BallMesh->SetSimulatePhysics(false);
 
 }
 
@@ -49,7 +48,7 @@ void Aball::BeginPlay()
 void Aball::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	OnRep_ReplicatedMovement();
 }
 
 //what happens to the ball after hit with a certain actor
@@ -81,6 +80,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			Aball::BallJump();
 			MultiProjectileHit();
 			BallSoundCount = 0;
+			
 			return;
 		}
 
@@ -96,6 +96,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		{
 			BallSoundCount = 0;
 			MultiSoundPlay();
+			
 			return;
 		}
 
@@ -110,6 +111,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		}
 		MultiSoundPlay();
 		BallSoundCount = 0;
+		
 	}
 }
 
@@ -249,23 +251,18 @@ void Aball::ServerBallDestroy_Implementation()
 // ball jump after hit with projectile
 void Aball::BallJump()
 {
-	if (GetLocalRole() < ROLE_Authority)
-	{
-		ServerBallJump();
-		return;
-	}
-	
+	NetMulticastBallJump();
 }
 
 //smoothing ball jump for clients
 void Aball::NetMulticastBallJump_Implementation()
 {
-	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
+	BallMesh->SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
 //serverballjump implementation, acutal position
 void Aball::ServerBallJump_Implementation()
 {
-	BallMesh->UPrimitiveComponent::SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
-	NetMulticastBallJump();
+	
+	
 }

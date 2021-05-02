@@ -49,6 +49,9 @@ void AProjectile::OnProjectileHit(AActor * SelfActor, AActor * OtherActor, FVect
 	}
 	if (Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(OtherActor))
 	{
+		
+		Bobby->LaunchCharacter(FVector(this->GetActorForwardVector().X, this->GetActorForwardVector().Y,this->GetActorForwardVector().Z).GetSafeNormal() * 2000, true, true);
+		AProjectile::ProjectileDestroy();
 		return;
 	}
 	AProjectile::ProjectileDestroy();

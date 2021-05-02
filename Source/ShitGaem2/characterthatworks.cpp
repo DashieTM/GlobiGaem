@@ -29,9 +29,9 @@ Acharacterthatworks::Acharacterthatworks()
 	PowerUpStrenght = 1500.f;
 	bHasPowerUp = true;
 	bCanDash = true;
-	DashCD = 2.f;
-	DashLenght = 8000.f;
-	DashFriction = 0.5f;
+	DashCD = 1.7f;
+	DashLenght =8000.f;
+	DashFriction = 0.0f;
 	DashFrictionAir = 38.0f;
 	PowerUpCD = 25.f;
 	BobbyNameText.FromString("");
@@ -41,7 +41,7 @@ Acharacterthatworks::Acharacterthatworks()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
 	GetCharacterMovement()->AirControl = 0.8f;
-	GetCharacterMovement()->JumpZVelocity = 600.0f;
+	GetCharacterMovement()->JumpZVelocity = 700.0f;
 	GetCharacterMovement()->MaxAcceleration = 10000.f;
 	GetCharacterMovement()->MaxWalkSpeed = 1100.0f;
 	
@@ -53,7 +53,7 @@ Acharacterthatworks::Acharacterthatworks()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	SoundEffectBobby = CreateDefaultSubobject<UAudioComponent>("Sound");
 	SoundEffectBobby->SetupAttachment(FollowCamera);
-	ShootingPosition = 400.f;
+	ShootingPosition = 105.f;
 	BobbyName = CreateDefaultSubobject<UTextRenderComponent>(TEXT("BobbyName"));
 	BobbyName->SetupAttachment(RootComponent);
 	BobbyName->SetText("");
@@ -78,6 +78,11 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 void Acharacterthatworks::BeginPlay()
 {
 	Super::BeginPlay();
+	if (GetLocalRole() != ROLE_Authority) 
+	{
+		this->DisableComponentsSimulatePhysics();
+	}
+	
 }
 
 // Called every frame
@@ -125,8 +130,6 @@ void Acharacterthatworks::MoveRight(float Axis)
 void Acharacterthatworks::ResetDash()
 { 
 	bCanDash = true;
-	GetCharacterMovement()->FallingLateralFriction = 8.f;
-	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
 	ServerResetDash();
 }
@@ -134,8 +137,7 @@ void Acharacterthatworks::ResetDash()
 //reset Friction after dash, called by server because of authority
 void Acharacterthatworks::ServerResetDash_Implementation()
 {
-	GetCharacterMovement()->FallingLateralFriction = 8.f;
-	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
+	bCanDash = true;
 }
 
 
@@ -148,13 +150,17 @@ void Acharacterthatworks::Dash()
 		{
 			bCanDash = false;
 			ServerDash();
+			GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
+			
 			return;
 		}
-		bCanDash = false;
 		GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 		GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-		LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, 0).GetSafeNormal() * DashLenght, true, true);
+		GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
+		bCanDash = false;
+		GetCharacterMovement()->BrakingFrictionFactor = 2.f;
+		GetCharacterMovement()->FallingLateralFriction = 8.f;
 		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
 	}
 }
@@ -162,20 +168,20 @@ void Acharacterthatworks::Dash()
 //dash implementation for server, in order to not falsly correct position
 void Acharacterthatworks::ServerDash_Implementation()
 {
-	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = true;
-	ClientDash();
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
-	GetCharacterMovement()->bIgnoreClientMovementErrorChecksAndCorrection = false;
+	
+	GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
+	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
+	GetCharacterMovement()->FallingLateralFriction = 8.f;
 }
+
+
 
 //client dash implementation for smooth movement
 void Acharacterthatworks::ClientDash_Implementation()
 {
-	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
-	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
+	
 }
 
 //servershoot implementation, authority
@@ -195,7 +201,8 @@ void Acharacterthatworks::Shoot()
 			return;
 		}
 		FTransform SpawnTransform = FollowCamera->GetComponentTransform();
-		SpawnTransform.SetLocation(FollowCamera->GetComponentRotation().Vector() * ShootingPosition + FollowCamera->GetComponentLocation());
+		
+		SpawnTransform.SetLocation(FollowCamera->GetComponentLocation() + FollowCamera->GetComponentRotation().Vector() * ShootingPosition );
 		FActorSpawnParameters SpawnParams;
 		GetWorld()->SpawnActor<AProjectile>(ProjectileBP, SpawnTransform, SpawnParams);
 		ClientBobbySound();
@@ -309,6 +316,7 @@ void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewContr
 	Acharacterthatworks::SetBobbyBuffer(BobbyDefault);
 	BobbyDefault->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyDefault);
+	TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f), true);
 	Destroy();
 }
 
@@ -336,6 +344,7 @@ void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewControlle
 	Acharacterthatworks::SetBobbyBuffer(BobbyRed);
 	BobbyRed->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyRed);
+	TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f), true);
 	Destroy();
 }
 
@@ -363,6 +372,7 @@ void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewControl
 	BobbyBuffer = BobbyGreen;
 	BobbyGreen->SetOwner(TheNewController);
 	TheNewController->Possess(BobbyGreen);
+	TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f), true);
 	Destroy();
 }
 
