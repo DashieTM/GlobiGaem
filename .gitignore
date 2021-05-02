@@ -12,3 +12,7 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
+*.pak
+.ucas
+*.ucas
+Releases/ShitGaemServerV1/LinuxServer/ShitGaem2-LinuxServer.ucas
