@@ -35,6 +35,8 @@ private:
 	FTimerHandle MemberTimerHandle2;
 	FTimerHandle MemberTimerHandle3;
 	FTimerHandle MemberTimerHandle4;
+	FTimerHandle MemberTimerHandle5;
+	FTimerHandle MemberTimerHandle6;
 
 	class Acharacterthatworks* BobbyRed;
 	class Acharacterthatworks* BobbyGreen;
@@ -119,6 +121,8 @@ public:
 	void Shoot(); 
 	void ResetShoot();
 	void ResetDash();
+	void DashMov();
+	void NoDashMov();
 
 	void SetBobbyBuffer(class Acharacterthatworks* Bobby);
 	void ClearBobbyBuffer();

@@ -40,7 +40,7 @@ Aball::Aball()
 void Aball::BeginPlay()
 {
 	Super::BeginPlay();
-	if (GetLocalRole() != ROLE_Authority) BallMesh->SetSimulatePhysics(false);
+	
 
 }
 
@@ -48,7 +48,7 @@ void Aball::BeginPlay()
 void Aball::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	OnRep_ReplicatedMovement();
+	
 }
 
 //what happens to the ball after hit with a certain actor
@@ -96,7 +96,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		{
 			BallSoundCount = 0;
 			MultiSoundPlay();
-			
+			BallMesh->SetPhysicsLinearVelocity(BallMesh->GetPhysicsLinearVelocity() * (10.f / 8000.f * (bobby->GetVelocity().Size() - 1500)  ) +1500);
 			return;
 		}
 

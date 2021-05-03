@@ -30,7 +30,7 @@ Acharacterthatworks::Acharacterthatworks()
 	bHasPowerUp = true;
 	bCanDash = true;
 	DashCD = 1.7f;
-	DashLenght =8000.f;
+	DashLenght =16000000.f;
 	DashFriction = 0.0f;
 	DashFrictionAir = 38.0f;
 	PowerUpCD = 25.f;
@@ -150,19 +150,35 @@ void Acharacterthatworks::Dash()
 		{
 			bCanDash = false;
 			ServerDash();
-			GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
+			LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
 			
 			return;
 		}
 		GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 		GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-		GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
+		
+		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle5, this, &Acharacterthatworks::DashMov, 0.01f, true);
+		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle6, this, &Acharacterthatworks::NoDashMov, 0.25f, false);
 		bCanDash = false;
-		GetCharacterMovement()->BrakingFrictionFactor = 2.f;
-		GetCharacterMovement()->FallingLateralFriction = 8.f;
-		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Acharacterthatworks::ResetDash, DashCD, false);
+		
+		GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle3, this, &Acharacterthatworks::ResetDash, DashCD, false);
+		
+		
 	}
+}
+
+void Acharacterthatworks::DashMov()
+{
+	GetCharacterMovement()->AddForce(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght);
+}
+
+void Acharacterthatworks::NoDashMov()
+{
+	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
+	GetCharacterMovement()->FallingLateralFriction = 8.f;
+	GetWorldTimerManager().ClearTimer(MemberTimerHandle5);
+	GetWorldTimerManager().ClearTimer(MemberTimerHandle6);
 }
 
 //dash implementation for server, in order to not falsly correct position
@@ -171,7 +187,7 @@ void Acharacterthatworks::ServerDash_Implementation()
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
 	
-	GetCharacterMovement()->AddImpulse(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true);
+	GetCharacterMovement()->AddForce(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght);
 	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
 	GetCharacterMovement()->FallingLateralFriction = 8.f;
 }
