@@ -24,12 +24,16 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Ball")
 	TSubclassOf<class Aball> ShitBall;
 
+	UPROPERTY(EditAnywhere, Category = "Gravity")
+		float Gravity;
+
 	UPROPERTY(Editanywhere, Category = "Sound")
 		UAudioComponent* SoundEffectBall;
 
 private:
 	int BallSoundCount;
 	int BallSoundBobby;
+	int BallHitCount;
 	bool bCanPlay;
 
 	FTimerHandle MemberTimerHandle;

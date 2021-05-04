@@ -24,6 +24,7 @@ Aball::Aball()
 	bCanPlay = true;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;
+	BallHitCount = 0;
 	BallMesh = CreateDefaultSubobject<UStaticMeshComponent>("BallMesh");
 	BallMesh->SetSimulatePhysics(true);
 	SetRootComponent(BallMesh);
@@ -31,7 +32,7 @@ Aball::Aball()
 	SoundEffectBall->SetupAttachment(BallMesh);
 	
 	OnActorHit.AddDynamic(this, &Aball::OnBallHit);
-
+	Gravity = 1000.f;
 	
 	bReplicates = true;
 }
@@ -48,6 +49,8 @@ void Aball::BeginPlay()
 void Aball::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	BallMesh->AddForce(FVector(0.f, 0.f,- Gravity * BallMesh->GetMass()));
+	
 	
 }
 
@@ -94,14 +97,21 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 
 		if (Acharacterthatworks* bobby = Cast<Acharacterthatworks>(OtherActor))
 		{
+			if (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() < 1800)
+			{
+				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 900));
+			}
+			else {
+				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size());
+			}
 			BallSoundCount = 0;
 			MultiSoundPlay();
-			BallMesh->SetPhysicsLinearVelocity(BallMesh->GetPhysicsLinearVelocity() * (10.f / 8000.f * (bobby->GetVelocity().Size() - 1500)  ) +1500);
 			return;
 		}
 
 		if (AGround* Ground = Cast<AGround>(OtherActor))
 		{
+			
 			if (BallSoundCount < 3)
 			{
 				MultiSoundPlay();
