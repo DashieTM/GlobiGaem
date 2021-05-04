@@ -22,6 +22,8 @@ public:
 
 
 
+	FReply OnFrameLimitClicked() const;
+
 	FReply OnSetBobbyNameClicked() const;
 	FReply OnConnectClicked() const;
 	FReply OnBackClicked() const;
@@ -31,6 +33,7 @@ public:
 
 	TSharedPtr<SEditableTextBox> BoxyPtr;
 	TSharedPtr<SEditableTextBox> BoxyPtr2;
+	TSharedPtr<SEditableTextBox> FrameBox;
 	TWeakObjectPtr<class AMenuHUD> OwningHUD;
 
 	virtual bool SupportsKeyboardFocus() const override { return true; };

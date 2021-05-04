@@ -47,7 +47,7 @@ protected:
 
 	TSharedPtr<class SMenuWidget> MenuWidget;
 	TSharedPtr<class SOptionsWidget> OptionWidget;
-	TSharedPtr<class SOptionsWidget> VideoOptionWidget;
+	TSharedPtr<class SOVideoOptionsWidget> VideoOptionWidget;
 	TSharedPtr<class SWidget> MenuWidgetContainer;
 	TSharedPtr<class SWidget> OptionWidgetContainer;
 	TSharedPtr<class SWidget> VideoOptionWidgetContainer;

@@ -10,6 +10,7 @@
 #include "Engine.h"
 #include "Framework/Application/SlateApplication.h"
 #include "SoccerGameState.h"
+#include "GameFramework/GameUserSettings.h"
 
 #define LOCTEXT_NAMESPACE "OptionsMenu"
 
@@ -29,6 +30,7 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 	const FText Connect = LOCTEXT("Connect", "Connect");
 	const FText ResetPoints = LOCTEXT("ResetPoints(Server only)", "ResetPoints(Server only)");
 	const FText Back = LOCTEXT("back", "back");
+	const FText FrameLimit = LOCTEXT("Frame Limit", "Frame Limit");
 
 
 	FSlateFontInfo ButtonTextStyle = FCoreStyle::Get().GetFontStyle("EmbossedText");
@@ -57,14 +59,31 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 		.Text(TitleText)
 		.Justification(ETextJustify::Center)
 		]
-	//Player Name Text Box
+	//Frame Limiter
 	+ SVerticalBox::Slot()
 		.Padding(ButtonPadding)
 		[
-			SAssignNew(BoxyPtr2, SEditableTextBox)
-			.HintText(BobbyName)
+			SNew(SHorizontalBox)
+			+ SHorizontalBox::Slot()
+		[
+			SNew(SButton)
+			.OnClicked(this, &SOVideoOptionsWidget::OnFrameLimitClicked)
+		[
+			SNew(STextBlock)
+			.Font(ButtonTextStyle)
+		.Text(FrameLimit)
+		.Justification(ETextJustify::Center)
+		]
+		]
+
+	+ SHorizontalBox::Slot()
+		.Padding(ButtonPadding)
+		[
+			SAssignNew(FrameBox, SEditableTextBox)
+			.HintText(Address)
 		.Font(ButtonTextStyle)
 		.Justification(ETextJustify::Center)
+		]
 		]
 	//Button Save Name
 	+ SVerticalBox::Slot()
@@ -118,6 +137,20 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 		];
 }
 
+FReply SOVideoOptionsWidget::OnFrameLimitClicked() const
+{
+	if (OwningHUD.IsValid())
+	{
+		if (APlayerController* PC = OwningHUD->PlayerOwner)
+		{
+			FString Command = FrameBox->GetText().ToString();
+			
+		}
+	}
+	return FReply::Handled();
+}
+
+
 //save the bobby name
 FReply SOVideoOptionsWidget::OnSetBobbyNameClicked() const
 {
@@ -151,7 +184,7 @@ FReply SOVideoOptionsWidget::OnConnectClicked() const
 //return to menu
 FReply SOVideoOptionsWidget::OnBackClicked() const
 {
-	OwningHUD->RemoveOptions();
+	OwningHUD->RemoveVideoOptions();
 	return FReply::Handled();
 }
 
@@ -160,7 +193,7 @@ FReply SOVideoOptionsWidget::OnPreviewKeyDown(const FGeometry& MyGeometry, const
 {
 	if (InKeyEvent.GetKey() == FKey("Escape") || InKeyEvent.GetKey() == FKey("Delete"))
 	{
-		OwningHUD->RemoveOptions();
+		OwningHUD->RemoveVideoOptions();
 	}
 	return FReply::Handled();
 }

@@ -119,8 +119,8 @@ void AMenuHUD::ShowVideoOptions()
 		GEngine->GameViewport->RemoveViewportWidgetContent(MenuWidgetContainer.ToSharedRef());
 		if (PlayerOwner)
 		{
-			OptionWidget = SNew(SOVideoOptionsWidget).OwningHUD(this);
-			GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(OptionWidgetContainer, SWeakWidget).PossiblyNullContent(VideoOptionWidget.ToSharedRef()));
+			VideoOptionWidget = SNew(SOVideoOptionsWidget).OwningHUD(this);
+			GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(VideoOptionWidgetContainer, SWeakWidget).PossiblyNullContent(VideoOptionWidget.ToSharedRef()));
 			FSlateApplication::Get().SetKeyboardFocus(VideoOptionWidget.ToSharedRef());
 		}
 	}
