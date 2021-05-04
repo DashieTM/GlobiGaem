@@ -65,7 +65,6 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			MultiSetHidden();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallGreenGoalHit, 0.7f, false);
 			BallSoundCount = 0;
-			BallHitCount = 0;
 			return;
 		}
 
@@ -75,7 +74,6 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			MultiSetHidden();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallRedGoalHit, 0.7f, false);
 			BallSoundCount = 0;
-			BallHitCount = 0;
 			return;
 		}
 	
@@ -85,7 +83,6 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			Aball::BallJump();
 			MultiProjectileHit();
 			BallSoundCount = 0;
-			BallHitCount = 0;
 			
 			return;
 		}
@@ -95,16 +92,20 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			BallDestroy();
 			Aball::SpawnBall();
 			BallSoundCount = 0;
-			BallHitCount = 0;
 			return;
 		}
 
 		if (Acharacterthatworks* bobby = Cast<Acharacterthatworks>(OtherActor))
 		{
-			if (BallHitCount == 0)BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * bobby->GetCharacterMovement()->GetLastUpdateVelocity() * 5);
+			if (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() < 1800)
+			{
+				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 900));
+			}
+			else {
+				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size());
+			}
 			BallSoundCount = 0;
 			MultiSoundPlay();
-			BallHitCount++;
 			return;
 		}
 
@@ -120,10 +121,8 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		}
 		MultiSoundPlay();
 		BallSoundCount = 0;
-		BallHitCount = 0;
 		
 	}
-	BallHitCount = 0;
 }
 
 //set the ball hidden for a few seconds, tape solution for the duration the goal hit function takes

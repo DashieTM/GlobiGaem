@@ -158,7 +158,7 @@ void Acharacterthatworks::Dash()
 		}
 		GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 		GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
-		LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * 8000.f, true, true);
+		LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 		GetCharacterMovement()->BrakingFrictionFactor = 2.f;
 		GetCharacterMovement()->FallingLateralFriction = 8.f;
 		//GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle5, this, &Acharacterthatworks::DashMov, 0.01f, true);
@@ -190,7 +190,7 @@ void Acharacterthatworks::ServerDash_Implementation()
 	GetCharacterMovement()->BrakingFrictionFactor = DashFriction;
 	GetCharacterMovement()->FallingLateralFriction = DashFrictionAir;
 	
-	GetCharacterMovement()->AddForce(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght);
+	LaunchCharacter(FVector(FollowCamera->GetForwardVector().X, FollowCamera->GetForwardVector().Y, FollowCamera->GetForwardVector().Z).GetSafeNormal() * DashLenght, true, true);
 	GetCharacterMovement()->BrakingFrictionFactor = 2.f;
 	GetCharacterMovement()->FallingLateralFriction = 8.f;
 }
