@@ -24,6 +24,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Ball")
 	TSubclassOf<class Aball> ShitBall;
 
+	UPROPERTY(EditAnywhere, Category = "Gravity")
+		float Gravity;
+
 	UPROPERTY(Editanywhere, Category = "Sound")
 		UAudioComponent* SoundEffectBall;
 

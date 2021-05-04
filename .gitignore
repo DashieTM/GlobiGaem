@@ -16,5 +16,13 @@ Saved
 .ucas
 *.ucas
 Releases/ShitGaemServerV1/LinuxServer/ShitGaem2-LinuxServer.ucas
-*.uproject
-*.uasset
+.uproject
+Content/StarterContent/Architecture/Floor_400x400.uasset
+Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset
+Content/StarterContent/Architecture/Floor_400x400.uasset
+Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset
+Content/StarterContent/Materials/M_Concrete_Grime.uasset
+Content/StarterContent/Materials/M_Ground_Grass.uasset
+Content/StarterContent/Materials/M_Tech_Checker_Dot.uasset
+Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset
+Content/StarterContent/Materials/M_Water_Lake.uasset
