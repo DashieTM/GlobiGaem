@@ -178,6 +178,14 @@ void Aball::ResetBallSoundEffect()
 //spawn a new ball
 void Aball::SpawnBall()
 {
+	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter)
+	{
+		ASoccerPlayerController* playerController = Cast<ASoccerPlayerController>(*iter);
+		Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(playerController->GetCharacter());
+		Bobby->GetCharacterMovement()->SetMovementMode(MOVE_None);
+		Bobby->CallCountdown();
+	}
+
 	BallDestroy();
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn = BallMesh->GetComponentTransform();
@@ -185,6 +193,7 @@ void Aball::SpawnBall()
 	BallRespawn.SetLocation(FVector(0.f, 0.f, 1100.f));
 	GetWorld()->SpawnActor<Aball>(ShitBall, BallRespawn, SpawnParams);
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle3);
+	
 }
 
 //spawn the ball serverside
@@ -192,6 +201,8 @@ void Aball::ServerSpawnBall_Implementation()
 {
 	SpawnBall();
 }
+
+
 
 //server red goal hit implementation
 void Aball::ServerCallRedGoalHit_Implementation()

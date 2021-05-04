@@ -21,8 +21,9 @@ class SHITGAEM2_API Acharacterthatworks : public ACharacter
 
 private:
 
-	bool bCanDash;
+	FString CountdownText;
 
+	bool bCanDash;
 	
 	bool bHasPowerUp;
 
@@ -37,6 +38,8 @@ private:
 	FTimerHandle MemberTimerHandle4;
 	FTimerHandle MemberTimerHandle5;
 	FTimerHandle MemberTimerHandle6;
+	FTimerHandle MemberTimerHandle7;
+	
 
 	class Acharacterthatworks* BobbyRed;
 	class Acharacterthatworks* BobbyGreen;
@@ -83,6 +86,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "PowerUpCD")
 	float PowerUpCD;
 
+	UPROPERTY(EditAnywhere, Category = "Countdown")
+		float CountdownTime;
+	
 	
 
 protected:
@@ -123,6 +129,8 @@ public:
 	void ResetDash();
 	void DashMov();
 	void NoDashMov();
+	void CallCountdown();
+	void DoCountdown();
 
 	void SetBobbyBuffer(class Acharacterthatworks* Bobby);
 	void ClearBobbyBuffer();
@@ -171,6 +179,9 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "PowerUpStatus")
 	FString ReturnPowerUpStatus();
+
+	UFUNCTION(BlueprintPure, Category = "Countdown")
+		FString ReturnCountdown();
 	
 	UFUNCTION(Server, Reliable)
 	void ServerShoot();

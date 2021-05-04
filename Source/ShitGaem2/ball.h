@@ -39,6 +39,7 @@ private:
 	FTimerHandle MemberTimerHandle;
 	FTimerHandle MemberTimerHandle2;
 	FTimerHandle MemberTimerHandle3;
+
 	
 
 protected:
@@ -89,6 +90,7 @@ public:
 
 	UFUNCTION(NetMulticast, Unreliable)
 		void MultiSetHidden();
+
 
 
 	UFUNCTION()

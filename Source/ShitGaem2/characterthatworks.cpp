@@ -30,6 +30,7 @@ Acharacterthatworks::Acharacterthatworks()
 	bHasPowerUp = true;
 	bCanDash = true;
 	DashCD = 1.7f;
+	CountdownTime = 3.f;
 	DashLenght =16000000.f;
 	DashFriction = 0.0f;
 	DashFrictionAir = 38.0f;
@@ -293,6 +294,35 @@ FString Acharacterthatworks::ReturnPowerUpStatus()
 	return "empty";
 }
 
+void Acharacterthatworks::CallCountdown()
+{
+	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle7, this, &Acharacterthatworks::DoCountdown, 1.0f, true, 0.f);
+}
+
+void Acharacterthatworks::DoCountdown()
+{
+	if (CountdownTime < 1)
+	{
+		CountdownText = "";
+		PowerUpCollected();
+		ResetDash();
+		ResetShoot();
+		this->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		GetWorldTimerManager().ClearTimer(MemberTimerHandle7);
+		return;
+	}
+	else {
+		CountdownText = CountdownText.SanitizeFloat(CountdownTime);
+		CountdownTime--;
+		}
+}
+
+//countdown
+FString Acharacterthatworks::ReturnCountdown()
+{
+	return CountdownText;
+}
+
 //delete the current character
 void Acharacterthatworks::DeleteBobby(Acharacterthatworks* Bobby)
 {
@@ -519,5 +549,4 @@ void Acharacterthatworks::ServerSetBobbyName_Implementation(const FText& LeName,
 void Acharacterthatworks::MultiSetBobbyName_Implementation(const FText& LeName, ASoccerPlayerController* BobbyController)
 {
 }
-
 
