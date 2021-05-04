@@ -16,5 +16,5 @@ Saved
 .ucas
 *.ucas
 Releases/ShitGaemServerV1/LinuxServer/ShitGaem2-LinuxServer.ucas
-.uproject
-.uasset
+*.uproject
+*.uasset
