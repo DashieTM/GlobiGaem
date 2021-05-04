@@ -29,6 +29,7 @@ public:
 		FReply OnRedClicked() const;
 		FReply OnGreenClicked() const;
 		FReply OnSpectatorClicked() const;
+		FReply OnOptionsClicked() const;
 		virtual FReply OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent) override;
 		
 		

@@ -27,8 +27,8 @@ void SMenuWidget::Construct(const FArguments& InArgs)
 	const FText Level1Text = LOCTEXT("StadiumSmall", "small stadium");
 	const FText Level2Text = LOCTEXT("StadiumBig", "big stadium");
 	const FText QuitText = LOCTEXT("Quit", "Quit");
-	const FText OptionsText = LOCTEXT("Close Menu", "Close Menu");
-	const FText MultiplayerText = LOCTEXT("Options", "Options");
+	const FText OptionsText = LOCTEXT("Options", "Options");
+	const FText MultiplayerText = LOCTEXT("Multiplayer", "Multiplayer");
 	const FText HintTextAddress = LOCTEXT("enter an IP address", "enter an IP address");
 	const FText TeamGreen = LOCTEXT("green", "green");
 	const FText TeamRed = LOCTEXT("red", "red");
@@ -91,6 +91,21 @@ void SMenuWidget::Construct(const FArguments& InArgs)
 			+ SVerticalBox::Slot()
 			.Padding(ButtonPadding)
 			[
+				SNew(SHorizontalBox)
+				+ SHorizontalBox::Slot()
+				[
+					SNew(SButton)
+					.OnClicked(this, &SMenuWidget::OnOptionsClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+				.Text(OptionsText)
+				.Justification(ETextJustify::Center)
+				]
+				]
+				
+			+ SHorizontalBox::Slot()
+				[
 				SNew(SButton)
 				.OnClicked(this, &SMenuWidget::OnMultiplayerClicked)
 				[
@@ -98,6 +113,7 @@ void SMenuWidget::Construct(const FArguments& InArgs)
 					.Font(ButtonTextStyle)
 					.Text(MultiplayerText)
 					.Justification(ETextJustify::Center)
+				]
 				]
 			]
 			//Buttons for teams
@@ -182,6 +198,12 @@ FReply SMenuWidget::OnLevel2Clicked() const
 FReply SMenuWidget::OnMultiplayerClicked() const
 {
 	OwningHUD->ShowOptions();
+	return FReply::Handled();
+}
+
+FReply SMenuWidget::OnOptionsClicked() const
+{
+	OwningHUD->ShowVideoOptions();
 	return FReply::Handled();
 }
 

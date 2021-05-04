@@ -47,8 +47,10 @@ protected:
 
 	TSharedPtr<class SMenuWidget> MenuWidget;
 	TSharedPtr<class SOptionsWidget> OptionWidget;
+	TSharedPtr<class SOptionsWidget> VideoOptionWidget;
 	TSharedPtr<class SWidget> MenuWidgetContainer;
 	TSharedPtr<class SWidget> OptionWidgetContainer;
+	TSharedPtr<class SWidget> VideoOptionWidgetContainer;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "PointsHUD", Meta = (BlueprintProtected = "true"))
 		TSubclassOf<class UUserWidget> PointsHUD;
 
@@ -73,7 +75,9 @@ public:
 	class Acharacterthatworks* GetBobbyBuffer();
 	void ClearBobbyBuffer();
 	void ShowOptions();
+	void ShowVideoOptions();
 	void RemoveOptions();
+	void RemoveVideoOptions();
 	int GetBobbyTeam();
 	void ReloadBobby(FText PlayerName);
 	void SetNameBuffer(FText& Name);

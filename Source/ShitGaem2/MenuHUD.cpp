@@ -14,6 +14,7 @@
 #include "SoccerGameState.h"
 #include "SoccerGameMode.h"
 #include "SOptionsWidget.h"
+#include "SOVideoOptionsWidget.h"
 #include "BobbyPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
@@ -101,6 +102,37 @@ void AMenuHUD::RemoveOptions()
 	if (GEngine && GEngine->GameViewport && OptionWidgetContainer.IsValid())
 	{
 		GEngine->GameViewport->RemoveViewportWidgetContent(OptionWidgetContainer.ToSharedRef());
+		if (PlayerOwner)
+		{
+			MenuWidget = SNew(SMenuWidget).OwningHUD(this);
+			GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(MenuWidgetContainer, SWeakWidget).PossiblyNullContent(MenuWidget.ToSharedRef()));
+			FSlateApplication::Get().SetKeyboardFocus(MenuWidget.ToSharedRef());
+		}
+	}
+}
+
+//show video options menu
+void AMenuHUD::ShowVideoOptions()
+{
+	if (GEngine && GEngine->GameViewport && MenuWidgetContainer.IsValid())
+	{
+		GEngine->GameViewport->RemoveViewportWidgetContent(MenuWidgetContainer.ToSharedRef());
+		if (PlayerOwner)
+		{
+			OptionWidget = SNew(SOVideoOptionsWidget).OwningHUD(this);
+			GEngine->GameViewport->AddViewportWidgetContent(SAssignNew(OptionWidgetContainer, SWeakWidget).PossiblyNullContent(VideoOptionWidget.ToSharedRef()));
+			FSlateApplication::Get().SetKeyboardFocus(VideoOptionWidget.ToSharedRef());
+		}
+	}
+}
+
+
+//remove video options and show menu
+void AMenuHUD::RemoveVideoOptions()
+{
+	if (GEngine && GEngine->GameViewport && VideoOptionWidgetContainer.IsValid())
+	{
+		GEngine->GameViewport->RemoveViewportWidgetContent(VideoOptionWidgetContainer.ToSharedRef());
 		if (PlayerOwner)
 		{
 			MenuWidget = SNew(SMenuWidget).OwningHUD(this);
