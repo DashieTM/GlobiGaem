@@ -33,6 +33,7 @@ public:
 private:
 	int BallSoundCount;
 	int BallSoundBobby;
+	int BallHitCount;
 	bool bCanPlay;
 
 	FTimerHandle MemberTimerHandle;

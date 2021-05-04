@@ -24,6 +24,7 @@ Aball::Aball()
 	bCanPlay = true;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;
+	BallHitCount = 0;
 	BallMesh = CreateDefaultSubobject<UStaticMeshComponent>("BallMesh");
 	BallMesh->SetSimulatePhysics(true);
 	SetRootComponent(BallMesh);
@@ -31,7 +32,7 @@ Aball::Aball()
 	SoundEffectBall->SetupAttachment(BallMesh);
 	
 	OnActorHit.AddDynamic(this, &Aball::OnBallHit);
-	Gravity = 4000.f;
+	Gravity = 1000.f;
 	
 	bReplicates = true;
 }
@@ -64,6 +65,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			MultiSetHidden();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallGreenGoalHit, 0.7f, false);
 			BallSoundCount = 0;
+			BallHitCount = 0;
 			return;
 		}
 
@@ -73,6 +75,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			MultiSetHidden();
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle2, this, &Aball::CallRedGoalHit, 0.7f, false);
 			BallSoundCount = 0;
+			BallHitCount = 0;
 			return;
 		}
 	
@@ -82,6 +85,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			Aball::BallJump();
 			MultiProjectileHit();
 			BallSoundCount = 0;
+			BallHitCount = 0;
 			
 			return;
 		}
@@ -91,20 +95,22 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			BallDestroy();
 			Aball::SpawnBall();
 			BallSoundCount = 0;
+			BallHitCount = 0;
 			return;
 		}
 
 		if (Acharacterthatworks* bobby = Cast<Acharacterthatworks>(OtherActor))
 		{
+			if (BallHitCount == 0)BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * bobby->GetCharacterMovement()->GetLastUpdateVelocity() * 5);
 			BallSoundCount = 0;
 			MultiSoundPlay();
-			BallMesh->SetPhysicsLinearVelocity(BallMesh->GetPhysicsLinearVelocity() * (10.f / 8000.f * (bobby->GetVelocity().Size() - 1500)  ) +1500);
+			BallHitCount++;
 			return;
 		}
 
 		if (AGround* Ground = Cast<AGround>(OtherActor))
 		{
-			BallMesh->AddForce(FVector(-BallMesh->GetPhysicsLinearVelocity().GetSafeNormal().X * Gravity * BallMesh->GetMass() * 0.5, -BallMesh->GetPhysicsLinearVelocity().GetSafeNormal().Y * Gravity * BallMesh->GetMass() * 0.5, 0.f));
+			
 			if (BallSoundCount < 3)
 			{
 				MultiSoundPlay();
@@ -114,8 +120,10 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 		}
 		MultiSoundPlay();
 		BallSoundCount = 0;
+		BallHitCount = 0;
 		
 	}
+	BallHitCount = 0;
 }
 
 //set the ball hidden for a few seconds, tape solution for the duration the goal hit function takes
