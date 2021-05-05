@@ -167,11 +167,13 @@ void AMenuHUD::SetTeamSpectator()
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				SetBobbyBuffer(BobbyOld, 0);
-				BobbyOld->Acharacterthatworks::SpawnBobbyDefault(TheNewController);
-				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-				TheNewController->SetTeamSpectator();
-				TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f));
-				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
+				if (!BobbyOld->ReturnisCountdown())
+				{
+					BobbyOld->Acharacterthatworks::SpawnBobbyDefault(TheNewController);
+					Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+					TheNewController->SetTeamSpectator();
+					GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
+				}
 			}
 		}
 	}
@@ -190,11 +192,13 @@ void AMenuHUD::SetTeamRed()
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				SetBobbyBuffer(BobbyOld, 2);
-				BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController);
-				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-				TheNewController->SetTeamRed();
-				TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
-				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
+				if (!BobbyOld->ReturnisCountdown())
+				{
+					BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController, false);
+					Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
+					TheNewController->SetTeamRed();
+					GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
+				}
 			}
 		}
 	}
@@ -213,11 +217,13 @@ void AMenuHUD::SetTeamGreen()
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				SetBobbyBuffer(BobbyOld, 1);
-				BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
+				if(!BobbyOld->ReturnisCountdown())
+				{ 
+				BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController, false);
 				Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 				TheNewController->SetTeamGreen();
-				TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
+				}
 			}
 		}
 	}
@@ -238,9 +244,8 @@ void AMenuHUD::RespawnBobby()
 			Acharacterthatworks* BobbyOld;
 			BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			SetBobbyBuffer(BobbyOld, 1);
-			BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController);
+			BobbyOld->Acharacterthatworks::SpawnBobbyGreen(TheNewController, true);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-			TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f));
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			break;
 		}
@@ -250,9 +255,8 @@ void AMenuHUD::RespawnBobby()
 			Acharacterthatworks* BobbyOld;
 			BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
 			SetBobbyBuffer(BobbyOld, 2);
-			BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController);
+			BobbyOld->Acharacterthatworks::SpawnBobbyRed(TheNewController, true);
 			Bobby = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
-			TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f));
 			GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle, this, &AMenuHUD::ReloadBobbyWSpawn, 0.1f, false);
 			break;
 		}

@@ -26,6 +26,7 @@ Acharacterthatworks::Acharacterthatworks()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = true;
+	bIsCountdown = false;
 	PowerUpStrenght = 1500.f;
 	bHasPowerUp = true;
 	bCanDash = true;
@@ -72,6 +73,9 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 	DOREPLIFETIME(Acharacterthatworks, BobbyNameText);
 	DOREPLIFETIME(Acharacterthatworks, bCanFire);
 	DOREPLIFETIME(Acharacterthatworks, SoundEffectBobby);
+	DOREPLIFETIME(Acharacterthatworks, CountdownText);
+	DOREPLIFETIME(Acharacterthatworks, CountdownTime);
+	DOREPLIFETIME(Acharacterthatworks, bIsCountdown);
 }
 
 
@@ -296,18 +300,29 @@ FString Acharacterthatworks::ReturnPowerUpStatus()
 
 void Acharacterthatworks::CallCountdown()
 {
-	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle7, this, &Acharacterthatworks::DoCountdown, 1.0f, true, 0.f);
+}
+
+void Acharacterthatworks::CallCountdownServer_Implementation()
+{
+
+}
+
+void Acharacterthatworks::CallCountdownClient_Implementation()
+{
+	
 }
 
 void Acharacterthatworks::DoCountdown()
 {
+	bIsCountdown = true;
 	if (CountdownTime < 1)
 	{
 		CountdownText = "";
 		PowerUpCollected();
 		ResetDash();
 		ResetShoot();
-		this->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		bIsCountdown = false;
 		GetWorldTimerManager().ClearTimer(MemberTimerHandle7);
 		return;
 	}
@@ -349,80 +364,105 @@ void Acharacterthatworks::ServerSpawnBobbyDefault_Implementation(ASoccerPlayerCo
 //spawn spectator bobby
 void Acharacterthatworks::SpawnBobbyDefault(ASoccerPlayerController* TheNewController)
 {
-	if (GetLocalRole() < ROLE_Authority)
-	{
-		ServerSpawnBobbyDefault(TheNewController);
-		SetRole(ROLE_AutonomousProxy);
-		return;
+	if(!bIsCountdown)
+	{ 
+		if (GetLocalRole() < ROLE_Authority)
+		{
+			ServerSpawnBobbyDefault(TheNewController);
+			SetRole(ROLE_AutonomousProxy);
+			return;
+		}
+		FActorSpawnParameters SpawnParams;
+		FTransform BallRespawn;
+		BallRespawn.TransformPosition(FVector());
+		BallRespawn.SetRotation(FQuat(FRotator(0.f, 0.f, 0.0f)));
+		BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+		BallRespawn.SetLocation(FVector(-4675.f, 0.f, 641.f));
+		BobbyDefault = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Default, BallRespawn, SpawnParams);
+		Acharacterthatworks::SetBobbyBuffer(BobbyDefault);
+		BobbyDefault->SetOwner(TheNewController);
+		TheNewController->Possess(BobbyDefault);
+		TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f), true);
+		Destroy();
 	}
-	FActorSpawnParameters SpawnParams;
-	FTransform BallRespawn;
-	BallRespawn.TransformPosition(FVector());
-	BallRespawn.SetRotation(FQuat(FRotator(0.f, 0.f, 0.0f)));
-	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	BallRespawn.SetLocation(FVector(-4675.f, 0.f, 641.f));
-	BobbyDefault = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Default, BallRespawn, SpawnParams);
-	Acharacterthatworks::SetBobbyBuffer(BobbyDefault);
-	BobbyDefault->SetOwner(TheNewController);
-	TheNewController->Possess(BobbyDefault);
-	TheNewController->ClientSetRotation(FRotator(0.f, 0.f, 0.0f), true);
-	Destroy();
 }
 
 //spawn bobby red, authority
-void Acharacterthatworks::ServerSpawnBobbyRed_Implementation(ASoccerPlayerController* TheNewController)
+void Acharacterthatworks::ServerSpawnBobbyRed_Implementation(ASoccerPlayerController* TheNewController ,bool ballrespawn)
 {
-	SpawnBobbyRed(TheNewController);
+	SpawnBobbyRed(TheNewController, ballrespawn);
 }
 
 //spawn bobby red
-void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewController)
+void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewController, bool ballrespawn)
 {
-	if (GetLocalRole() < ROLE_Authority)
+	if (!bIsCountdown)
 	{
-		ServerSpawnBobbyRed(TheNewController);
-		return;
+		if (GetLocalRole() < ROLE_Authority)
+		{
+			ServerSpawnBobbyRed(TheNewController, ballrespawn);
+			return;
+		}
+		FActorSpawnParameters SpawnParams;
+		FTransform BallRespawn;
+		BallRespawn.TransformPosition(FVector());
+		BallRespawn.SetRotation(FQuat(FRotator(0.f, 90.f, 0.0f)));
+		BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+		BallRespawn.SetLocation(FVector(0.f, -4500.f, 380.f));
+		BobbyRed = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Red, BallRespawn, SpawnParams);
+		Acharacterthatworks::SetBobbyBuffer(BobbyRed);
+		BobbyRed->SetOwner(TheNewController);
+		TheNewController->Possess(BobbyRed);
+		TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f), true);
+		if (ballrespawn)
+		{
+			BobbyRed->GetCharacterMovement()->SetMovementMode(MOVE_None);
+			GetWorld()->GetTimerManager().SetTimer(BobbyRed->MemberTimerHandle7, BobbyRed, &Acharacterthatworks::DoCountdown, 1.0f, true, 0.f);
+			BobbyRed->bCanDash = false;
+			BobbyRed->bCanFire = false;
+			BobbyRed->bHasPowerUp = false;
+		}
+		Destroy();
 	}
-	FActorSpawnParameters SpawnParams;
-	FTransform BallRespawn;
-	BallRespawn.TransformPosition(FVector());
-	BallRespawn.SetRotation(FQuat(FRotator(0.f, 90.f, 0.0f)));
-	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	BallRespawn.SetLocation(FVector(0.f, -4500.f, 380.f));
-	BobbyRed = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Red, BallRespawn, SpawnParams);
-	Acharacterthatworks::SetBobbyBuffer(BobbyRed);
-	BobbyRed->SetOwner(TheNewController);
-	TheNewController->Possess(BobbyRed);
-	TheNewController->ClientSetRotation(FRotator(0.f, 90.f, 0.0f), true);
-	Destroy();
 }
 
 //spawn bobby green, authority
-void Acharacterthatworks::ServerSpawnBobbyGreen_Implementation(ASoccerPlayerController* TheNewController)
+void Acharacterthatworks::ServerSpawnBobbyGreen_Implementation(ASoccerPlayerController* TheNewController ,bool ballrespawn)
 {
-	SpawnBobbyGreen(TheNewController);
+	SpawnBobbyGreen(TheNewController, ballrespawn);
 }
 
 //spawn bobby green
-void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewController)
+void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewController, bool ballrespawn)
 {
-	if (GetLocalRole() < ROLE_Authority)
+	if (!bIsCountdown)
 	{
-		ServerSpawnBobbyGreen(TheNewController);
-		return;
+		if (GetLocalRole() < ROLE_Authority)
+		{
+			ServerSpawnBobbyGreen(TheNewController, ballrespawn);
+			return;
+		}
+		FActorSpawnParameters SpawnParams;
+		FTransform BallRespawn;
+		BallRespawn.TransformPosition(FVector());
+		BallRespawn.SetRotation(FQuat(FRotator(0.f, -90.f, 0.0f)));
+		BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+		BallRespawn.SetLocation(FVector(0.f, 4500.f, 380.f));
+		BobbyGreen = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Green, BallRespawn, SpawnParams);
+		BobbyBuffer = BobbyGreen;
+		BobbyGreen->SetOwner(TheNewController);
+		TheNewController->Possess(BobbyGreen);
+		TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f), true);
+		if (ballrespawn == true)
+		{
+			BobbyGreen->GetCharacterMovement()->SetMovementMode(MOVE_None);
+			GetWorld()->GetTimerManager().SetTimer(BobbyGreen->MemberTimerHandle7, BobbyGreen, &Acharacterthatworks::DoCountdown, 1.0f, true, 0.f);
+			BobbyGreen->bCanDash = false;
+			BobbyGreen->bCanFire = false;
+			BobbyGreen->bHasPowerUp = false;
+		}
+		Destroy();
 	}
-	FActorSpawnParameters SpawnParams;
-	FTransform BallRespawn;
-	BallRespawn.TransformPosition(FVector());
-	BallRespawn.SetRotation(FQuat(FRotator(0.f, -90.f, 0.0f)));
-	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	BallRespawn.SetLocation(FVector(0.f, 4500.f, 380.f));
-	BobbyGreen = GetWorld()->SpawnActor<Acharacterthatworks>(Bobby_Green, BallRespawn, SpawnParams);
-	BobbyBuffer = BobbyGreen;
-	BobbyGreen->SetOwner(TheNewController);
-	TheNewController->Possess(BobbyGreen);
-	TheNewController->ClientSetRotation(FRotator(0.f, -90.f, 0.0f), true);
-	Destroy();
 }
 
 //set the bobby buffer
@@ -444,7 +484,7 @@ void Acharacterthatworks::ClearBobbyBuffer()
 }
 
 //determine which bobby should spawn
-void Acharacterthatworks::ClientWhichTeam_Implementation(ASoccerPlayerController* SController)
+void Acharacterthatworks::ClientWhichTeam_Implementation(ASoccerPlayerController* SController, bool ballrespawn)
 {
 	if (GetWorld()->GetName() == "soccer4p")
 	{
@@ -458,12 +498,12 @@ void Acharacterthatworks::ClientWhichTeam_Implementation(ASoccerPlayerController
 			}
 			case 1:
 			{
-				Acharacterthatworks::SpawnBobbyGreen(SController);
+				Acharacterthatworks::SpawnBobbyGreen(SController, true);
 				break;
 			}
 			case 2:
 			{
-				Acharacterthatworks::SpawnBobbyRed(SController);
+				Acharacterthatworks::SpawnBobbyRed(SController, true);
 			}
 		}
 	}
@@ -550,3 +590,7 @@ void Acharacterthatworks::MultiSetBobbyName_Implementation(const FText& LeName, 
 {
 }
 
+bool Acharacterthatworks::ReturnisCountdown()
+{
+	return bIsCountdown;
+}

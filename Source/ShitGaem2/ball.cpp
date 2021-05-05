@@ -83,7 +83,6 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 			Aball::BallJump();
 			MultiProjectileHit();
 			BallSoundCount = 0;
-			
 			return;
 		}
 
@@ -178,23 +177,19 @@ void Aball::ResetBallSoundEffect()
 //spawn a new ball
 void Aball::SpawnBall()
 {
-	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter)
-	{
-		ASoccerPlayerController* playerController = Cast<ASoccerPlayerController>(*iter);
-		Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(playerController->GetCharacter());
-		Bobby->GetCharacterMovement()->SetMovementMode(MOVE_None);
-		Bobby->CallCountdown();
-	}
-
-	BallDestroy();
 	FActorSpawnParameters SpawnParams;
 	FTransform BallRespawn = BallMesh->GetComponentTransform();
 	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
 	BallRespawn.SetLocation(FVector(0.f, 0.f, 1100.f));
 	GetWorld()->SpawnActor<Aball>(ShitBall, BallRespawn, SpawnParams);
-	GetWorldTimerManager().ClearTimer(MemberTimerHandle3);
+}
+
+
+void Aball::MultiCountdown_Implementation(Acharacterthatworks* bobby)
+{
 	
 }
+
 
 //spawn the ball serverside
 void Aball::ServerSpawnBall_Implementation()
@@ -227,10 +222,11 @@ void Aball::CallGreenGoalHit()
 	{
 		ASoccerPlayerController* playerController = Cast<ASoccerPlayerController>(*iter);
 		Acharacterthatworks* Bobby = Cast<Acharacterthatworks>(playerController->GetCharacter());
-		Bobby->ClientWhichTeam(playerController);
+		Bobby->ClientWhichTeam(playerController, true);
 	}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
 	Aball::SpawnBall();
+	BallDestroy();
 }
 
 //increase the green points and reset the ball and characters
@@ -244,10 +240,11 @@ void Aball::CallRedGoalHit()
 		{
 		ASoccerPlayerController* playerController = Cast<ASoccerPlayerController>(*iter);
 		Acharacterthatworks* Bobby =Cast<Acharacterthatworks>(playerController->GetCharacter());
-		Bobby->ClientWhichTeam(playerController);
+		Bobby->ClientWhichTeam(playerController, true);
 		}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
 	Aball::SpawnBall();
+	BallDestroy();
 }
 
 //destroy the ball
@@ -284,6 +281,8 @@ void Aball::NetMulticastBallJump_Implementation()
 //serverballjump implementation, acutal position
 void Aball::ServerBallJump_Implementation()
 {
-	
-	
+}
+
+void Aball::CallCountdown()
+{
 }

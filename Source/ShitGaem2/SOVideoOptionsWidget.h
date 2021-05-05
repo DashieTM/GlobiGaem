@@ -24,8 +24,10 @@ public:
 
 	FReply OnFrameLimitClicked() const;
 
-	FReply OnSetBobbyNameClicked() const;
-	FReply OnConnectClicked() const;
+	FReply OnVSyncClicked() const;
+	FReply OnFullscreenClicked() const;
+	FReply OnVSyncOFFClicked() const;
+	FReply OnFullscreenOFFClicked() const;
 	FReply OnBackClicked() const;
 
 	virtual FReply OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent) override;

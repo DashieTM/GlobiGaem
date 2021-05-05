@@ -20,8 +20,7 @@ class SHITGAEM2_API Acharacterthatworks : public ACharacter
 	GENERATED_BODY()
 
 private:
-
-	FString CountdownText;
+	
 
 	bool bCanDash;
 	
@@ -29,6 +28,7 @@ private:
 
 	UPROPERTY(ReplicatedUsing = OnRep_CurrentName)
 		FText BobbyNameText;
+
 	
 	FTransform SpawnTransformPowerUp;
 
@@ -47,6 +47,12 @@ private:
 
 	UPROPERTY(Replicated)
 	bool bCanFire;
+
+	UPROPERTY(Replicated)
+		bool bIsCountdown;
+
+	UPROPERTY(Replicated)
+		FString CountdownText;
 
 	UPROPERTY(Replicated)
 		class Acharacterthatworks* BobbyBuffer;
@@ -86,7 +92,7 @@ private:
 	UPROPERTY(EditAnywhere, Category = "PowerUpCD")
 	float PowerUpCD;
 
-	UPROPERTY(EditAnywhere, Category = "Countdown")
+	UPROPERTY(EditAnywhere, Category = "Countdown", Replicated)
 		float CountdownTime;
 	
 	
@@ -131,6 +137,7 @@ public:
 	void NoDashMov();
 	void CallCountdown();
 	void DoCountdown();
+	bool ReturnisCountdown();
 
 	void SetBobbyBuffer(class Acharacterthatworks* Bobby);
 	void ClearBobbyBuffer();
@@ -159,10 +166,10 @@ public:
 	void SpawnBobbyDefault(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION()
-	void SpawnBobbyRed(class ASoccerPlayerController* TheNewController);
+	void SpawnBobbyRed(class ASoccerPlayerController* TheNewController, bool ballrespawn);
 
 	UFUNCTION()
-	void SpawnBobbyGreen(class ASoccerPlayerController* TheNewController);
+	void SpawnBobbyGreen(class ASoccerPlayerController* TheNewController, bool ballrespawn);
 
 	UFUNCTION()
 	void UsePowerUp();
@@ -193,14 +200,14 @@ public:
 	void ServerSpawnBobbyDefault(class ASoccerPlayerController* TheNewController);
 
 	UFUNCTION(Server, Reliable)
-	void ServerSpawnBobbyRed(class ASoccerPlayerController* TheNewController);
+	void ServerSpawnBobbyRed(class ASoccerPlayerController* TheNewController ,bool ballrespawn);
 
 	UFUNCTION(Server, Reliable)
 		void ServerResetDash();
 
 
 	UFUNCTION(Server, Reliable)
-	void ServerSpawnBobbyGreen(class ASoccerPlayerController* TheNewController);
+	void ServerSpawnBobbyGreen(class ASoccerPlayerController* TheNewController ,bool ballrespawn);
 
 	UFUNCTION(Server, Reliable)
 	void ServerDash();
@@ -214,6 +221,11 @@ public:
 	UFUNCTION(Server, Reliable)
 	void ServerSpawnPowerUpDelay();
 
+	UFUNCTION(Server, Reliable)
+		void CallCountdownServer();
+
+	UFUNCTION(Server, Reliable)
+		void CallCountdownClient();
 
 	UFUNCTION(Server, Reliable)
 	void ServerSetBobbyName(const FText& LeName, ASoccerPlayerController* BobbyController);
@@ -223,7 +235,7 @@ public:
 	void ClientDash();
 
 	UFUNCTION(Client, Reliable)
-	void ClientWhichTeam(class ASoccerPlayerController* SController); //which character are is the client requesting to spawn?
+	void ClientWhichTeam(class ASoccerPlayerController* SController, bool ballrespawn); //which character are is the client requesting to spawn?
 
 	UFUNCTION(Client, Reliable)
 	void ClientUsePowerUp();

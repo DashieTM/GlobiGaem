@@ -39,6 +39,7 @@ private:
 	FTimerHandle MemberTimerHandle;
 	FTimerHandle MemberTimerHandle2;
 	FTimerHandle MemberTimerHandle3;
+	FTimerHandle MemberTimerHandle4;
 
 	
 
@@ -56,6 +57,7 @@ public:
 	void BallDestroy();
 	void BallJump();
 	void ResetBallSoundEffect();
+	void CallCountdown();
 	
 
 	UFUNCTION(Server, Reliable)
@@ -90,6 +92,9 @@ public:
 
 	UFUNCTION(NetMulticast, Unreliable)
 		void MultiSetHidden();
+
+	UFUNCTION(NetMulticast, Unreliable)
+		void MultiCountdown(Acharacterthatworks* bobby);
 
 
 

@@ -20,12 +20,14 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 
 	OwningHUD = InArgs._OwningHUD;
 
-	const FMargin ContentPadding = FMargin(425.0f, 225.0f);
-	const FMargin ButtonPadding = FMargin(15.f);
+	const FMargin ContentPadding = FMargin(500.0f, 300.0f);
+	const FMargin ButtonPadding = FMargin(10.f);
 
 	const FText TitleText = LOCTEXT("OptionsTitle", "Options");
-	const FText BobbyName = LOCTEXT("BobbyName", "Player");
-	const FText SetBobbyName = LOCTEXT("SaveBobbyName", "Save");
+	const FText VsyncOn = LOCTEXT("Vsync ON", "Vsync ON");
+	const FText FullscreenOn = LOCTEXT("Fullscreen", "Fullscreen");
+	const FText VsyncOff = LOCTEXT("Vsync OFF", "Vsync OFF");
+	const FText FullscreenOff = LOCTEXT("Windowed", "Windowed");
 	const FText Address = LOCTEXT("Address", "enter an IP address");
 	const FText Connect = LOCTEXT("Connect", "Connect");
 	const FText ResetPoints = LOCTEXT("ResetPoints(Server only)", "ResetPoints(Server only)");
@@ -34,7 +36,7 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 
 
 	FSlateFontInfo ButtonTextStyle = FCoreStyle::Get().GetFontStyle("EmbossedText");
-	ButtonTextStyle.Size = 25.f;
+	ButtonTextStyle.Size = 29.f;
 
 	FSlateFontInfo TitleTextStyle = ButtonTextStyle;
 	TitleTextStyle.Size = 38.0f;
@@ -80,44 +82,65 @@ void SOVideoOptionsWidget::Construct(const FArguments& InArgs)
 		.Padding(ButtonPadding)
 		[
 			SAssignNew(FrameBox, SEditableTextBox)
-			.HintText(Address)
+			.HintText(FrameLimit)
 		.Font(ButtonTextStyle)
 		.Justification(ETextJustify::Center)
 		]
 		]
-	//Button Save Name
+	//VSync on and off
 	+ SVerticalBox::Slot()
 		.Padding(ButtonPadding)
 		[
+			SNew(SHorizontalBox)
+			+SHorizontalBox::Slot()
+		[
 			SNew(SButton)
-			.OnClicked(this, &SOVideoOptionsWidget::OnSetBobbyNameClicked)
+			.OnClicked(this, &SOVideoOptionsWidget::OnVSyncClicked)
 		[
 			SNew(STextBlock)
 			.Font(ButtonTextStyle)
-		.Text(SetBobbyName)
+		.Text(VsyncOn)
 		.Justification(ETextJustify::Center)
 		]
 		]
-	//IP address Box
+			+ SHorizontalBox::Slot()
+				[
+				SNew(SButton)
+				.OnClicked(this, &SOVideoOptionsWidget::OnVSyncOFFClicked)
+				[
+					SNew(STextBlock)
+					.Font(ButtonTextStyle)
+				.Text(VsyncOff)
+				.Justification(ETextJustify::Center)
+				]
+		]
+		]
+	//fullscreen on and off
 	+ SVerticalBox::Slot()
 		.Padding(ButtonPadding)
 		[
-			SAssignNew(BoxyPtr, SEditableTextBox)
-			.HintText(Address)
-		.Font(ButtonTextStyle)
-		.Justification(ETextJustify::Center)
-		]
-	//Connect to IP
-	+ SVerticalBox::Slot()
-		.Padding(ButtonPadding)
+			SNew(SHorizontalBox)
+			+ SHorizontalBox::Slot()
 		[
 			SNew(SButton)
-			.OnClicked(this, &SOVideoOptionsWidget::OnConnectClicked)
+			.OnClicked(this, &SOVideoOptionsWidget::OnFullscreenClicked)
 		[
 			SNew(STextBlock)
 			.Font(ButtonTextStyle)
-		.Text(Connect)
+		.Text(FullscreenOn)
 		.Justification(ETextJustify::Center)
+		]
+		]
+	+ SHorizontalBox::Slot()
+		[
+			SNew(SButton)
+			.OnClicked(this, &SOVideoOptionsWidget::OnFullscreenOFFClicked)
+		[
+			SNew(STextBlock)
+			.Font(ButtonTextStyle)
+		.Text(FullscreenOff)
+		.Justification(ETextJustify::Center)
+		]
 		]
 		]
 	//Button Quit
@@ -144,41 +167,75 @@ FReply SOVideoOptionsWidget::OnFrameLimitClicked() const
 		if (APlayerController* PC = OwningHUD->PlayerOwner)
 		{
 			FString Command = FrameBox->GetText().ToString();
-			
+			if(Command.IsNumeric())
+			{ 
+			float limit = FCString::Atof(*Command);
+			GEngine->GetGameUserSettings()->SetFrameRateLimit(limit);
+			GEngine->GetGameUserSettings()->ApplySettings(true);
+			}
 		}
 	}
 	return FReply::Handled();
 }
 
 
-//save the bobby name
-FReply SOVideoOptionsWidget::OnSetBobbyNameClicked() const
+//vsync on
+FReply SOVideoOptionsWidget::SOVideoOptionsWidget::OnVSyncClicked() const
 {
 	if (OwningHUD.IsValid())
 	{
 		if (APlayerController* PC = OwningHUD->PlayerOwner)
 		{
-			FText PlayerName = BoxyPtr2->GetText();
-			OwningHUD->ReloadBobby(PlayerName);
+				GEngine->GetGameUserSettings()->SetVSyncEnabled(true);
+				GEngine->GetGameUserSettings()->ApplySettings(true);
 		}
 	}
 	return FReply::Handled();
 }
-
-//connect to entered IP
-FReply SOVideoOptionsWidget::OnConnectClicked() const
+//vsync off
+FReply SOVideoOptionsWidget::SOVideoOptionsWidget::OnVSyncOFFClicked() const
 {
 	if (OwningHUD.IsValid())
 	{
 		if (APlayerController* PC = OwningHUD->PlayerOwner)
 		{
-			FString Command = BoxyPtr->GetText().ToString();
-			Command = "open " + Command;
-			PC->ConsoleCommand(Command);
+			GEngine->GetGameUserSettings()->SetVSyncEnabled(false);
+			GEngine->GetGameUserSettings()->ApplySettings(true);
 		}
 	}
 	return FReply::Handled();
 }
+
+
+
+//fullscreen on
+FReply SOVideoOptionsWidget::SOVideoOptionsWidget::OnFullscreenClicked() const
+{
+	if (OwningHUD.IsValid())
+	{
+		if (APlayerController* PC = OwningHUD->PlayerOwner)
+		{
+				GEngine->GetGameUserSettings()->SetFullscreenMode(EWindowMode::Fullscreen);
+		}
+	}
+	GEngine->GetGameUserSettings()->ApplySettings(true);
+	return FReply::Handled();
+}
+
+//fullscreen off
+FReply SOVideoOptionsWidget::SOVideoOptionsWidget::OnFullscreenOFFClicked() const
+{
+	if (OwningHUD.IsValid())
+	{
+		if (APlayerController* PC = OwningHUD->PlayerOwner)
+		{
+				GEngine->GetGameUserSettings()->SetFullscreenMode(EWindowMode::Windowed);
+		}
+	}
+	GEngine->GetGameUserSettings()->ApplySettings(true);
+	return FReply::Handled();
+}
+
 
 
 //return to menu
