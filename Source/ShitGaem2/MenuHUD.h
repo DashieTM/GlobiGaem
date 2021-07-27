@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
+#include "SoccerGameState.h"
 #include "MenuHUD.generated.h"
 
 
@@ -23,6 +24,7 @@ private:
 	bool BobbyDefaultExists;
 	bool IsServer;
 	FText BobbyName;
+	class ASoccerGameState* GameState;
 
 	FTimerHandle MemberTimerHandle;
 

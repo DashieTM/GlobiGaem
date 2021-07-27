@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "SoccerGameMode.h"
 #include "Components/AudioComponent.h"
+//#include "SoccerGameState.h"
 #include "ball.generated.h"
 
 UCLASS()
@@ -40,12 +41,13 @@ private:
 	FTimerHandle MemberTimerHandle2;
 	FTimerHandle MemberTimerHandle3;
 	FTimerHandle MemberTimerHandle4;
-
+	//class ASoccerGameState* GameStateBall;
 	
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 
 public:	
 	// Called every frame

@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "ball.h"
 #include "SoccerGameState.generated.h"
+
 
 /**
  * 
@@ -15,6 +17,12 @@ class SHITGAEM2_API ASoccerGameState : public AGameStateBase
 	GENERATED_BODY()
 	
 private:
+	UPROPERTY(Replicated)
+		int32 PlayersGreen;
+
+	UPROPERTY(Replicated)
+		int32 PlayersRed;
+
 	UPROPERTY(Replicated)
 	int32 PointsGreen;
 
@@ -44,8 +52,13 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Default Bobby")
 		TSubclassOf<class Acharacterthatworks> Bobby_Default;
+	
+	FTransform Ball;
+	FActorSpawnParameters SpawnParams2;
+	class Aball* BallInPlay;
 
-
+	UPROPERTY(EditAnywhere, Category = "Default Bobby")
+		TSubclassOf<class Aball> Ball_Default;
 
 protected:
 
@@ -62,8 +75,15 @@ public:
 	void ClearBobbyBuffer();
 	void ResetPoints();
 	void ResetVictory();
+	void PlayersGreenIncrease();
+	void PlayersRedIncrease();
+	void StartGame();
+	void ResetBall();
 
-
+	UFUNCTION(BlueprintPure, Category = "Players")
+		int32 GetPlayersRed();
+	UFUNCTION(BlueprintPure, Category = "Players")
+		int32 GetPlayersGreen();
 	UFUNCTION(BlueprintPure, Category = "Points")
 		int32 GetPointsRed();
 	UFUNCTION(BlueprintPure, Category = "Points")

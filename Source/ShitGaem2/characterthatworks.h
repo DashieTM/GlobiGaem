@@ -22,9 +22,6 @@ class SHITGAEM2_API Acharacterthatworks : public ACharacter
 private:
 	
 
-	bool bCanDash;
-	
-	bool bHasPowerUp;
 
 	UPROPERTY(ReplicatedUsing = OnRep_CurrentName)
 		FText BobbyNameText;
@@ -47,6 +44,12 @@ private:
 
 	UPROPERTY(Replicated)
 	bool bCanFire;
+
+	UPROPERTY(Replicated)
+	bool bCanDash;
+
+	UPROPERTY(Replicated)
+	bool bHasPowerUp;
 
 	UPROPERTY(Replicated)
 		bool bIsCountdown;

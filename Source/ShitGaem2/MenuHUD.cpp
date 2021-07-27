@@ -35,6 +35,7 @@ void AMenuHUD::BeginPlay()
 	Team = 0;
 	SetBobbyBuffer (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()),0);
 	ShowMenu();
+	GameState = Cast<ASoccerGameState>(GetWorld()->GetGameState());
 }
 
 //show the menu
@@ -188,6 +189,7 @@ void AMenuHUD::SetTeamRed()
 		{
 			if (BobbyBuffer)
 			{
+				GameState->PlayersRedIncrease();
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
@@ -213,6 +215,7 @@ void AMenuHUD::SetTeamGreen()
 		{
 			if (BobbyBuffer)
 			{
+				GameState->PlayersGreenIncrease();
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));

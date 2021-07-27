@@ -72,6 +72,8 @@ void Acharacterthatworks::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >
 	DOREPLIFETIME(Acharacterthatworks, BobbyBufferOld);
 	DOREPLIFETIME(Acharacterthatworks, BobbyNameText);
 	DOREPLIFETIME(Acharacterthatworks, bCanFire);
+	DOREPLIFETIME(Acharacterthatworks, bHasPowerUp);
+	DOREPLIFETIME(Acharacterthatworks, bCanDash);
 	DOREPLIFETIME(Acharacterthatworks, SoundEffectBobby);
 	DOREPLIFETIME(Acharacterthatworks, CountdownText);
 	DOREPLIFETIME(Acharacterthatworks, CountdownTime);

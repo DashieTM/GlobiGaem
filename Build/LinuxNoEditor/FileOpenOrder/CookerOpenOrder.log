@@ -1,0 +1,469 @@
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/SoccerPlayerController_BP.uasset" 0
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Basic_Wall.uasset" 1
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Sphere.uasset" 2
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Spark_Core.uasset" 3
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Spark.uasset" 4
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Gradient/RadialGradient.uasset" 5
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Radial_Gradient.uasset" 6
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_Tiled_D.uasset" 7
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Smoke_SubUV.uasset" 8
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset" 9
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Sparks.uasset" 10
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_D.uasset" 11
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Gold_N.uasset" 12
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_MacroVariation.uasset" 13
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Gold.uasset" 14
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/PowerUpNew.uasset" 15
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/gunshotsilenced.uasset" 16
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_Skeleton.uasset" 17
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_UCX_Shape_NarrowCapsule_PhysicsAsset.uasset" 18
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_Skeleton.uasset" 19
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim_Shape_NarrowCapsule_PhysicsAsset.uasset" 20
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_N.uasset" 21
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Oak_D.uasset" 22
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Oak.uasset" 23
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/ogrim.uasset" 24
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_M.uasset" 25
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Water_N.uasset" 26
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Perlin_Noise_M.uasset" 27
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BlendAngleCorrectedNormals.uasset" 28
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Water_Ocean.uasset" 29
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uasset" 30
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uasset" 31
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uasset" 32
+"../../../Engine/Content/EngineMaterials/WorldGridMaterial.uasset" 33
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/MaterialSphere.uasset" 34
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/ShitProjectile.uasset" 35
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_N.uasset" 36
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Pine_D.uasset" 37
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Pine.uasset" 38
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Red.uasset" 39
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_N.uasset" 40
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_M.uasset" 41
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Floor_Walnut_D.uasset" 42
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Polished.uasset" 43
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Ogrim_Green.uasset" 44
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Red.uasset" 45
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Green.uasset" 46
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Bobby_Default.uasset" 47
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/SoccerGameState_BP.uasset" 48
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/selfimplemented/crosshair__2_.uasset" 49
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/HUD/HUD.uasset" 50
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/MenuHUD_BP.uasset" 51
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/ShitGamemode.uasset" 52
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Collapse01.uasset" 53
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Collapse02.uasset" 54
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Fire01.uasset" 55
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Fire_Sparks01.uasset" 56
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Smoke01.uasset" 57
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Birds01.uasset" 58
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Music01.uasset" 59
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Wind05.uasset" 60
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Wind06.uasset" 61
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Steam01.uasset" 62
+"../../../Engine/Content/ArtTools/RenderToTexture/Meshes/S_1_Unit_Plane.uasset" 63
+"../../../Engine/Content/BasicShapes/Plane.uasset" 64
+"../../../Engine/Content/EngineMaterials/DefaultMaterial.uasset" 65
+"../../../Engine/Content/BasicShapes/Sphere.uasset" 66
+"../../../Engine/Content/EditorLandscapeResources/DataLayer.uasset" 67
+"../../../Engine/Content/EditorLandscapeResources/DefaultAlphaTexture.uasset" 68
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Toggle.uasset" 69
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Visibility.uasset" 70
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.uasset" 71
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicatorMaterial.uasset" 72
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_ColorTrack.uasset" 73
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Anim.uasset" 74
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_AudioMaster.uasset" 75
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Director.uasset" 76
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Event.uasset" 77
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Fade.uasset" 78
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Float.uasset" 79
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Move.uasset" 80
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Slomo.uasset" 81
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Sound.uasset" 82
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Vector.uasset" 83
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_NoImage.uasset" 84
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_OOD.uasset" 85
+"../../../Engine/Content/EditorMaterials/Camera/CineMat.uasset" 86
+"../../../Engine/Content/EditorMaterials/Camera/MI_CineMat_Rig.uasset" 87
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Arm.uasset" 88
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Base.uasset" 89
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Body.uasset" 90
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Mount.uasset" 91
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Mount.uasset" 92
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Track.uasset" 93
+"../../../Engine/Content/EditorResources/BSPVertex.uasset" 94
+"../../../Engine/Content/EditorResources/EmptyActor.uasset" 95
+"../../../Engine/Content/EditorResources/S_Actor.uasset" 96
+"../../../Engine/Content/EditorResources/S_Note.uasset" 97
+"../../../Engine/Content/EditorResources/S_Solver.uasset" 98
+"../../../Engine/Content/EditorResources/S_Terrain.uasset" 99
+"../../../Engine/Content/EditorResources/S_Trigger.uasset" 100
+"../../../Engine/Content/EditorResources/AudioIcons/S_AudioComponent.uasset" 101
+"../../../Engine/Content/EditorResources/AudioIcons/S_AudioComponent_AutoActivate.uasset" 102
+"../../../Engine/Content/EditorResources/LightIcons/S_LightError.uasset" 103
+"../../../Engine/Content/EditorResources/SequenceRecorder/Countdown.uasset" 104
+"../../../Engine/Content/EditorResources/SequenceRecorder/RecordingIndicator.uasset" 105
+"../../../Engine/Content/EngineDamageTypes/DmgTypeBP_Environmental.uasset" 106
+"../../../Engine/Content/EngineDebugMaterials/DebugEditorMaterial.uasset" 107
+"../../../Engine/Content/EngineDebugMaterials/DebugMeshMaterial.uasset" 108
+"../../../Engine/Content/EngineDebugMaterials/M_SimpleUnlitTranslucent.uasset" 109
+"../../../Engine/Content/EngineDebugMaterials/VolumeToRender.uasset" 110
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/CameraDirectionVector.uasset" 111
+"../../../Engine/Content/EngineDebugMaterials/M_VolumeRenderSphereTracePP.uasset" 112
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec.uasset" 113
+"../../../Engine/Content/EngineDebugMaterials/VertexColorMaterial.uasset" 114
+"../../../Engine/Content/EngineDebugMaterials/WireframeMaterial.uasset" 115
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uasset" 116
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uasset" 117
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uasset" 118
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uasset" 119
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uasset" 120
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uasset" 121
+"../../../Engine/Content/EngineFonts/Roboto.uasset" 122
+"../../../Engine/Content/EngineMaterials/BaseFlattenNormalMap.uasset" 123
+"../../../Engine/Content/EngineMaterials/BaseFlattenGrayscaleMap.uasset" 124
+"../../../Engine/Content/EngineMaterials/BaseFlattenEmissiveMap.uasset" 125
+"../../../Engine/Content/EngineMaterials/BaseFlattenDiffuseMap.uasset" 126
+"../../../Engine/Content/EngineMaterials/BaseFlattenMaterial.uasset" 127
+"../../../Engine/Content/EngineMaterials/BlueNoise.uasset" 128
+"../../../Engine/Content/EngineMaterials/DefaultBloomKernel.uasset" 129
+"../../../Engine/Content/EngineMaterials/DefaultBokeh.uasset" 130
+"../../../Engine/Content/EngineMaterials/DefaultDiffuse.uasset" 131
+"../../../Engine/Content/EngineMaterials/DefaultDeferredDecalMaterial.uasset" 132
+"../../../Engine/Content/EngineMaterials/DefaultLightFunctionMaterial.uasset" 133
+"../../../Engine/Content/EngineMaterials/DefaultPhysicalMaterial.uasset" 134
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.uasset" 135
+"../../../Engine/Content/EngineMaterials/DefaultPostProcessMaterial.uasset" 136
+"../../../Engine/Content/EngineFonts/RobotoDistanceField.uasset" 137
+"../../../Engine/Content/EngineMaterials/DefaultTextMaterialOpaque.uasset" 138
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid.uasset" 139
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid_Low.uasset" 140
+"../../../Engine/Content/EngineMaterials/EmissiveMeshMaterial.uasset" 141
+"../../../Engine/Content/EngineMaterials/GizmoMaterial.uasset" 142
+"../../../Engine/Content/EngineMaterials/Good64x64TilingNoiseHighFreq.uasset" 143
+"../../../Engine/Content/EngineMaterials/MiniFont.uasset" 144
+"../../../Engine/Content/EngineMaterials/InvalidLightmapSettings.uasset" 145
+"../../../Engine/Content/EngineMaterials/M_InvalidLightmapSettings.uasset" 146
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/CameraOffset.uasset" 147
+"../../../Engine/Content/EngineMaterials/PhAT_JointLimitMaterial.uasset" 148
+"../../../Engine/Content/EngineMaterials/PreintegratedSkinBRDF.uasset" 149
+"../../../Engine/Content/EngineMaterials/RemoveSurfaceMaterial.uasset" 150
+"../../../Engine/Content/EngineMaterials/WeightMapPlaceholderTexture.uasset" 151
+"../../../Engine/Content/EngineResources/WhiteSquareTexture.uasset" 152
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough.uasset" 153
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked.uasset" 154
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque.uasset" 155
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked_OneSided.uasset" 156
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque_OneSided.uasset" 157
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent.uasset" 158
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent_OneSided.uasset" 159
+"../../../Engine/Content/EngineMeshes/Cylinder.uasset" 160
+"../../../Engine/Content/EngineMeshes/Sphere.uasset" 161
+"../../../Engine/Content/EngineResources/Black.uasset" 162
+"../../../Engine/Content/EngineResources/DefaultTextureCube.uasset" 163
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture2D.uasset" 164
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture.uasset" 165
+"../../../Engine/Content/EngineResources/GradientTexture0.uasset" 166
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseShape64.uasset" 167
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseShape64.uasset" 168
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseErosion.uasset" 169
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseErosion32.uasset" 170
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudWeatherTexture.uasset" 171
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudGradientTexture.uasset" 172
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat2.uasset" 173
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud.uasset" 174
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.uasset" 175
+"../../../Engine/Content/EngineSounds/Master.uasset" 176
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness.uasset" 177
+"../../../Engine/Content/Maps/Templates/Thumbnails/Default.uasset" 178
+"../../../Engine/Content/Maps/Templates/Thumbnails/TimeOfDay.uasset" 179
+"../../../Engine/Content/Maps/Templates/Thumbnails/VR-Basic.uasset" 180
+"../../../Engine/Content/MobileResources/T_MobileControls_texture.uasset" 181
+"../../../Engine/Content/MobileResources/T_MobileMenu2.uasset" 182
+"../../../Engine/Content/MobileResources/HUD/AnalogHat.uasset" 183
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Thumb.uasset" 184
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Background.uasset" 185
+"../../../Engine/Content/MobileResources/HUD/DefaultVirtualJoysticks.uasset" 186
+"../../../Engine/Content/MobileResources/HUD/LeftVirtualJoystickOnly.uasset" 187
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_off.uasset" 188
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_on.uasset" 189
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_off.uasset" 190
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_on.uasset" 191
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton3.uasset" 192
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButtonFire.uasset" 193
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad.uasset" 194
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad2.uasset" 195
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad3.uasset" 196
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionStick.uasset" 197
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickInner.uasset" 198
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickOutter.uasset" 199
+"../../../Engine/Content/Tutorial/ContentIntroCurve.uasset" 200
+"../../../Engine/Content/Tutorial/Basics/LevelEditorAttract.uasset" 201
+"../../../Engine/Content/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial.uasset" 202
+"../../../Engine/Content/VREditor/LaserPointer/VR_LaserPower_01.uasset" 203
+"../../../Engine/Content/VREditor/TransformGizmo/TransformGizmoMaterial.uasset" 204
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxCorner.uasset" 205
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxEdge.uasset" 206
+"../../../Engine/Content/VREditor/TransformGizmo/PlaneTranslationHandle.uasset" 207
+"../../../Engine/Content/VREditor/TransformGizmo/Xray.uasset" 208
+"../../../Engine/Content/VREditor/TransformGizmo/Main.uasset" 209
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Key.uasset" 210
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Node.uasset" 211
+"../../Plugins/2D/Paper2D/Content/PlaceholderTextures/DummySpriteTexture.uasset" 212
+"../../Plugins/2D/Paper2D/Content/DummySprite.uasset" 213
+"../../Plugins/2D/Paper2D/Content/DefaultPaperTerrainMaterial.uasset" 214
+"../../Plugins/2D/Paper2D/Content/DefaultSpriteMaterial.uasset" 215
+"../../Plugins/2D/Paper2D/Content/MaskedUnlitSpriteMaterial.uasset" 216
+"../../Plugins/2D/Paper2D/Content/OpaqueUnlitSpriteMaterial.uasset" 217
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uasset" 218
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uasset" 219
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uasset" 220
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uasset" 221
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uasset" 222
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uasset" 223
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uasset" 224
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uasset" 225
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uasset" 226
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uasset" 227
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uasset" 228
+"../../../Engine/Content/EngineResources/DefaultTexture.uasset" 229
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uasset" 230
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uasset" 231
+"../../Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uasset" 232
+"../../../Engine/Content/BasicShapes/Cylinder.uasset" 233
+"../../../Engine/Content/ArtTools/RenderToTexture/Materials/Debug/M_Emissive_Color.uasset" 234
+"../../Plugins/Lumin/MagicLeapPassableWorld/Content/MagicLeapARPinInfoActor.uasset" 235
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Pipe_90.uasset" 236
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 237
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 238
+"../../../Engine/Content/BasicShapes/Cube.uasset" 239
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial.uasset" 240
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterial_Inst.uasset" 241
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_N.uasset" 242
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_RockMesh_M.uasset" 243
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Basalt_D.uasset" 244
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Detail_Rocky_N.uasset" 245
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Rock.uasset" 246
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Glass.uasset" 247
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_Variation_M.uasset" 248
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_N.uasset" 249
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_M.uasset" 250
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Tiles_D.uasset" 251
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Tiles.uasset" 252
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 253
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 254
+"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uasset" 255
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/CubeMaterial.uasset" 256
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/1M_Cube.uasset" 257
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_N.uasset" 258
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Grass_D.uasset" 259
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Grass.uasset" 260
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Ground.uasset" 261
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Gamebounds_BP.uasset" 262
+"../../../Engine/Content/VREditor/LaserPointer/LaserPointerMaterialInst.uasset" 263
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/shitty_goal_BP.uasset" 264
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_soft_smoke.uasset" 265
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/T_SmokeSubUV_8X8.uasset" 266
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/M_smoke_subUV_blackbody.uasset" 267
+"../../../Engine/Content/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.uasset" 268
+"../../../Engine/Content/BasicShapes/Cone.uasset" 269
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Blueprints/Brazier_BP.uasset" 270
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 271
+"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 272
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 273
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 274
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 275
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 276
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_radial_ramp.uasset" 277
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/m_flare_01.uasset" 278
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Explosion_SubUV.uasset" 279
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_explosion_subUV.uasset" 280
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Burst_M.uasset" 281
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Burst.uasset" 282
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Explosion.uasset" 283
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Explosion01.uasset" 284
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/ShittyGoalRed.uasset" 285
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/ShittyGoalGreen.uasset" 286
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/selfimplemented/audio/ballhit.uasset" 287
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_N.uasset" 288
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Hex_Tile_M.uasset" 289
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset" 290
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/ShittyBall.uasset" 291
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Maps/soccer4p_BuiltData.uasset" 292
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Maps/soccer4p.umap" 293
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Wedge_A.uasset" 294
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Geometry/Meshes/TemplateFloor.uasset" 295
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Moss_N.uasset" 296
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_ground_Moss_D.uasset" 297
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Moss.uasset" 298
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player_BuiltData.uasset" 299
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/Maps/soccer_2player.umap" 300
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/M_GreyBall.uasset" 301
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/Color_checker.uasset" 302
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/M_ColorGrid.uasset" 303
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/M_ClearCoatBlack.uasset" 304
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/M_ClearCoat.uasset" 305
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/M_ChromeBall.uasset" 306
+"../../../Engine/Content/EditorMeshes/ColorCalibrator/SM_ColorCalibrator.uasset" 307
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/Advanced_Lighting_BuiltData.uasset" 308
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" 309
+"../../../Engine/Content/MapTemplates/Sky/DaylightAmbientCubemap.uasset" 310
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Master.uasset" 311
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_HDRI.uasset" 312
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/M_LightStage_Arrows.uasset" 313
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/SM_Arrows.uasset" 314
+"../../../Engine/Content/EditorMaterials/Thumbnails/SkySphereMaterial.uasset" 315
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/Skybox.uasset" 316
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Black.uasset" 317
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/SunlightColorLUT.uasset" 318
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Assets/FogBrightnessLUT.uasset" 319
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/BP_LightStudio.uasset" 320
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_AssetPlatform.uasset" 321
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Architecture/SM_AssetPlatform.uasset" 322
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/Advanced_Lighting.umap" 323
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_TableRound_N.uasset" 324
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_TableRound_M.uasset" 325
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_TableRound.uasset" 326
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_TableRound.uasset" 327
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Statue_N.uasset" 328
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Statue_M.uasset" 329
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Statue.uasset" 330
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_StatueGlass.uasset" 331
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_Statue.uasset" 332
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Chair_N.uasset" 333
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Chair_M.uasset" 334
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Chair.uasset" 335
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_Chair.uasset" 336
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Copper_D.uasset" 337
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Copper.uasset" 338
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Aluminum_D.uasset" 339
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset" 340
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Brushed_Nickel.uasset" 341
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/Minimal_Default_BuiltData.uasset" 342
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Background_Cue.uasset" 343
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Basic_Floor.uasset" 344
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Architecture/Floor_400x400.uasset" 345
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/Minimal_Default.umap" 346
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_QuadPyramid.uasset" 347
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Shapes/Shape_Cube.uasset" 348
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Frame_N.uasset" 349
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Frame_M.uasset" 350
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Frame.uasset" 351
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_WindowFrame.uasset" 352
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_PillarFrame300.uasset" 353
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_PillarFrame.uasset" 354
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_GlassWindow.uasset" 355
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_DoorFrame.uasset" 356
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_CornerFrame.uasset" 357
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Dust_Particle_D.uasset" 358
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Dust_Particle.uasset" 359
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Ambient_Dust.uasset" 360
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Walnut_N.uasset" 361
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Wood_Walnut_D.uasset" 362
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Walnut.uasset" 363
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/AlphaOffset.uasset" 364
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Worn.uasset" 365
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Water_Lake.uasset" 366
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Panel_N.uasset" 367
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Panel_M.uasset" 368
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Steel_D.uasset" 369
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Panel.uasset" 370
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Hex_Tile.uasset" 371
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Dot_N.uasset" 372
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Tech_Dot_M.uasset" 373
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Single_Tile_N.uasset" 374
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Checker_Noise_M.uasset" 375
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Tech_Checker_Dot.uasset" 376
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Slate_N.uasset" 377
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Slate_D.uasset" 378
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Rock_Slate.uasset" 379
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Sandstone_N.uasset" 380
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Sandstone_D.uasset" 381
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Rock_Sandstone.uasset" 382
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Marble_Polished_D.uasset" 383
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Rock_Marble_Polished.uasset" 384
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Basalt_N.uasset" 385
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Rock_Basalt.uasset" 386
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Steel_N.uasset" 387
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Steel.uasset" 388
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Rust_D.uasset" 389
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Metal_Rust_N.uasset" 390
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Rust.uasset" 391
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Metal_Chrome.uasset" 392
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Gravel_N.uasset" 393
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ground_Gravel_D.uasset" 394
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ground_Gravel.uasset" 395
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Poured_N.uasset" 396
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Poured_D.uasset" 397
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Poured.uasset" 398
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Panels_N.uasset" 399
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Panels_D.uasset" 400
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Panels.uasset" 401
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Concrete_Grime_D.uasset" 402
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Concrete_Grime.uasset" 403
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Smooth_N.uasset" 404
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Smooth_M.uasset" 405
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Smooth_D.uasset" 406
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Rock_Smooth_Granite_D.uasset" 407
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Gradinet_01.uasset" 408
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_CobbleStone_Smooth.uasset" 409
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Rough_N.uasset" 410
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Rough_D.uasset" 411
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_CobbleStone_Rough.uasset" 412
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Pebble_N.uasset" 413
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Pebble_M.uasset" 414
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_CobbleStone_Pebble_D.uasset" 415
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_CobbleStone_Pebble.uasset" 416
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ceramic_Tile_N.uasset" 417
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Ceramic_Tile_M.uasset" 418
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Ceramic_Tile_Checker.uasset" 419
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Hewn_Stone_N.uasset" 420
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Hewn_Stone_M.uasset" 421
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Hewn_Stone_D.uasset" 422
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Hewn_Stone.uasset" 423
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Cut_Stone_N.uasset" 424
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Cut_Stone_D.uasset" 425
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Cut_Stone.uasset" 426
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_Old_N.uasset" 427
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_Old_D.uasset" 428
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" 429
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_New_N.uasset" 430
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_New_M.uasset" 431
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_New_D.uasset" 432
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Clay_New.uasset" 433
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_Beveled_N.uasset" 434
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_Beveled_M.uasset" 435
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Brick_Clay_Beveled_D.uasset" 436
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset" 437
+"../../../Engine/Content/Functions/Engine_MaterialFunctions03/Procedurals/ComputeFilterWidth.uasset" 438
+"../../../Engine/Content/EngineMaterials/AntiAliasedTextMaterialTranslucent.uasset" 439
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/StarterMap_BuiltData.uasset" 440
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Lamp_N.uasset" 441
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Lamp_M.uasset" 442
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/Materials/M_Lamp.uasset" 443
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_Lamp_Wall.uasset" 444
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_WallSconce.uasset" 445
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Steam_Lit.uasset" 446
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Steam01_Cue.uasset" 447
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_Effect_Steam.uasset" 448
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Fire_Sparks01_Cue.uasset" 449
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_Effect_Sparks.uasset" 450
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Smoke.uasset" 451
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Smoke01_Cue.uasset" 452
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_Effect_Smoke.uasset" 453
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Heat_Distortion.uasset" 454
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Fire_Tiled_D.uasset" 455
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Textures/T_Fire_SubUV.uasset" 456
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/Materials/M_Fire_SubUV.uasset" 457
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Particles/P_Fire.uasset" 458
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Fire01_Cue.uasset" 459
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_Effect_Fire.uasset" 460
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Props/SM_Lamp_Ceiling.uasset" 461
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset" 462
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Starter_Music_Cue.uasset" 463
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Audio/Collapse_Cue.uasset" 464
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Architecture/Wall_Window_400x300.uasset" 465
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Architecture/Wall_Door_400x300.uasset" 466
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Architecture/Wall_400x200.uasset" 467
+"../../../../Users/fabio/OneDrive/Dokumente/Unreal Projects/ShitGaem2/Content/StarterContent/Maps/StarterMap.umap" 468

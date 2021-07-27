@@ -1,7 +1,6 @@
 #include "ball.h"
 #include "Components/StaticMeshComponent.h"
 #include "SoccerGameMode.h"
-#include "SoccerGameState.h"
 #include "Goalgreen.h"
 #include "Goalred.h"
 #include "characterthatworks.h"
@@ -21,6 +20,7 @@ Aball::Aball()
 	
 	
 	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
+	if (GetLocalRole() < ROLE_Authority) DisableComponentsSimulatePhysics();
 	bCanPlay = true;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;
@@ -35,6 +35,7 @@ Aball::Aball()
 	Gravity = 1000.f;
 	
 	bReplicates = true;
+	//GameStateBall = Cast<ASoccerGameState>(GetWorld()->GetGameState());
 }
 
 // Called when the game starts or when spawned
@@ -88,8 +89,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 
 		if (AGamebounds* Target3 = Cast<AGamebounds>(OtherActor))
 		{
-			BallDestroy();
-			Aball::SpawnBall();
+			//GameStateBall->ResetBall();
 			BallSoundCount = 0;
 			return;
 		}
@@ -225,8 +225,8 @@ void Aball::CallGreenGoalHit()
 		Bobby->ClientWhichTeam(playerController, true);
 	}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
-	Aball::SpawnBall();
-	BallDestroy();
+	//GameStateBall->ResetBall();
+	
 }
 
 //increase the green points and reset the ball and characters
@@ -243,8 +243,8 @@ void Aball::CallRedGoalHit()
 		Bobby->ClientWhichTeam(playerController, true);
 		}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
-	Aball::SpawnBall();
-	BallDestroy();
+	//GameStateBall->ResetBall();
+	
 }
 
 //destroy the ball
