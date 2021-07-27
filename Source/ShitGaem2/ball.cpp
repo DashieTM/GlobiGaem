@@ -35,7 +35,7 @@ Aball::Aball()
 	Gravity = 1000.f;
 	
 	bReplicates = true;
-	//GameStateBall = Cast<ASoccerGameState>(GetWorld()->GetGameState());
+	
 }
 
 // Called when the game starts or when spawned
@@ -217,6 +217,7 @@ void Aball::CallGreenGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnGreenGoalHit();
+		GM->ResetBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter)
 	{
@@ -225,8 +226,6 @@ void Aball::CallGreenGoalHit()
 		Bobby->ClientWhichTeam(playerController, true);
 	}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
-	//GameStateBall->ResetBall();
-	
 }
 
 //increase the green points and reset the ball and characters
@@ -235,6 +234,7 @@ void Aball::CallRedGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnRedGoalHit();
+		GM->ResetBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter) 
 		{
@@ -243,8 +243,6 @@ void Aball::CallRedGoalHit()
 		Bobby->ClientWhichTeam(playerController, true);
 		}
 	GetWorldTimerManager().ClearTimer(MemberTimerHandle2);
-	//GameStateBall->ResetBall();
-	
 }
 
 //destroy the ball
