@@ -34,15 +34,15 @@ void ASoccerGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 void ASoccerGameState::StartGame()
 {
 	
-	Ball.SetRotation(FQuat(FRotator(0.f, 0.f, 0.0f)));
-	Ball.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	Ball.SetLocation(FVector(0.f, 0.f, 1100.f));
-	BallInPlay = GetWorld()->SpawnActor<Aball>(Ball_Default ,Ball, SpawnParams2);
+//	Ball.SetRotation(FQuat(FRotator(0.f, 0.f, 0.0f)));
+	//Ball.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+	//Ball.SetLocation(FVector(0.f, 0.f, 1100.f));
+	//BallInPlay = GetWorld()->SpawnActor<Aball>(Ball_Default ,Ball, SpawnParams2);
 }
 
 void ASoccerGameState::ResetBall()
 {
-	BallInPlay->SetActorLocationAndRotation(FVector(0.f, 0.f, 1100.f), FQuat(FRotator(0.f, 0.f, 0.0f)));
+//	BallInPlay->SetActorLocationAndRotation(FVector(0.f, 0.f, 1100.f), FQuat(FRotator(0.f, 0.f, 0.0f)));
 }
 
 void ASoccerGameState::OnGreenGoalHit()
