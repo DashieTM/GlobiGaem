@@ -70,14 +70,14 @@ void ASoccerGameState::OnRedGoalHit()
 
 void ASoccerGameState::PlayersRedIncrease()
 {
-	PlayersRed++;
-	if (PlayersRed > 0 && PlayersRed < 2)StartGame();
+	//PlayersRed++;
+	//if (PlayersRed > 0 && PlayersRed < 2)StartGame();
 }
 
 void ASoccerGameState::PlayersGreenIncrease()
 {
-	PlayersGreen++;
-	if (PlayersGreen > 0 && PlayersGreen < 2)StartGame();
+	//PlayersGreen++;
+	//if (PlayersGreen > 0 && PlayersGreen < 2)StartGame();
 }
 
 int32 ASoccerGameState::GetPointsRed()
