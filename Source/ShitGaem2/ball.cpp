@@ -22,6 +22,7 @@ Aball::Aball()
 	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
 	if (GetLocalRole() < ROLE_Authority) DisableComponentsSimulatePhysics();
 	bCanPlay = true;
+	bBallHit = false;
 	BallSoundBobby = 0;
 	BallSoundCount = 0;
 	BallHitCount = 0;
@@ -96,17 +97,28 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 
 		if (Acharacterthatworks* bobby = Cast<Acharacterthatworks>(OtherActor))
 		{
-			if (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() < 1800)
-			{
-				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 900));
+			if(bBallHit == false)
+			{ 
+				if (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() < 1800)
+				{
+					BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 900));
+				}
+				else if(bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() < 900)
+				{
+					BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 300));
+				}
+				else {
+					BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * (bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size() + 50));
+				}
+				bBallHit = true;
+				GetWorld()->GetTimerManager().SetTimer(MemberTimerHandle5, this, &Aball::ResetBallHit, 0.15f, false);
+				BallSoundCount = 0;
+				MultiSoundPlay();
+				return;
 			}
-			else {
-				BallMesh->SetPhysicsLinearVelocity(Hit.ImpactNormal * bobby->GetCharacterMovement()->GetLastUpdateVelocity().Size());
-			}
-			BallSoundCount = 0;
-			MultiSoundPlay();
-			return;
 		}
+
+		
 
 		if (AGround* Ground = Cast<AGround>(OtherActor))
 		{
@@ -124,6 +136,12 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 	}
 }
 
+
+void Aball::ResetBallHit()
+{
+	bBallHit = false;
+	GetWorldTimerManager().ClearTimer(MemberTimerHandle5);
+}
 //set the ball hidden for a few seconds, tape solution for the duration the goal hit function takes
 void Aball::MultiSetHidden_Implementation()
 {
@@ -217,7 +235,7 @@ void Aball::CallGreenGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnGreenGoalHit();
-		//GM->ResetBall();
+		GM->ResetBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter)
 	{
@@ -234,7 +252,7 @@ void Aball::CallRedGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnRedGoalHit();
-		//GM->ResetBall();
+		GM->ResetBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter) 
 		{
@@ -267,7 +285,7 @@ void Aball::ServerBallDestroy_Implementation()
 // ball jump after hit with projectile
 void Aball::BallJump()
 {
-	NetMulticastBallJump();
+	ServerBallJump();
 }
 
 //smoothing ball jump for clients
@@ -279,6 +297,7 @@ void Aball::NetMulticastBallJump_Implementation()
 //serverballjump implementation, acutal position
 void Aball::ServerBallJump_Implementation()
 {
+	BallMesh->SetPhysicsLinearVelocity(FVector(0.f, 0.f, 900.f));
 }
 
 void Aball::CallCountdown()

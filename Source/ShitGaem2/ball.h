@@ -35,11 +35,13 @@ private:
 	int BallSoundBobby;
 	int BallHitCount;
 	bool bCanPlay;
+	bool bBallHit;
 
 	FTimerHandle MemberTimerHandle;
 	FTimerHandle MemberTimerHandle2;
 	FTimerHandle MemberTimerHandle3;
 	FTimerHandle MemberTimerHandle4;
+	FTimerHandle MemberTimerHandle5;
 	
 	
 
@@ -59,6 +61,7 @@ public:
 	void BallJump();
 	void ResetBallSoundEffect();
 	void CallCountdown();
+	void ResetBallHit();
 	
 
 	UFUNCTION(Server, Reliable)

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-//#include "ball.h"
+#include "ball.h"
 #include "GameFramework/GameStateBase.h"
 #include "SoccerGameState.generated.h"
 
@@ -43,6 +43,8 @@ private:
 
 	FTimerHandle MemberTimerHandle;
 
+	FTimerHandle MemberTimerHandlestate;
+
 	UPROPERTY(EditAnywhere, Category = "Red Bobby")
 		TSubclassOf<class Acharacterthatworks> Bobby_Red;
 
@@ -53,9 +55,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Default Bobby")
 		TSubclassOf<class Acharacterthatworks> Bobby_Default;
 	
-	//FTransform Ball;
-	//FActorSpawnParameters SpawnParams2;
-	//class Aball* BallInPlay;
+	FTransform Ball;
+	FActorSpawnParameters SpawnParams2;
+	class Aball* BallInPlay;
 
 	UPROPERTY(EditAnywhere, Category = "Default Bobby")
 		TSubclassOf<class Aball> Ball_Default;
