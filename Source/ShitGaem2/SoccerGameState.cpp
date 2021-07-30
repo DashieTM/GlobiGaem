@@ -15,11 +15,17 @@ ASoccerGameState::ASoccerGameState()
 {
 	PointsRed = 0;
 	PointsGreen = 0;
+	PlayersGreen = 0;
+	PlayersRed = 0;
 	RedWinStatus = false;
 	GreenWinStatus = false;
-
-	bReplicates = true;
 	
+	bReplicates = true;
+}
+
+void ASoccerGameState::BeginPlay()
+{
+	if(HasAuthority()) Mode = Cast<ASoccerGameMode>(GetWorld()->GetAuthGameMode());
 }
 
 void ASoccerGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -33,15 +39,18 @@ void ASoccerGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 
 void ASoccerGameState::StartGame()
 {
-	
-	Ball.SetRotation(FQuat(FRotator(0.f, 0.f, 0.0f)));
-	Ball.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	Ball.SetLocation(FVector(0.f, 0.f, 1100.f));
-	BallInPlay = GetWorld()->SpawnActor<Aball>(Ball_Default ,Ball, SpawnParams2);
-	GetWorldTimerManager().ClearTimer(MemberTimerHandlestate);
+}
+
+void ASoccerGameState::StartGameServer_Implementation()
+{
 }
 
 void ASoccerGameState::ResetBall()
+{
+	ResetBallServer();
+}
+
+void ASoccerGameState::ResetBallServer_Implementation()
 {
 	BallInPlay->Destroy();
 	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandlestate, this, &ASoccerGameState::StartGame, 3.0f, false);
@@ -72,17 +81,27 @@ void ASoccerGameState::OnRedGoalHit()
 
 void ASoccerGameState::PlayersRedIncrease()
 {
+	
+	PlayersRedIncreaseServer();
+}
+
+void ASoccerGameState::PlayersRedIncreaseServer_Implementation()
+{
 	PlayersRed++;
-	if (BallInPlay == nullptr)StartGame();
-	else {
-		ResetBall();
-	}
+	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandlestate2, this, &ASoccerGameState::SpawnBall, 3.0f, false);
 }
 
 void ASoccerGameState::PlayersGreenIncrease()
 {
 	PlayersGreen++;
-	if (BallInPlay == nullptr)StartGame();
+	GetWorld()->GetTimerManager().SetTimer(MemberTimerHandlestate3, this, &ASoccerGameState::SpawnBall, 3.0f, false);
+}
+
+void ASoccerGameState::SpawnBall()
+{
+	Mode->SpawnBall();
+	GetWorldTimerManager().ClearTimer(MemberTimerHandlestate2);
+	GetWorldTimerManager().ClearTimer(MemberTimerHandlestate3);
 }
 
 int32 ASoccerGameState::GetPointsRed()

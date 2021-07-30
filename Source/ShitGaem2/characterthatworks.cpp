@@ -89,7 +89,7 @@ void Acharacterthatworks::BeginPlay()
 	{
 		this->DisableComponentsSimulatePhysics();
 	}
-	
+	State = Cast<ASoccerGameState>(GetWorld()->GetGameState());
 }
 
 // Called every frame
@@ -424,6 +424,7 @@ void Acharacterthatworks::SpawnBobbyRed(ASoccerPlayerController* TheNewControlle
 			BobbyRed->bCanFire = false;
 			BobbyRed->bHasPowerUp = false;
 		}
+		State->PlayersRedIncrease();
 		Destroy();
 	}
 }
@@ -463,6 +464,7 @@ void Acharacterthatworks::SpawnBobbyGreen(ASoccerPlayerController* TheNewControl
 			BobbyGreen->bCanFire = false;
 			BobbyGreen->bHasPowerUp = false;
 		}
+		State->PlayersGreenIncrease();
 		Destroy();
 	}
 }

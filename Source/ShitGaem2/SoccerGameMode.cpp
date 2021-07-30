@@ -8,6 +8,7 @@
 #include "UObject/ConstructorHelpers.h"
 #include "MenuHUD.h"
 #include "BobbyPlayerState.h"
+#include "ball.h"
 
 
 
@@ -23,6 +24,23 @@ ASoccerGameMode::ASoccerGameMode()
 	PlayerStateClass = ABobbyPlayerState::StaticClass();
 	GameStateClass = ASoccerGameState::StaticClass();
 	HUDClass = AMenuHUD::StaticClass();
-	
+	ShitBall = nullptr;
 }
 
+
+
+void ASoccerGameMode::SpawnBall()
+{
+	if (ShitBall == nullptr)
+	{
+		Ball.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+		Ball.SetLocation(FVector(0.f, 0.f, 1100.f));
+	ShitBall =	GetWorld()->SpawnActor<Aball>(Ball_Default, Ball, SpawnParams2);
+	}
+	else {
+		ShitBall->Destroy();
+		Ball.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+		Ball.SetLocation(FVector(0.f, 0.f, 1100.f));
+		ShitBall = GetWorld()->SpawnActor<Aball>(Ball_Default, Ball, SpawnParams2);
+	}
+}

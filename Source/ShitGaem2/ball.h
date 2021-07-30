@@ -43,7 +43,7 @@ private:
 	FTimerHandle MemberTimerHandle4;
 	FTimerHandle MemberTimerHandle5;
 	
-	
+	class ASoccerGameMode* Mode;
 
 protected:
 	// Called when the game starts or when spawned

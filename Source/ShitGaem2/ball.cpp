@@ -19,8 +19,7 @@ Aball::Aball()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	
-	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
-	if (GetLocalRole() < ROLE_Authority) DisableComponentsSimulatePhysics();
+	
 	bCanPlay = true;
 	bBallHit = false;
 	BallSoundBobby = 0;
@@ -43,8 +42,9 @@ Aball::Aball()
 void Aball::BeginPlay()
 {
 	Super::BeginPlay();
+	ServerCallGreenGoalHit();
+	if (GetLocalRole() < ROLE_Authority) SetRole(ROLE_SimulatedProxy);
 	
-
 }
 
 // Called every frame
@@ -90,7 +90,7 @@ void Aball::OnBallHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpul
 
 		if (AGamebounds* Target3 = Cast<AGamebounds>(OtherActor))
 		{
-			//GameStateBall->ResetBall();
+			SpawnBall();
 			BallSoundCount = 0;
 			return;
 		}
@@ -195,11 +195,12 @@ void Aball::ResetBallSoundEffect()
 //spawn a new ball
 void Aball::SpawnBall()
 {
-	FActorSpawnParameters SpawnParams;
-	FTransform BallRespawn = BallMesh->GetComponentTransform();
-	BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
-	BallRespawn.SetLocation(FVector(0.f, 0.f, 1100.f));
-	GetWorld()->SpawnActor<Aball>(ShitBall, BallRespawn, SpawnParams);
+	//FActorSpawnParameters SpawnParams;
+	//FTransform BallRespawn = BallMesh->GetComponentTransform();
+	//BallRespawn.SetScale3D(FVector(1.0f, 1.0f, 1.0f));
+	//BallRespawn.SetLocation(FVector(0.f, 0.f, 1100.f));
+	//GetWorld()->SpawnActor<Aball>(ShitBall, BallRespawn, SpawnParams);
+	//ServerSpawnBall();
 }
 
 
@@ -212,7 +213,7 @@ void Aball::MultiCountdown_Implementation(Acharacterthatworks* bobby)
 //spawn the ball serverside
 void Aball::ServerSpawnBall_Implementation()
 {
-	SpawnBall();
+	
 }
 
 
@@ -226,7 +227,7 @@ void Aball::ServerCallRedGoalHit_Implementation()
 //server green goal hit implementation
 void Aball::ServerCallGreenGoalHit_Implementation()
 {
-	CallGreenGoalHit();
+	Mode = Cast<ASoccerGameMode>(GetWorld()->GetAuthGameMode());
 }
 
 //increase the red points and reset the ball and characters
@@ -235,7 +236,7 @@ void Aball::CallGreenGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnGreenGoalHit();
-		GM->ResetBall();
+	//	SpawnBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter)
 	{
@@ -252,7 +253,7 @@ void Aball::CallRedGoalHit()
 	if (ASoccerGameState* GM = Cast<ASoccerGameState>(GetWorld()->GetGameState()))
 	{
 		GM->OnRedGoalHit();
-		GM->ResetBall();
+	//	SpawnBall();
 	}
 	for (FConstPlayerControllerIterator iter = GetWorld()->GetPlayerControllerIterator(); iter; ++iter) 
 		{

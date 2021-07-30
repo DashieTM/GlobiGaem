@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ball.h"
+#include "SoccerGameMode.h"
 #include "GameFramework/GameStateBase.h"
 #include "SoccerGameState.generated.h"
 
@@ -15,7 +16,10 @@ UCLASS()
 class SHITGAEM2_API ASoccerGameState : public AGameStateBase
 {
 	GENERATED_BODY()
-	
+
+protected:
+	virtual void BeginPlay() override;
+
 private:
 	UPROPERTY(Replicated)
 		int32 PlayersGreen;
@@ -40,10 +44,13 @@ private:
 	class Acharacterthatworks* BobbyGreen;
 	class Acharacterthatworks* BobbyDefault;
 	class Acharacterthatworks* BobbyBuffer;
+	class ASoccerGameMode* Mode;
 
 	FTimerHandle MemberTimerHandle;
 
 	FTimerHandle MemberTimerHandlestate;
+	FTimerHandle MemberTimerHandlestate2;
+	FTimerHandle MemberTimerHandlestate3;
 
 	UPROPERTY(EditAnywhere, Category = "Red Bobby")
 		TSubclassOf<class Acharacterthatworks> Bobby_Red;
@@ -62,6 +69,7 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Default Bobby")
 		TSubclassOf<class Aball> Ball_Default;
 
+	
 protected:
 
 
@@ -81,6 +89,7 @@ public:
 	void PlayersRedIncrease();
 	void StartGame();
 	void ResetBall();
+	void SpawnBall();
 
 	UFUNCTION(BlueprintPure, Category = "Players")
 		int32 GetPlayersRed();
@@ -96,6 +105,14 @@ public:
 		bool GreenHasWon();
 
 
+	UFUNCTION(Server, Reliable)
+		void StartGameServer();
+	UFUNCTION(Server, Reliable)
+		void ResetBallServer();
+	UFUNCTION(Server, Reliable)
+		void PlayersRedIncreaseServer();
+	
+	
 
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };

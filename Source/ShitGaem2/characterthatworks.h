@@ -8,6 +8,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
+#include "SoccerGameState.h"
 #include "Components/AudioComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/TextRenderComponent.h"
@@ -41,6 +42,7 @@ private:
 	class Acharacterthatworks* BobbyRed;
 	class Acharacterthatworks* BobbyGreen;
 	class Acharacterthatworks* BobbyDefault;
+	class ASoccerGameState* State;
 
 	UPROPERTY(Replicated)
 	bool bCanFire;

@@ -189,7 +189,7 @@ void AMenuHUD::SetTeamRed()
 		{
 			if (BobbyBuffer)
 			{
-				GameState->PlayersRedIncrease();
+				//GameState->PlayersRedIncrease();
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
@@ -215,7 +215,7 @@ void AMenuHUD::SetTeamGreen()
 		{
 			if (BobbyBuffer)
 			{
-				GameState->PlayersGreenIncrease();
+				//GameState->PlayersGreenIncrease();
 				Acharacterthatworks* Bobby;
 				Acharacterthatworks* BobbyOld;
 				BobbyOld = (Cast<Acharacterthatworks>(PlayerOwner->GetCharacter()));
