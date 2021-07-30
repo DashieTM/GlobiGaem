@@ -35,8 +35,8 @@
 		}
 	],
 	"TargetPlatforms": [
+		"WindowsNoEditor",
 		"LinuxNoEditor",
-		"LinuxAArch64NoEditor",
-		"WindowsNoEditor"
+		"LinuxAArch64NoEditor"
 	]
 }
